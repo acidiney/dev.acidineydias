@@ -18,7 +18,7 @@ const md = new MarkdownIt({
 md.use(mip)
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -121,7 +121,7 @@ module.exports = {
         include: path.resolve(__dirname, 'content'),
         loader: 'frontmatter-markdown-loader',
         options: {
-          mode: [Mode.VUE_COMPONENT, Mode.META],
+          mode: [Mode.VUE_RENDER_FUNCTIONS, Mode.VUE_COMPONENT],
           vue: {
             root: 'dynamicMarkdown'
           },
@@ -149,6 +149,6 @@ module.exports = {
     }
   },
   generate: {
-    routes: [].concat(getPaths('post'))
+    routes: [].concat(getPaths('blog'))
   }
 }

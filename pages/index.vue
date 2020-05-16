@@ -17,14 +17,14 @@
         </h1>
 
         <p>
-          I'm full stack developer, currently working as Frontend Lead at
-          <a
+          I'm a full stack developer, currently working as a Frontend Lead at <a
             href="https://www.digitalfactory.co.ao"
             target="__blank"
-          >Digital Factory Angola</a>. I'm a frontend addict and user experience, I love css with passion
-          and always keep my mouth open when I discover a new possibilities. I
-          love to see my systems working from front to back. I share my
-          learnings on Youtube/Medium and anywhere that accepts me.
+          >Digital Factory Angola</a>. 
+          I'm a frontend addict and deeply enjoy creating wonderful user experiences, 
+          I have a strong passion for CSS and I can't keep my mouth closed when I discover a new possibilities. 
+          I love to see my systems working from front to back. I share my learnings on Youtube/Medium 
+          and anywhere else I can be heard.
         </p>
         <a class="text-left md:mr-5 block" href="https://drive.google.com/open?id=1YMoSAyeULgir2hk9fp7MAvzqGl-RUm74" target="__blank">
           <i class="icon-download"></i> Download my CV.
@@ -57,7 +57,7 @@
             :key="article.link"
             v-observe-visibility="(isVisible, entry) => loadFrontMatterDescription(isVisible, entry, article.link)"
             class="py-6 px-6 relative">
-            <nuxt-link :to="`/post/${article.link}`">
+            <nuxt-link :to="`/blog/${article.link}`">
               <header>
                 <div class="categories flex-wrap flex">
                   <p v-for="(category, i) in article.categories" :key="category + i" class="mr-2 text-xs rounded">

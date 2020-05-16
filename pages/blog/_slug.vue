@@ -34,18 +34,24 @@
         </div>
         <h2>{{ title }}</h2>
       </div>
-      <component :is="singlePostComponent" />
+      <client-only>
+        <DynamicMarkdown
+          :render-func="renderFunc"
+          :static-render-funcs="staticRenderFuncs"
+        />
+      </client-only>
     </footer>
     <nuxt-link class="my-5 block text-center" to='/'> <i class="icon-arrow-left"></i> Go Home</nuxt-link>
-    <div class="comments">
+    <div class="comments w-4/5 md:w-2/4 mx-auto">
       <vue-disqus shortname="acidineydias" :identifier="getUrl" :url="getUrl"></vue-disqus>
     </div>
   </div>
 </template>
 
 <script>
+import DynamicMarkdown from '~/components/Markdown/DynamicMarkdown'
 export default {
-  name: 'Post',
+  name: 'Blog',
   validate (context) {
     const { slug } = context.params
     if (slug) {
@@ -63,13 +69,16 @@ export default {
         image: post.attributes.image,
         imagePosition: post.attributes.imagePosition,
         categories: post.attributes.categories.split(','),
-        singlePostComponent: post.vue.component
+        // extraComponent: post.attributes.extraComponent,
+        renderFunc: `(${post.vue.render})`,
+        staticRenderFuncs: `[${post.vue.staticRenderFns}]`,
       }
     } catch (err) {
       console.debug(err)
       return false
     }
   },
+  components: { DynamicMarkdown },
   computed: {
     socials () {
     return [
