@@ -35,11 +35,11 @@
         <h2>{{ title }}</h2>
       </div>
       <component :is="singlePostComponent" />
-      <nuxt-link class="my-5 block text-center" to='/'> <i class="icon-arrow-left"></i> Go Home</nuxt-link>
-        <div class="comments">
-          <vue-disqus shortname="acidineydias" :identifier="getUrl" :url="getUrl"></vue-disqus>
-        </div>
     </footer>
+    <nuxt-link class="my-5 block text-center" to='/'> <i class="icon-arrow-left"></i> Go Home</nuxt-link>
+    <div class="comments">
+      <vue-disqus shortname="acidineydias" :identifier="getUrl" :url="getUrl"></vue-disqus>
+    </div>
   </div>
 </template>
 
