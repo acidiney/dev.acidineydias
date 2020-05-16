@@ -60,7 +60,7 @@ export default {
       return {
         date: new Date(post.attributes.date).toLocaleDateString('pt'),
         title: post.attributes.title,
-        image: post.attributes.img,
+        image: post.attributes.image,
         imagePosition: post.attributes.imagePosition,
         categories: post.attributes.categories.split(','),
         singlePostComponent: post.vue.component
