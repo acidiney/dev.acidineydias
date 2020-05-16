@@ -1,7 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f010a3d3-66ab-44ef-a0e3-e22f7bfa10bb/deploy-status)](https://app.netlify.com/sites/acidineydias/deploys)
 
 <h1 align="center">
-    My Personal Website
+    Acidiney Dias Personal Website
 </h1>
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/acidiney/acidiney.github.io">
@@ -41,7 +41,7 @@ This project was developed with the following technologies:
 
 ## 💻 Project
 
-This is my personal website, made with Nuxt JS.
+This is Acidiney Dias personal website, made with Nuxt JS.
 
 ## Layout
 
