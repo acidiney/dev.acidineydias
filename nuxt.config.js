@@ -104,7 +104,7 @@ module.exports = {
       theme_color: '#212121',
       description: 'My Personal Website'
     }
-  }
+  },
   /*
   ** Build configuration
   */
