@@ -101,6 +101,7 @@ export default {
     mode: 'out-in'
   },
   head () {
+    const { fullPath } = this.$route
     return {
       title: this.title + '- Acidiney Dias\' Blog',
       meta: [
@@ -112,12 +113,17 @@ export default {
         {
           hid:'og:image',
           name: 'og:image',
-          content: this.image
+          content: `https://acidineydias.me/${this.image}`
         },
         {
           hid:'og:type',
           name: 'og:type',
           content: 'article'
+        },
+        {
+          hid:'og:url',
+          name: 'og:url',
+          content: `https://acidineydias.me${fullPath}`
         },
         {
           hid:'og:title',
@@ -132,7 +138,7 @@ export default {
         {
           hid:'twitter:image',
           name: 'twitter:image',
-          content: this.image
+          content: `https://acidineydias.me/${this.image}`
         },
         {
           hid:'twitter:title',
