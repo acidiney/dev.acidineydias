@@ -113,6 +113,41 @@ export default {
           hid:'og:image',
           name: 'og:image',
           content: this.image
+        },
+        {
+          hid:'og:type',
+          name: 'og:type',
+          content: 'article'
+        },
+        {
+          hid:'og:title',
+          name: 'og:title',
+          content: this.title
+        },
+        {
+          hid:'og:description',
+          name: 'og:description',
+          content: this.description
+        },
+        {
+          hid:'twitter:image',
+          name: 'twitter:image',
+          content: this.image
+        },
+        {
+          hid:'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid:'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        {
+          hid:'twitter:card',
+          name: 'twitter:card',
+          content: 'summary'
         }
       ]
     }

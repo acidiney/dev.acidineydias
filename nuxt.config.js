@@ -27,6 +27,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { hid: 'description', name: 'description', content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.' },
+      { hid: 'author', name: 'author', content: 'Acidiney Dias <acidineydias@gmail.com>' },
+      { hid: 'application-name', name: 'application-name', content: 'Acidiney Dias Website' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'msapplication-TileColor', content: '#212121' },
       { name: 'theme-color', content: '#212121' },
