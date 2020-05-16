@@ -22,11 +22,11 @@
       :classes="`h-54 w-full object-cover ${imagePosition}`"
       alt="avatar"
     />
-    <footer class="w-4/5 md:w-2/4 mt-6 mx-auto mb-3">
+    <footer class="w-4/5 markdown md:w-2/4 mt-6 mx-auto break-all mb-3">
       <div class="head-post">
-        <div class="time-categories flex justify-between items-center">
+        <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
           <time class="text-xs"> {{ date }} </time>
-          <div class="categories flex">
+          <div class="categories flex-wrap flex">
             <p v-for="(category, i) in categories" :key="category + i" class="mr-2 text-xs rounded">
               {{ category }}
             </p>
@@ -143,4 +143,18 @@ footer .head-post .categories p {
   color:rgba(148, 148, 149, 0.9);
   text-transform: uppercase;
 }
+</style>
+
+<style>
+  footer.markdown a {
+    border-bottom: 1px dashed #fff;
+  }
+
+  footer.markdown p {
+    margin-bottom: 10px;
+  }
+
+  footer.markdown p::first-line {
+    padding-left: 10px !important;
+  }
 </style>

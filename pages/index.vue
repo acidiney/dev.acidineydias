@@ -59,7 +59,7 @@
             class="py-6 px-6 relative">
             <nuxt-link :to="`/post/${article.link}`">
               <header>
-                <div class="categories flex">
+                <div class="categories flex-wrap flex">
                   <p v-for="(category, i) in article.categories" :key="category + i" class="mr-2 text-xs rounded">
                     {{ category }}
                   </p>
@@ -84,7 +84,7 @@
             class="py-6 px-6 relative">
             <a :href="repo.html_url" target="__blank">
               <header>
-                <div class="categories flex">
+                <div class="categories flex-wrap flex">
                   <p class="mr-2 text-xs rounded">
                     {{ repo.language }}
                   </p>
