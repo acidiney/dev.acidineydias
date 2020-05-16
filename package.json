@@ -2,7 +2,7 @@
   "name": "acidineydias.me",
   "version": "1.0.0",
   "description": "My superior Nuxt.js project",
-  "author": "Acidiney Dias",
+  "author": "Acidiney Dias <acidineydias@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",

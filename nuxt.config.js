@@ -95,6 +95,16 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
+  pwa: {
+    manifest: {
+      name: 'Acidiney Dias | Website',
+      lang: 'en'
+    },
+    meta: {
+      theme_color: '#212121',
+      description: 'My Personal Website'
+    }
+  }
   /*
   ** Build configuration
   */
