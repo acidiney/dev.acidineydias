@@ -1,6 +1,6 @@
 ---
 date: 2020-05-16
-title: Re-build meu portfolio parte 1
+title: Refazendo meu portfolio parte 1
 image: 2020-16-05-rebuild-portfolio.jpg
 categories: Javascript, Nuxtjs, PWA, SSG, Markdown, JAMStack
 description: Passo a passo de como foi refazer o porfolio
