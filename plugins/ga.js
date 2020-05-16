@@ -1,6 +1,6 @@
 /* eslint-disable */
-export default ({ app, isClient }) => {
-  if (isClient) {
+export default ({ app }) => {
+  if (process.client) {
     if (process.env.NODE_ENV !== 'production') return
     (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
