@@ -22,7 +22,7 @@
             href="https://www.digitalfactory.co.ao"
             target="__blank"
           >Digital Factory Angola</a>. I'm a frontend addict and user experience, I love css with passion
-          and always keep my mouth open when I discover a new possibility. I
+          and always keep my mouth open when I discover a new possibilities. I
           love to see my systems working from front to back. I share my
           learnings on Youtube/Medium and anywhere that accepts me.
         </p>
