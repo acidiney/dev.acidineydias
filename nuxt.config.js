@@ -139,6 +139,6 @@ module.exports = {
     }
   },
   generate: {
-    routes: [].concat(getPaths('blog'))
+    routes: [].concat(getPaths('post'))
   }
 }
