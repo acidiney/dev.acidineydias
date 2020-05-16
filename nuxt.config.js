@@ -100,6 +100,8 @@ module.exports = {
       name: 'Acidiney Dias | Website',
       lang: 'en',
       theme_color: '#212121',
+      background_color: '#212121',
+      twitterCreator: '@acidiney',
       description: 'My Personal Website'
     }
   },
