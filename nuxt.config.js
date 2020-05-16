@@ -104,6 +104,7 @@ module.exports = {
   pwa: {
     manifest: {
       name: 'Acidiney Dias | Full stack developer',
+      short_name: 'Acidiney Dias',
       lang: 'en',
       theme_color: '#212121',
       background_color: '#212121',
