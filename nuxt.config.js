@@ -30,7 +30,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'msapplication-TileColor', content: '#212121' },
       { name: 'theme-color', content: '#212121' },
-      { name: 'robots', content: 'index, follow' },
+      { name: 'robots', content: 'index, blog, follow' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@acidiney' },
       { name: 'linkedin:site', content: 'acidineydias' },
@@ -93,16 +93,22 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'https://acidineydias.me',
+    lastmod: builtAt,
+    routes: [].concat(getPaths('blog'))
+  },
   pwa: {
     manifest: {
-      name: 'Acidiney Dias | Website',
+      name: 'Acidiney Dias | Full stack developer',
       lang: 'en',
       theme_color: '#212121',
       background_color: '#212121',
       twitterCreator: '@acidiney',
-      description: 'My Personal Website'
+      description: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
     }
   },
   /*
