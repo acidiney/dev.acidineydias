@@ -98,9 +98,7 @@ module.exports = {
   pwa: {
     manifest: {
       name: 'Acidiney Dias | Website',
-      lang: 'en'
-    },
-    meta: {
+      lang: 'en',
       theme_color: '#212121',
       description: 'My Personal Website'
     }
