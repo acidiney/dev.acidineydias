@@ -93,7 +93,7 @@ export default {
       ]
     },
     getUrl () {
-      return process.env.BASE_URL + this.$route.fullPath
+      return 'https://www.acidineydias.me' + this.$route.fullPath
     }
   },
   transition: {
