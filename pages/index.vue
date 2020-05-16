@@ -197,6 +197,14 @@ export default {
   },
   mounted () {
     this.loadArticles()
+  },
+  head () {
+    return {
+      title: 'Acidiney Dias | Full stack developer',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.' },
+      ]
+    }
   }
 }
 </script>

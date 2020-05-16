@@ -23,10 +23,8 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Acidiney Dias | Full stack developer',
     meta: [
       { charset: 'utf-8' },
-      { hid: 'description', name: 'description', content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.' },
       { hid: 'author', name: 'author', content: 'Acidiney Dias <acidineydias@gmail.com>' },
       { hid: 'application-name', name: 'application-name', content: 'Acidiney Dias Website' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -110,8 +108,7 @@ module.exports = {
       lang: 'en',
       theme_color: '#212121',
       background_color: '#212121',
-      twitterCreator: '@acidiney',
-      description: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
+      twitterCreator: '@acidiney'
     }
   },
   /*
