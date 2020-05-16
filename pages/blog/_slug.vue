@@ -105,12 +105,12 @@ export default {
       title: this.title + '- Acidiney Dias\' Blog',
       meta: [
         {
-          vmid: 'description',
+          hid: 'description',
           name: 'description',
           content: this.description,
         },
         {
-          vmid:'og:image',
+          hid:'og:image',
           name: 'og:image',
           content: this.image
         }
