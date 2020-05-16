@@ -18,7 +18,7 @@ const md = new MarkdownIt({
 md.use(mip)
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
