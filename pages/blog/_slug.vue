@@ -99,6 +99,23 @@ export default {
   transition: {
     name: 'slide-fade',
     mode: 'out-in'
+  },
+  head () {
+    return {
+      title: this.title + '- Acidiney Dias\' Blog',
+      meta: [
+        {
+          vmid: 'description',
+          name: 'description',
+          content: this.description,
+        },
+        {
+          vmid:'og:image',
+          name: 'og:image',
+          content: this.image
+        }
+      ]
+    }
   }
 }
 </script>
