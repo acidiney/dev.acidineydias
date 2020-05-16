@@ -17,22 +17,22 @@
     </header>
     <hr />
     <ImageResponsive
-      v-if="image"
-      :imageURL="'blog/' + image"
-      :classes="`h-54 w-full object-cover ${imagePosition}`"
+      v-if="attributes.image"
+      :imageURL="'blog/' + attributes.image"
+      :classes="`h-54 w-full object-cover ${attributes.imagePosition}`"
       alt="avatar"
     />
     <footer class="w-4/5 markdown md:w-2/4 mt-6 mx-auto break-all mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
-          <time class="text-xs"> {{ date }} </time>
+          <time class="text-xs"> {{ attributes.date }} </time>
           <div class="categories flex-wrap flex">
-            <p v-for="(category, i) in categories" :key="category + i" class="mr-2 text-xs rounded">
+            <p v-for="(category, i) in attributes.categories" :key="category + i" class="mr-2 text-xs rounded">
               {{ category }}
             </p>
           </div>
         </div>
-        <h2>{{ title }}</h2>
+        <h2>{{ attributes.title }}</h2>
       </div>
       <client-only>
         <DynamicMarkdown
@@ -60,10 +60,16 @@ export default {
 
     context.redirect('/')
   },
-  async asyncData({ params }) {
+  data () {
+    return {
+      attributes: {}
+    }
+  },
+  async created() {
     try {
+      const { params } = this.$route
       let post = await import(`~/content/${params.slug}.md`)
-      return {
+      this.attributes = {
         date: new Date(post.attributes.date).toLocaleDateString('pt'),
         title: post.attributes.title,
         image: post.attributes.image,
