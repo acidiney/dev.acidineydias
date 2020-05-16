@@ -17,9 +17,9 @@
     </header>
     <hr />
     <ImageResponsive
-      v-if="attributes.image"
-      :imageURL="'blog/' + attributes.image"
-      :classes="`h-54 w-full object-cover ${attributes.imagePosition}`"
+      v-if="image"
+      :imageURL="'blog/' + image"
+      :classes="`h-54 w-full object-cover ${imagePosition}`"
       alt="avatar"
     />
     <footer class="w-4/5 markdown md:w-2/4 mt-6 mx-auto break-all mb-3">
@@ -65,11 +65,10 @@ export default {
       attributes: {}
     }
   },
-  async created() {
+  async asyncData({params}) {
     try {
-      const { params } = this.$route
       let post = await import(`~/content/${params.slug}.md`)
-      this.attributes = {
+      return {
         date: new Date(post.attributes.date).toLocaleDateString('pt'),
         title: post.attributes.title,
         image: post.attributes.image,
