@@ -22,7 +22,7 @@
       :classes="`h-54 w-full object-cover ${imagePosition}`"
       alt="avatar"
     />
-    <footer class="w-4/5 markdown md:w-2/4 mt-6 mx-auto break-all mb-3">
+    <footer class="w-4/5 markdown md:w-2/4 mt-6 mx-auto text-justify mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
           <time class="text-xs"> {{ attributes.date }} </time>
@@ -228,5 +228,17 @@ footer .head-post .categories p {
 
   footer.markdown p::first-line {
     padding-left: 10px !important;
+  }
+
+  footer code {
+    word-break: break-all;
+    font-family: monospace, monospace;
+    background-color: #282a36;
+    padding: 2px 10px;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: 100;
+    border: 0;
+    outline: none;
   }
 </style>
