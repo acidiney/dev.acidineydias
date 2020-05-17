@@ -25,14 +25,14 @@
     <footer class="w-4/5 markdown md:w-2/4 mt-6 mx-auto text-justify mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
-          <time class="text-xs"> {{ attributes.date }} </time>
+          <time class="text-xs"> {{ new Date(date).toLocaleDateString('pt') }} </time>
           <div class="categories flex-wrap flex">
-            <p v-for="(category, i) in attributes.categories" :key="category + i" class="mr-2 text-xs rounded">
+            <p v-for="(category, i) in categories" :key="category + i" class="mr-2 text-xs rounded">
               {{ category }}
             </p>
           </div>
         </div>
-        <h2>{{ attributes.title }}</h2>
+        <h2>{{ title }}</h2>
       </div>
       <client-only>
         <DynamicMarkdown
@@ -69,7 +69,7 @@ export default {
     try {
       let post = await import(`~/content/${params.slug}.md`)
       return {
-        date: new Date(post.attributes.date).toLocaleDateString('pt'),
+        date: post.attributes.date,
         title: post.attributes.title,
         image: post.attributes.image,
         imagePosition: post.attributes.imagePosition,
