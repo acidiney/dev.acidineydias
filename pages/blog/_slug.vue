@@ -32,7 +32,7 @@
             </p>
           </div>
         </div>
-        <h2>{{ title }}</h2>
+        <h2 class="text-left">{{ title }}</h2>
       </div>
       <client-only>
         <DynamicMarkdown
