@@ -58,7 +58,7 @@
             :key="article.link"
             v-observe-visibility="(isVisible, entry) => loadFrontMatterDescription(isVisible, entry, article.link)"
             class="py-6 px-6 relative">
-            <nuxt-link :to="`/post/${article.link}`">
+            <nuxt-link :to="`/blog/${article.link}`">
               <header>
                 <div class="categories flex-wrap flex">
                   <p v-for="(category, i) in article.categories" :key="category + i" class="mr-2 text-xs rounded">
