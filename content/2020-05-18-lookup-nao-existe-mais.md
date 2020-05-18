@@ -1,15 +1,15 @@
 ---
 date: 2020-05-18
-title: A quem pertence este nif? [Lookup-ao]
+title: Lookup não exite mais!
 categories: Nodejs, Javascript, API, Umbler, Break-changes, Nestjs
 description: Breakchanges no projecto lookup-ao
 ---
 
 Opa, boas?
 
-<!-- Pessoal, nest post por mais que eu site o serviço scrapper ele está focado na API Rest, então tem partes que não vou especificar... entendam, chama-se preguiça. 😁 -->
+	Pessoal, nest post por mais que eu site o serviço scrapper ele está focado na API Rest, então tem partes que não vou especificar...entendam, chama-se preguiça. 😁
 
-Estou novamente aqui, empenhado em fazer meu corpo funcionar no mesmo nível que a cabeça 😂, são exatamente 01h  quando decide escrever esse artigo, para vos introduzir com uma mudança que aconteceu agora num projecto meu. 🤦‍♂️ Provavelmente tem aplicações que vão parar de funcionar por conta dessa loucura.
+Estou novamente aqui, empenhado em fazer meu corpo funcionar no mesmo nível que a cabeça 😂, são exatamente 01h  quando decidi escrever esse artigo, para vos introduzir com uma mudança que aconteceu agora num projecto meu. 🤦‍♂️ Provavelmente tem aplicações que vão parar de funcionar por conta dessa loucura.
 
 Recentemente estive a trabalhar num prova de conceito chamado de **lookup-ao** que consiste basicamente em dois módulos(micro-serviços), um serviço de *scrapping* e uma API REST, eles são totalmente desacoplados e estão em locais diferentes, fiz isso por questões de segurança e de escalabilidade porque não queria que o projecto tivesse somente este foco, o modulo REST é aberto e está disponível no [github](https://github.com/acidiney/buscador-ao/).
 

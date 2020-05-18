@@ -171,6 +171,7 @@ export default {
         if (article.link === link) {
           return {
             ...article,
+            title: post.attributes.title,
             description: post.attributes.description,
             categories: post.attributes.categories.split(',')
           }
@@ -181,7 +182,7 @@ export default {
       })
     },
     loadArticles () {
-      return this.posts.map((post) => {
+      return this.posts.reverse().map((post) => {
         const date = post.slice(0, 10)
         // const bruteTitle = post.slice(10, (post.length - 3)).split('.')
         const title = post.slice(10, (post.length - 3)).split('-').join(' ')
