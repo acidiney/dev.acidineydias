@@ -2,7 +2,7 @@
 date: 2020-05-18
 title: Lookup não exite mais!
 categories: Nodejs, Javascript, API, Umbler, Break-changes, Nestjs
-description: Breakchanges no projecto lookup-ao
+description: Break-changes no projecto lookup-ao
 ---
 
 Opa, boas?
