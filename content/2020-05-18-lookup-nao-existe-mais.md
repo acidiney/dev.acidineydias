@@ -7,7 +7,7 @@ description: Break-changes no projecto lookup-ao
 
 Opa, boas?
 
-**Nota**:Pessoal, nest post por mais que eu site o serviço scrapper ele está focado na API Rest, então tem partes que não vou especificar...entendam, chama-se preguiça. 😁
+**Nota**:Pessoal, nest post por mais que eu cite o serviço scrapper ele está focado na API Rest, então tem partes que não vou especificar...entendam, chama-se preguiça. 😁
 
 Estou novamente aqui, empenhado em fazer meu corpo funcionar no mesmo nível que a cabeça 😂, são exatamente 01h  quando decidi escrever esse artigo, para vos introduzir com uma mudança que aconteceu agora num projecto meu. 🤦‍♂️ Provavelmente tem aplicações que vão parar de funcionar por conta dessa loucura.
 
