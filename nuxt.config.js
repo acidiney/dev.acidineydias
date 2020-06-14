@@ -74,7 +74,7 @@ module.exports = {
   plugins: [
     '~/plugins/disqus',
     '~/plugins/lazyload',
-    '~/plugins/ga',
+    // '~/plugins/ga',
     '~/plugins/image'
 
   ],
@@ -85,8 +85,13 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-analytics'
   ],
+
+  googleAnalytics: {
+    id: 'UA-111254529-3'
+  },
   /*
   ** Nuxt.js modules
   */
