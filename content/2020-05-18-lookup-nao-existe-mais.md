@@ -7,7 +7,7 @@ description: Break-changes no projecto lookup-ao
 
 Opa, boas?
 
-**Nota**:Pessoal, nest post por mais que eu site o serviço scrapper ele está focado na API Rest, então tem partes que não vou especificar...entendam, chama-se preguiça. 😁
+**Nota**:Pessoal, nest post por mais que eu cite o serviço scrapper ele está focado na API Rest, então tem partes que não vou especificar...entendam, chama-se preguiça. 😁
 
 Estou novamente aqui, empenhado em fazer meu corpo funcionar no mesmo nível que a cabeça 😂, são exatamente 01h  quando decidi escrever esse artigo, para vos introduzir com uma mudança que aconteceu agora num projecto meu. 🤦‍♂️ Provavelmente tem aplicações que vão parar de funcionar por conta dessa loucura.
 
@@ -53,17 +53,17 @@ Esse foi um breve resumo da existência do projecto, para situar todos.
 
   E sim, tem alguns campos a mais, talvez remova num futuro... mas pessoalmente, não vi nada de errado em manter eles aí, então yh.
 
-- A outra mudança é quanto o *hosting* , antes ele estava junto do meu meu portfolio na [namecheap](https://namecheap.com) porém como literalmente não estou mais usando ele, quis procurar por outra alternativa, inicialmente até procurei espaço no [heroku](https://heroku.com) mas só quem já tentou ligar um domínio comprado no [SEPE](https://sepe.gov.ao) ao [heroku](https://heroku.com)  sabe as dores, basicamente para você que não sabe o [SEPE](https://sepe.gov.ao)só te permite mexer nos *nameservers* do domínio e o [heroku](https://heroku.com) quer que você altere diretamente as configurações de *DNS* porque o [heroku](https://heroku.com) usa [DNSSEC](https://pt.wikipedia.org/wiki/DNSSEC), epah é isso que dá comprar domínio em sítios duvidosos.  Eu até tentei usar um *addon* lá no [heroku](https://heroku.com) chamado [PointDNS](https://elements.heroku.com/addons/pointdns) que dava *nameservers*... mas como deves ter imaginado, não funcionou muito bem..
+- A outra mudança é quanto o *hosting* , antes ele estava junto do meu meu portfolio na [namecheap](https://namecheap.com) porém como literalmente não estou mais usando ele, quis procurar por outra alternativa, inicialmente até procurei espaço no [heroku](https://heroku.com) mas só quem já tentou ligar um domínio comprado no [SEPE](https://sepe.gov.ao) ao [heroku](https://heroku.com)  sabe as dores, basicamente para você que não sabe o [SEPE](https://sepe.gov.ao) só te permite mexer nos *nameservers* do domínio e o [heroku](https://heroku.com) quer que você altere diretamente as configurações de *DNS* porque o [heroku](https://heroku.com) usa [DNSSEC](https://pt.wikipedia.org/wiki/DNSSEC), epah é isso que dá comprar domínio em sítios duvidosos.  Eu até tentei usar um *addon* lá no [heroku](https://heroku.com) chamado [PointDNS](https://elements.heroku.com/addons/pointdns) que dava *nameservers*... mas como deves ter imaginado, não funcionou muito bem..
 
-  Depois procurei alternativas aqui mesmo, e esquece a angoweb... Nem me macei ir lá, procurei na [iberweb](https://iberweb.co.ao) e na [ngolaIT](https://ngolait.com) e não tive um resultado satisfatório para o *host*. (Se você já usou alguma para node e recomendas, por favor parte nos comentários).
+  Depois procurei alternativas aqui mesmo, e esquece a angoweb... Nem me macei ir lá, procurei na [iberweb](https://iberweb.co.ao) e na [ngolaIT](https://ngolait.com) e não tive um resultado satisfatório para o *host*. (Se você já usou alguma solução para node local e recomendas, por favor compartilhe nos comentários).
 
-  Assim já desistindo me lembrei que tinha alguns créditos na [umbler](umbler.com.br) que não estava a usar, então decide colocar lá. a experiência é mesmo outra... e sim tive que bilar bué para tudo funcionar bem.
+  Assim já desistindo me lembrei que tinha alguns créditos na [umbler](umbler.com.br) que não estava a usar, então decidi colocar lá. A experiência é mesmo outra... e sim tive que bilar bué para tudo funcionar bem.
 
 ## E agora, o futuro?
 
-Números, é o que sustenta o mundo... Enquanto tiver pessoas usando o projecto ficará no ar. E sim desta vez não iriei mudar o domínio novamente, PROMETO 🙈.
+Números! É o que sustenta o mundo... Enquanto tiver pessoas usando, o projecto ficará no ar. E sim desta vez não irei mudar o domínio novamente, PROMETO 🙈.
 
-Alguns módulos que estive a pensar em implementar é algo como *authorization* para pegar essas informações... As mesmas continuam livres, porém para ter maior controle de quem usa essas informações, pensei em algo assim.
+Um módulo que estive a pensar em implementar é algo como *authorization* para pegar essas informações... As mesmas continuam livres, porém para ter maior controle de quem usa essas informações, pensei em algo assim.
 
 Outra coisa é uma *lading page* decente para o projecto, então se alguém se pré-dispor a fazer uma *lading page* para o projecto, pode entrar em [contacto comigo](mailto:me@acidineydias.me) ou fazer uma PR directamente lá no projecto se tiver experiência com [Nestjs](https://nestjs.org)... Ficarei eternamente grato ^^.
 

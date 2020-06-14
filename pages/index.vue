@@ -27,7 +27,7 @@
           love to see my systems working from front to back. I share my
           learnings on Youtube/Medium and anywhere that accepts me.
         </p>
-        <a class="text-left md:mr-5 block" href="https://drive.google.com/open?id=1YMoSAyeULgir2hk9fp7MAvzqGl-RUm74" target="__blank">
+        <a class="text-left md:mr-5 block" href="https://drive.google.com/file/d/1yVMbA1UqreruBaAi2mUT3otRwq2Wt4XB/view?usp=sharing" target="__blank">
           <i class="icon-download"></i> Download my CV.
         </a>
 
