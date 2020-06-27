@@ -9,29 +9,29 @@ Opa boas?
 
 *Nota importante: Quando comecei a escrever este artigo peguei um copo com ☕ e abri a minha playlist de Jazz no spotify,  então este artigo pode estar um pouco extenso... take your time and enjoy the article😁.*
 
-Este tema despertou muito interesse por parte das pessoas, quando anunciei que iria criar um artigo com um tema tão brusco, e realmente faz sentido, afinal de conta estou presumindo que muitas pessoas fazem coisas "erradas".
+Este tema despertou muito interesse por parte das pessoas quando anunciei que iria criar um artigo com um tema tão brusco, e realmente faz sentido, afinal de conta estou presumindo que muitas pessoas fazem coisas "erradas".
 
-Este artigo não é apenas voltado para o pessoal de desenvolvimento como também para o pessoal da área de design e sobre tudo para os encarregados por usar boas praticas de user experiencie,  e sim, o desenvolvedor frontend pode não saber sobre UX e não tem nada de errado, porém é recomendado que saiba, para seu crescimento profissional.
+Este artigo não é apenas voltado para o pessoal de desenvolvimento como também para o pessoal da área de design e sobre tudo para os encarregados por terem boas praticas de user experiencie,  e sim, o desenvolvedor frontend pode não saber sobre UX e não tem nada de errado, porém, é recomendado que saiba, para seu crescimento profissional.
 
-Antes de avançar, gostaria de dizer uma coisa muito importante **"está é a minha opinião, baseada na minha experiencia e nos meus estudos"**.
+Antes de avançar, gostaria de dizer uma coisa muito importante **"esta é a minha opinião, baseada na minha experiência e nos meus estudos"**.
 
-### Qual foi a motivação por trás desse tema?
+### Qual foi a motivação por detrás desse tema?
 
-Durante o todo o tempo em que atuo como developer, já tive a oportunidade de fazer muitos trabalhos onde o foco em si estava em como o cliente final interage com o site ou sistema, e isso foi muito bom para mim porque pude desenvolver um pensamento muito critico quanto a algumas práticas quando vou elaborar um projeto de grande complexidade e com grande complexidade me refiro a um projeto que dependa muito da interação do cliente final.
+Durante o tempo que atuo como developer, já tive a oportunidade de fazer muitos trabalhos onde o foco em si estava em como o cliente final interage com o site ou sistema... E isso foi muito bom para mim porque pude desenvolver um pensamento muito crítico quanto a algumas práticas quando vou elaborar um projeto de grande complexidade e com grande complexidade me refiro a um projeto que depende muito da interação do cliente final.
 
-E este senso critico me fez começar a investigar mais sobre UX e sobre tudo a ver como as grandes empresas de TI resolvem estes pontos. Até agora já devo té-lo situado um pouco sobre o contexto desta postagem, mas deixa te dar um exemplo: Um dos casos mais comuns de desenvolvedores que fazem BackOffice ( parte administrativa do site ou sistema ) é ter um monte na sua maioria de tabelas com ações distintas ... e nota não tem nada de errado em ter tabelas ( o ponto não é este e nunca será este...), continuando,  basicamente eles tem um menu do usuário ( supondo), que após abrir o mesmo ele poderá listar, editar, visualizar e por aí vai.
+E este senso crítico fez-me começar a investigar mais sobre UX e sobre tudo a ver como as grandes empresas de TI resolvem estes problemas. Até agora, já devo té-lo situado um pouco sobre o contexto desta postagem mas permita-me mostrar-lhe um exemplo: Um dos casos mais comuns de desenvolvedores ao fazerem o BackOffice ( parte administrativa do site ou sistema ) de um site é ter na sua maioria, é ter um monte de tabelas com ações distintas... e nota não tem nada de errado em ter tabelas ( o ponto não é este e nunca será este...), continuando,  basicamente eles têm um menu do usuário ( supondo), que após abrir o mesmo ele poderá listar, editar, visualizar e por aí vai.
 
-Bem, este exemplo que dei é um clássico e você encontra isso em quase todos sistemas se não em todos, o que eu quero analisar contigo é o seguinte qual valor você está agregando ao usuário final quando o mesmo usa o teu sistema?.
+Bem, este exemplo que dei é um clássico e você encontra isso em quase todos sistemas se não em todos, o que eu quero analisar contigo é o seguinte: qual valor você está agregando ao usuário final quando o mesmo usa o teu sistema?
 
-É bom prestar atenção que podemos dois tipos de usuários no nosso sistema, os que gostam do sistema e usam por isto, e aqueles que se desse nunca mais usava... simplesmente usa porque não pode mudar ( quanto a isso podem ser vários motivos ).
+É bom prestar atenção que podemos ter dois tipos de usuários no nosso sistema, os que gostam do sistema e por isso usam, e aqueles que se desse nunca mais usariam... simplesmente usa porque não pode mudar ( quanto a isso podem estar relacionado a vários motivos ).
 
 Eu sei, é uma pergunta bem genérica e que fora de contexto realmente é difícil de perguntar, pode ser que até você esteja a se perguntar o que eu quero dizer com isso. Bem, a minha missão com este artigo é te explicar algo antes de te perguntar novamente, e se for o teu caso, considerares verificar o que tens feito.
 
-Para começar, decidi ir ao google e escrever "o que é UX", podes tentar se quiseres... acredito que essa investigação pode e sempre vai agregar um pouco mais de valor mesmo para você que é experiente no caso.
+Para começar, decidi ir ao google 😎 e escrever "o que é UX?", podes tentar se quiseres... acredito que essa investigação pode e sempre vai agregar algum valor adicional até mesmo para você que é experiente no caso.
 
 Este tópico é tão interessante que se você procurar em 3 locais diferentes sobre o que é UX, terás 3 respostas diferentes... Então vamos nos manter pelo básico que por agora deve servir.
 
-"Experiência do usuário, do inglês user experience, é o conjunto de elementos e fatores relativos à interação do usuário com um determinado produto, sistema ou serviço cujo resultado gera uma perceção positiva  ou negativa.", Segundo o nosso querido Wikipédia.
+"Experiência do usuário, do inglês user experience, é o conjunto de elementos e fatores relativos à interação do usuário com um determinado produto, sistema ou serviço cujo resultado gera uma perceção positiva  ou negativa.", segundo o nosso querido Wikipédia.
 
 ### Momento história
 Teve um momento onde precisei redesenhar a tela de contactos do [WeSender](https://www.wesender.co.ao) porque não estava muito satisfeito com o que tinha atualmente, e achei que poderia melhorar e entregar uma melhor experiência para o usuário final então resolvi investigar como serviços semelhantes tratavam daquele assunto em especifico, e peguei um porrada de exemplos... Uns que achei muito nada haver, outros muito 😒😒(também quero), e foi nas falhas dos que achei nada haver e nos quase surreais que vi que comecei a desenhar uma tela ( eu não sou designer, é bom isso ficar explicado aqui ). Porém, ao terminar de desenhar, o primeiro feeling que tive que que estava muito bom! Mas depois de algum tempo a analisar o que tinha feito, percebi que o que eu tinha feito, não resolvia o problema do software ... Por mais bonito que aquele primeiro desenho tinha ficado.
