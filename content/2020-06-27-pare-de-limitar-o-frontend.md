@@ -7,9 +7,9 @@ description: É bom prestar atenção que podemos dois tipos de usuários no nos
 
 Opa boas?
 
-*Nota importante: Quando comecei a escrever este artigo peguei uma copo com ☕ e abri a minha playlist de Jazz no spotify  então este artigo pode estar um pouco extenso...  então take your time and enjoy the article😁.*
+*Nota importante: Quando comecei a escrever este artigo peguei um copo com ☕ e abri a minha playlist de Jazz no spotify,  então este artigo pode estar um pouco extenso... take your time and enjoy the article😁.*
 
-Esse tema despertou muito interesse por parte das pessoas, quando anunciei que iria criar um artigo com um tema tão brusco, e realmente faz sentido, afinal de conta estou presumindo que muita gente faz as coisas "erradas".
+Este tema despertou muito interesse por parte das pessoas, quando anunciei que iria criar um artigo com um tema tão brusco, e realmente faz sentido, afinal de conta estou presumindo que muitas pessoas fazem coisas "erradas".
 
 Este artigo não é apenas voltado para o pessoal de desenvolvimento como também para o pessoal da área de design e sobre tudo para os encarregados por usar boas praticas de user experiencie,  e sim, o desenvolvedor frontend pode não saber sobre UX e não tem nada de errado, porém é recomendado que saiba, para seu crescimento profissional.
 
@@ -19,17 +19,17 @@ Antes de avançar, gostaria de dizer uma coisa muito importante **"está é a mi
 
 Durante o todo o tempo em que atuo como developer, já tive a oportunidade de fazer muitos trabalhos onde o foco em si estava em como o cliente final interage com o site ou sistema, e isso foi muito bom para mim porque pude desenvolver um pensamento muito critico quanto a algumas práticas quando vou elaborar um projeto de grande complexidade e com grande complexidade me refiro a um projeto que dependa muito da interação do cliente final.
 
-E esse senso critico me fez começar a investigar mais sobre UX e sobre tudo a ver como as grandes empresas de TI resolvem estes pontos. Até agora já devo té-lo situado um pouco sobre o contexto desta postagem, mas deixa te dar um exemplo: Um dos casos mais comuns de desenvolvedores que fazem BackOffice ( parte administrativa do site ou sistema ) é ter um monte na sua maioria de tabelas com ações distintas ... e nota não tem nada de errado em ter tabelas ( o ponto não é este e nunca será esse...), continuando,  basicamente eles tem um menu do usuário ( supondo), que após abrir o mesmo ele poderá listar, editar, visualizar e por aí vai.
+E este senso critico me fez começar a investigar mais sobre UX e sobre tudo a ver como as grandes empresas de TI resolvem estes pontos. Até agora já devo té-lo situado um pouco sobre o contexto desta postagem, mas deixa te dar um exemplo: Um dos casos mais comuns de desenvolvedores que fazem BackOffice ( parte administrativa do site ou sistema ) é ter um monte na sua maioria de tabelas com ações distintas ... e nota não tem nada de errado em ter tabelas ( o ponto não é este e nunca será este...), continuando,  basicamente eles tem um menu do usuário ( supondo), que após abrir o mesmo ele poderá listar, editar, visualizar e por aí vai.
 
-Bem, esse exemplo que dei é um clássico e você encontra isso em quase todos sistemas se não em todos, o que eu quero analisar contigo é o seguinte qual valor você está agregando ao usuário final quando o mesmo usa o teu sistema?.
+Bem, este exemplo que dei é um clássico e você encontra isso em quase todos sistemas se não em todos, o que eu quero analisar contigo é o seguinte qual valor você está agregando ao usuário final quando o mesmo usa o teu sistema?.
 
 É bom prestar atenção que podemos dois tipos de usuários no nosso sistema, os que gostam do sistema e usam por isto, e aqueles que se desse nunca mais usava... simplesmente usa porque não pode mudar ( quanto a isso podem ser vários motivos ).
 
-Eu sei, é uma pergunta bem genérica e que fora de contexto realmente é difícil de perguntar, pode ser que até você esteja a se perguntar o que eu quero dizer com isso. Bem, a minha missão com esse artigo é te explicar algo antes de te perguntar novamente, e se for o teu caso, considerares verificar o que tens feito.
+Eu sei, é uma pergunta bem genérica e que fora de contexto realmente é difícil de perguntar, pode ser que até você esteja a se perguntar o que eu quero dizer com isso. Bem, a minha missão com este artigo é te explicar algo antes de te perguntar novamente, e se for o teu caso, considerares verificar o que tens feito.
 
 Para começar, decidi ir ao google e escrever "o que é UX", podes tentar se quiseres... acredito que essa investigação pode e sempre vai agregar um pouco mais de valor mesmo para você que é experiente no caso.
 
-Esse tópico é tão interessante que se você procurar em 3 locais diferentes sobre o que é UX, terás 3 respostas diferentes... Então vamos nos manter pelo básico que por agora deve servir.
+Este tópico é tão interessante que se você procurar em 3 locais diferentes sobre o que é UX, terás 3 respostas diferentes... Então vamos nos manter pelo básico que por agora deve servir.
 
 "Experiência do usuário, do inglês user experience, é o conjunto de elementos e fatores relativos à interação do usuário com um determinado produto, sistema ou serviço cujo resultado gera uma perceção positiva  ou negativa.", Segundo o nosso querido Wikipédia.
 
@@ -42,7 +42,7 @@ E qual era o problema do software no caso? Era enviar mensagens... E sim, nós t
 
 Então qual era o real problema do desenho? Bem, quando eu  fiz aquela interface esqueci de algo que eu uso muito quando programo... ** atalhos ** ( E sim faz real diferença ) ... e talvez seja interessante explicar que um atalho é um caminho mais curto do que o **costume**. E costume é o ponto! 
 
-Muitas das vezes um nós vemos fazendo sempre a mesma coisa, e desconsideramos que existem melhores maneiras de fazer a mesma por que temos o costume de fazer elas assim, no mundo do desenvolvimento também é comum isso acontecer, mas isso chega a ser bem perigoso, quando você desenvolve coisas que o teu usuário final tem experiência e uma ideia totalmente diferente da que você está fez. Ex: Muitas vezes uma simples opção de editar sem o usuário sem a necessidade dele abrir o detalhes é faz uma diferença enorme. Porquê? Porque ele fez o que queria e não precisou dar muita volta para o fazer, eu vou explorar mais esse exemplo no futuro, então mantenha ele em mente.
+Muitas das vezes um nós vemos fazendo sempre a mesma coisa, e desconsideramos que existem melhores maneiras de fazer a mesma por que temos o costume de fazer elas assim, no mundo do desenvolvimento também é comum isso acontecer, mas isso chega a ser bem perigoso, quando você desenvolve coisas que o teu usuário final tem experiência e uma ideia totalmente diferente da que você está fez. Ex: Muitas vezes uma simples opção de editar sem o usuário sem a necessidade dele abrir o detalhes é faz uma diferença enorme. Porquê? Porque ele fez o que queria e não precisou dar muita volta para o fazer, eu vou explorar mais este exemplo no futuro, então mantenha ele em mente.
 
 #### Descontraia um pouco, o mundo não é tão sério assim.
 Mas, como eu estou  a gostar da música que estou ouvindo, vou citar mais um ponto crítico, este acontece normalmente quando nós trabalhos com API e ficamos muito focados em como o backend espera receber ou retorna as informações e a partir deste ponto começamos a criar a nossa interface... Em alguns casos começamos a inventar um monte de "coisas" ou começamos a pensar em determinadas tools para resolver um problema que não necessariamente é um problema. " O problema nem sempre é um problema, o teu desconhecimento é mais problemático que o problema em muitos casos."  ( Acidiney Dias, 2020 ) 😂😂😂😂😂
@@ -51,11 +51,11 @@ Em alguns casos, só o facto de você conhecer 70% da ferramenta que você está
 
 Mesmo da pior forma possível, tens que achar uma maneira de resolver o teu problema, porque isso demostra o teu nível de crescimento não com a plataforma, mas sim, a resolver problemas 🤗.
 
-Se não acha que consegue, então lamento te informar, mas podes ter esquecido do foco desse mundo maravilhoso que é  a programação. 😒 Assim só queres dinheiro mesmo? Depois não vais ficar rico '-'. ( Se ficares, nunca leste esse comentário )🙈
+Se não acha que consegue, então lamento te informar, mas podes ter esquecido do foco desse mundo maravilhoso que é  a programação. 😒 Assim só queres dinheiro mesmo? Depois não vais ficar rico '-'. ( Se ficares, nunca leste este comentário )🙈
 
 #### voltando ao contexto
 
-No caso em especifico do WeSender, eu parei e comecei a analisar quais pontos realmente poderiam ser atalhos para a zona de contactos, e para saber que pontos poderiam ser atalhos precisamos primeiramente saber qual é o objetivos da ferramenta ( E olha que interessante, nesse ponto você consegue ir buscar mais um conceito bem interessante cujo a base se resume a *contexto*, deixa nos comentários se você sabe qual conceito é esse 😉) . No caso do WeSender que é um serviço de envio de mensagens, faz sentido que tenha um atalho para enviar mensagens a partir da zona de contactos, assim como o aplicativo de agenda telefónica te permite ligar para um número a partir da lista telefônica.  Bom quanto a isto acredito estarmos fechados! No fundo tudo é contexto, saber em que contexto estais, te permite criar soluções que realmente ajudem o teu usuário final, então ao perceber o meu contexto, pude tomar nota que faz sentido eu conseguir enviar mensagens para um ou múltiplos contactos a partir da zona de contactos, e deixando assim ela de ser uma simples decoração e começando a realmente ajudar muitas pessoas. 
+No caso em especifico do WeSender, eu parei e comecei a analisar quais pontos realmente poderiam ser atalhos para a zona de contactos, e para saber que pontos poderiam ser atalhos precisamos primeiramente saber qual é o objetivos da ferramenta ( E olha que interessante, nesse ponto você consegue ir buscar mais um conceito bem interessante cujo a base se resume a *contexto*, deixa nos comentários se você sabe qual conceito é este 😉) . No caso do WeSender que é um serviço de envio de mensagens, faz sentido que tenha um atalho para enviar mensagens a partir da zona de contactos, assim como o aplicativo de agenda telefónica te permite ligar para um número a partir da lista telefônica.  Bom quanto a isto acredito estarmos fechados! No fundo tudo é contexto, saber em que contexto estais, te permite criar soluções que realmente ajudem o teu usuário final, então ao perceber o meu contexto, pude tomar nota que faz sentido eu conseguir enviar mensagens para um ou múltiplos contactos a partir da zona de contactos, e deixando assim ela de ser uma simples decoração e começando a realmente ajudar muitas pessoas. 
 
 "Abre parenteses aqui..."
 ( Aqui eu poderia simplesmente colocar os números que o usuário pretende enviar em uma sessão e mudar de página, mas aqui eu deixo a reflexão sobre o ponto que falei antes. Faz sentido para ti isto? Bem para mim não, porque mudar de página é mais um custo para enviar uma mensagem. E presta atenção que a única coisa que ele terá que fazer é redigir o que quer enviar e enviar... Então nesse ponto, fica mais fluído um modal do que mover de página.
@@ -98,9 +98,9 @@ Infelizmente o pessoal esqueceu disso por conta da sua facilidade! Eu já vi um 
 
 Isso não é somente uma questão de estética, é uma de experiencia de utilização mesmo! Don't use if you dont need.
 
-Os modais são bons para atalhos mais quando mal usados, podem se tornar uma grande dor de cabeça, não só a nível de conceito, mas também como é uma informação que sempre existe na página, o uso descuidado do mesmo, pode impactar de forma negativa a construção do teu site ou sistema.. então tome cuidado. Hoje o assunto não é esse, mais vou deixar alguns links abaixo para você dar uma olhada 😎.
+Os modais são bons para atalhos mais quando mal usados, podem se tornar uma grande dor de cabeça, não só a nível de conceito, mas também como é uma informação que sempre existe na página, o uso descuidado do mesmo, pode impactar de forma negativa a construção do teu site ou sistema.. então tome cuidado. Hoje o assunto não é este, mais vou deixar alguns links abaixo para você dar uma olhada 😎.
 
-Por hoje é tudo pessoal, esse assunto é longo, então posso escrever uma outra parte um outro dia, mas sendo mais especifico num assunto específico.
+Por hoje é tudo pessoal, este assunto é longo, então posso escrever uma outra parte um outro dia, mas sendo mais especifico num assunto específico.
 
 Obrigado a todos os 30 que votaram sobre qual dos artigos lançar primeiro 🤗 vocês são incríveis.
 
