@@ -105,7 +105,7 @@ Por hoje é tudo pessoal, esse assunto é longo, então posso escrever uma outra
 Obrigado a todos os 30 que votaram sobre qual dos artigos lançar primeiro 🤗 vocês são incríveis.
 
 ### Recursos interessantes
-
+- [JAZZ - SPOTIFY](https://open.spotify.com/playlist/37i9dQZF1DWTbzY5gOVvKd?si=4J9hGW1-QAyhNl4TxukQUQd)
 - [Modal Or Not](https://medium.com/allenhwkim/modal-or-not-modal-3d65de64d82c)
 - [Why We Should Avoid Modal Dialog](https://medium.com/allenhwkim/why-not-modal-84d9f5d7c646)
 - [Best Practices for Modals / Overlays / Dialog Windows](https://uxplanet.org/best-practices-for-modals-overlays-dialog-windows-c00c66cddd8c)
