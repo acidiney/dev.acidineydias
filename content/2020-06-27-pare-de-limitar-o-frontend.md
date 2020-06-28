@@ -89,17 +89,17 @@ Como desenvolvedores, devemos sempre pensar em como podemos deixar mais simples 
 
 ### Os Meus Queridos Modal
 
-Lembra do que falei, sobre abrir um modal e não carregar uma nova página, no exemplo em cima?
+Lembra do que falei, sobre abrir um modal e não carregar uma nova página, no exemplo acima?
 
 R: Tempo, para fazer uma tarefa simples.
 
-" Mas tome nota, que exite contras " 🙄
+" Mas tome nota, que existe contras " 🙄
 
 Muita gente vai me prometer surra por isso 😂😂😂😂😂, vou tomar cuidado para não falar algo que me comprometa 😥!
 
 " Txé, estou nem aí vou falar mesmo 😤, não gostou faz b.o "
 
-A pessoas que deveriam ser presas de tantos modais que têm no site, os modais são um atalho, sim! São simples de se usar, sim! Porém NÃO É PARA TUDO!
+Há pessoas que deveriam ser presas de tantos modais que têm no site, os modais são um atalho, sim! São simples de se usar, sim! Porém NÃO É PARA TUDO!
 
 Perceba algo, modal é uma informação a mais que fica na página e trabalha sobre a página atual. Ou seja, o comportamento da página atual afeta indiretamente o comportamento do modal.
 
@@ -117,7 +117,7 @@ Os modais são bons para atalhos, mas quando mal usados, podem se tornar uma gra
 
 Então, permita-me perguntar novamente... Qual valor você está agregando ao teu usuário final?
 
-Por hoje é tudo pessoal, este assunto é longo ( poderia falar de tempo de carregamento, [offline first](http://offlinefirst.org/) e muitas outras coisas, porém queria deixar uma reflexão mais generica ), então posso escrever uma outra parte um outro dia, sendo mais especifico sobre um assunto.
+Por hoje é tudo pessoal, este assunto é longo ( poderia falar de tempo de carregamento, [offline first](http://offlinefirst.org/) e muitas outras coisas, porém, queria deixar uma reflexão mais generica ), então posso escrever uma outra parte num outro dia, sendo mais especifico sobre um assunto.
 
 Obrigado a todos os 30 que votaram sobre qual dos artigos lançar primeiro 🤗 vocês são incríveis.
 
@@ -132,3 +132,10 @@ Obrigado a todos os 30 que votaram sobre qual dos artigos lançar primeiro 🤗 
 - [Don Norman: O termo "UX"](https://www.youtube.com/watch?v=9BdtGjoIN4E&feature=emb_logo)
 - [O que é UX – User Experience](https://www.hostinger.com.br/tutoriais/ux-o-que-e-user-experience/)
 - [How You Are Destroying Your Creativity and Imagination](https://medium.com/@mikeschoultz/how-you-are-destroying-your-creativity-and-imagination-479a6d962c3b)
+
+### Revisado por
+
+- [Aermany Dias](https://github.com/marcioquimbundo)
+- [Márcio Quimbundo](https://github.com/marcioquimbundo)
+
+Muito obrigado 😍
