@@ -20,7 +20,7 @@ Antes de avançar, gostaria de dizer uma coisa muito importante **"esta é a min
 
 Durante o tempo que atuo como developer, já tive a oportunidade de fazer muitos trabalhos onde o foco em si estava em como o cliente final interage com o site ou sistema... E isso foi muito bom para mim porque pude desenvolver um pensamento muito crítico quanto a algumas práticas quando vou elaborar um projeto de grande complexidade e com grande complexidade me refiro a um projeto que depende muito da interação do cliente final.
 
-E este senso crítico fez-me começar a investigar mais sobre UX e sobre tudo a ver, como as grandes empresas de TI resolvem estes problemas. Até agora, já devo té-lo situado um pouco sobre o contexto desta postagem mas permita-me mostrar-lhe um exemplo: Um dos casos mais comuns de desenvolvedores ao fazerem o BackOffice ( parte administrativa do site ou sistema ) é ter na sua maioria um monte de tabelas com ações distintas... e nota não tem nada de errado em ter tabelas ( o ponto não é este e nunca será este...), continuando,  basicamente eles têm um menu do usuário ( supondo), que após abrir o mesmo ele poderá listar, editar, visualizar e por aí vai.
+E este senso crítico fez-me começar a investigar mais sobre UX e sobre tudo a ver, como as grandes empresas de TI resolvem estes problemas. Até agora, já devo tê-lo situado um pouco sobre o contexto desta postagem mas permita-me mostrar-lhe um exemplo: Um dos casos mais comuns de desenvolvedores ao fazerem o BackOffice ( parte administrativa do site ou sistema ) é ter na sua maioria um monte de tabelas com ações distintas... e nota não tem nada de errado em ter tabelas ( o ponto não é este e nunca será este...), continuando,  basicamente eles têm um menu do usuário ( supondo), que após abrir o mesmo ele poderá listar, editar, visualizar e por aí vai.
 
 Bem, este exemplo que dei é um clássico e você encontrará isso em quase todos os sistemas se não em todos, o que eu quero analisar contigo é o seguinte: qual valor você está agregando ao usuário final quando o mesmo usa o teu sistema?
 
@@ -37,7 +37,7 @@ Este tópico é tão interessante que se você procurar em 3 locais diferentes s
 ### Momento história
 Teve um momento onde precisei redesenhar a tela de contactos do [WeSender](https://www.wesender.co.ao) porque não estava muito satisfeito com o que tinha atualmente, e achei que poderia melhorar e entregar uma melhor experiência para o usuário final, então resolvi investigar como serviços semelhantes tratavam daquele assunto em especifico, e peguei um porrada de exemplos... Uns que achei muito nada haver, outros muito 😒😒(também quero), e foi nas falhas dos que achei nada haver e nos quase surreais que vi que comecei a desenhar uma tela ( eu não sou designer, é bom isso ficar explicado aqui ). Porém, ao terminar de desenhar, o primeiro feeling que tive era que estava muito boa! Mas depois de algum tempo a analisar o que tinha feito, percebi que o que eu tinha feito não resolvia o problema do software ... Por mais bonito que aquele primeiro desenho tinha ficado.
 
-E qual era o problema do software no caso? Era enviar mensagens... E sim, nós tínhamos uma zona para enviar messagens assim como muitos softwares dedicados a enviar as benditas mensagens. 😒, ué o problema é enviar mensagens... Mas tem um local para enviar mensagens? 😒 Como isso é um problema? 😒
+E qual era o problema do software no caso? Era enviar mensagens... E sim, nós tínhamos uma zona para enviar mensagens assim como muitos softwares dedicados a enviar as benditas mensagens. 😒, ué o problema é enviar mensagens... Mas tem um local para enviar mensagens? 😒 Como isso é um problema? 😒
 
 " Continue lendo ... " 😘
 
@@ -52,9 +52,9 @@ Mas, como eu estou  a gostar da música que estou a ouvir, então irei citar mai
   é mais problemático que o problema em muitos casos."
   Acidiney Dias, 2020 😂😂😂😂😂
 
-Em alguns casos, só o facto de você conhecer 70% da ferramenta que você estais a usar, já te permite resolver a maioria dos casos que te aparecem a frente... Tem um post muito antigo que li quando queria aprender mais sobre [GraqhQL](https://graphql.org/) que dizia o seguinte: "Se você está a fugir do [REST](https://pt.wikipedia.org/wiki/REST), por que não achaste uma forma de resolver o que procuras (resolver), então o mesmo acontecerá em tudo que você tentar usar.". O que isso quer dizer? Não é que [GraphQL](https://graphql.org/) é mau ou coisa do género... e pode ser que ele realmente resolva melhor o que você está tentando resolver. Mas desmerecer uma ferramenta por uma incapacidade tua gera um loop infinito no desmerecimento.
+Em alguns casos, só o facto de você conhecer 70% da ferramenta que você estais a usar, já te permite resolver a maioria dos casos que te aparecem a frente... Tem um post muito antigo que li quando queria aprender mais sobre [GraqhQL](https://graphql.org/) que dizia o seguinte: "Se você está a fugir do [REST](https://pt.wikipedia.org/wiki/REST), por que não achaste uma forma de resolver o que procuras (resolver), então o mesmo acontecerá em tudo que você tentar usar.". O que isso quer dizer? Não é que [GraphQL](https://graphql.org/) é mau ou coisa do gênero... e pode ser que ele realmente resolva melhor o que você está tentando resolver. Mas desmerecer uma ferramenta por uma incapacidade tua gera um loop infinito no desmerecimento.
 
-Mesmo da pior forma possível, tens que achar uma maneira de resolver o teu problema, porque isso demostra o teu nível de crescimento não com a plataforma, mas sim, a resolver problemas 🤗.
+Mesmo da pior forma possível, tens que achar uma maneira de resolver o teu problema, porque isso demonstra o teu nível de crescimento não com a plataforma, mas sim, a resolver problemas 🤗.
 
 Se não acha que consegues, então lamento informar-te, mas podes ter esquecido do foco desse mundo maravilhoso que é a programação. 😒 Assim só queres dinheiro mesmo? Depois não vais ficar rico '-'. ( Se ficares, nunca leste este comentário )🙈
 
@@ -62,7 +62,7 @@ Se não acha que consegues, então lamento informar-te, mas podes ter esquecido 
 
 No caso em especifico do [WeSender]((https://www.wesender.co.ao)), eu parei e comecei a analisar quais pontos realmente poderiam ser atalhos ( para a zona de contactos ), e para saber que pontos poderiam ser atalhos precisamos primeiramente saber qual é o objetivos da ferramenta ( E olha que interessante, nesse ponto você consegui ir buscar mais um conceito bem interessante cujo a base se resume ao *contexto*, deixa nos comentários se você sabe qual conceito é este 😉) . No caso do [WeSender](https://www.wesender.co.ao) que é um serviço de envio de mensagens, faz sentido que tenha um atalho para enviar mensagens a partir da zona de contactos, assim como um aplicativo de lista telefônica te permite ligar para um número a partir da lista telefônica.  Bom, quanto a isto acredito que estamos fechados! No fundo tudo é contexto, saber em que contexto estás, te permite criar soluções que realmente ajudem o teu usuário final. Então, ao perceber o meu contexto, pude tomar nota que faz sentido eu conseguir enviar mensagens para um ou múltiplos contactos a partir da zona de contactos, e assim deixando ela de ser uma simples decoração, e começar a realmente ajudar as pessoas. 
 
-"Abre parenteses aqui..."
+"Abre parênteses aqui..."
 
 ( Neste ponto eu poderia simplesmente colocar os números que o usuário pretende enviar em uma sessão e mudar de página, mas aqui eu deixo a reflexão sobre o ponto que falei antes. Faz sentido para ti isto? Bem, para mim não. Porque mudar de página é mais um custo para enviar uma mensagem. E presta atenção que a única coisa que ele terá que fazer é redigir o que pretende e consequentemente enviar... Então nesse ponto, fica mais fluído um modal do que mover de página.
 
@@ -72,7 +72,7 @@ Quando parei para analisar essa situação, percebi que o que o [WeSender](https
 
 ( Eu amo o google por conta disso, até o [Google Contacts](https://contacts.google.com)... consegue ser tão simples, mas tão interativo 🤗🤗)
 
-E essa opinião só começou literalmente a se formar quando comecei a olhar para as soluções que outras pessoas faziam, principalmente quando os outros devs (acronomo para desenvolvedor) criavam determinadas zonas limitando a sua imaginação porque tinham que fazer com base nas informações que o backend iria enviar ou receber.
+E essa opinião só começou literalmente a se formar quando comecei a olhar para as soluções que outras pessoas faziam, principalmente quando os outros devs (acrônimo para desenvolvedor) criavam determinadas zonas limitando a sua imaginação porque tinham que fazer com base nas informações que o backend iria enviar ou receber.
 
 Se és frontend, deixa-me te contar um segredo... Tudo bem em usar o mesmo endpoint em dois sítios diferentes e/ou usar informação antigas no caso de só ter uma mudança ^^.
 
@@ -120,7 +120,7 @@ Os modais são bons para atalhos, mas quando mal usados, podem se tornar uma gra
 
 Então, permita-me perguntar novamente... Qual valor você está agregando ao teu usuário final?
 
-Por hoje é tudo pessoal, este assunto é longo ( poderia falar de tempo de carregamento, [offline first](http://offlinefirst.org/) e muitas outras coisas, porém, queria deixar uma reflexão mais generica ), então posso escrever uma outra parte num outro dia, sendo mais especifico sobre um assunto.
+Por hoje é tudo pessoal, este assunto é longo ( poderia falar de tempo de carregamento, [offline first](http://offlinefirst.org/) e muitas outras coisas, porém, queria deixar uma reflexão mais genérica ), então posso escrever uma outra parte num outro dia, sendo mais especifico sobre um assunto.
 
 Obrigado a todos os 30 que votaram sobre qual dos artigos lançar primeiro 🤗 vocês são incríveis.
 
