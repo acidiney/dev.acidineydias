@@ -135,7 +135,7 @@ Obrigado a todos os 30 que votaram sobre qual dos artigos lançar primeiro 🤗 
 
 ### Revisado por
 
-- [Aermany Dias](https://github.com/marcioquimbundo)
+- [Aermany Dias](https://www.instagram.com/nany3a)
 - [Márcio Quimbundo](https://github.com/marcioquimbundo)
 
 Muito obrigado 😍
