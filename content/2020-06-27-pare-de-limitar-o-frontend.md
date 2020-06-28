@@ -1,5 +1,5 @@
 ---
-date: 2020-06-27
+date: 2020-06-28
 title: Pare de limitar o frontend!
 categories: programação, frontend, UI/UX, design, imagination
 description: É bom prestar atenção que podemos dois tipos de usuários no nosso sistema, os que gostam do sistema e usam por isto, e aqueles que se desse nunca mais usava... simplesmente usa porque não pode mudar ( quanto a isso podem ser vários motivos ).
@@ -47,7 +47,8 @@ Muitas vezes nos vemos a fazer sempre a mesma coisa. E desconsideramos que exist
 #### Descontraia um pouco, o mundo não é tão sério assim.
 Mas, como eu estou  a gostar da música que estou a ouvir, então irei citar mais um ponto crítico. Este acontece normalmente quando nós trabalhamos com API's, e ficamos muito focados em como o backend espera receber ou retornar as informações, e a partir deste ponto começamos a criar a nossa interface... Em alguns casos começamos a inventar um monte de "coisas" ou começamos a pensar em determinadas tools para resolver um problema que não necessariamente é um problema.
 
-    "O problema nem sempre é um problema, o teu desconhecimento é mais problemático que o problema em muitos casos."  - Acidiney Dias, 2020 😂😂😂😂😂
+    "O problema nem sempre é um problema, o teu desconhecimento
+    é mais problemático que o problema em muitos casos." - Acidiney Dias, 2020 😂😂😂😂😂
 
 Em alguns casos, só o facto de você conhecer 70% da ferramenta que você estais a usar, já te permite resolver a maioria dos casos que te aparecem a frente... Tem um post muito antigo que li quando queria aprender mais sobre [GraqhQL](https://graphql.org/) que dizia o seguinte: "Se você está a fugir do [REST](https://pt.wikipedia.org/wiki/REST), por que não achaste uma forma de resolver o que procuras (resolver), então o mesmo acontecerá em tudo que você tentar usar.". O que isso quer dizer? Não é que [GraphQL](https://graphql.org/) é mau ou coisa do género... e pode ser que ele realmente resolva melhor o que você está tentando resolver. Mas desmerecer uma ferramenta por uma incapacidade tua gera um loop infinito no desmerecimento.
 
