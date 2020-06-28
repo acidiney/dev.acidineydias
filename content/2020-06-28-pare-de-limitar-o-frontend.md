@@ -108,7 +108,7 @@ Perceba algo, modal é uma informação a mais que fica na página e trabalha so
 
 O que isso quer dizer? É SIMPLES, modais foram concebidos para serem atalhos simples a informações SIMPLES! Como por exemplo uma notificação, detalhar alguma informação SIMPLES e editar informações SIMPLES.
 
-    Keep it simple and stuped!
+" Keep it simple and stuped! "
 
 Infelizmente o pessoal esqueceu disso por conta da sua facilidade! Eu já vi um pessoal usando um modal para preencher uns 20 campos lá 😑, man... Take it easy.
 

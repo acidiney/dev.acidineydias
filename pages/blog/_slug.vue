@@ -220,6 +220,7 @@ footer .head-post .categories p {
 <style>
   footer.markdown a {
     border-bottom: 1px dashed #fff;
+    font-weight: 600 !important;
   }
 
   footer.markdown p {
@@ -240,5 +241,32 @@ footer .head-post .categories p {
     font-weight: 100;
     border: 0;
     outline: none;
+  }
+
+  footer.markdown h3 {
+    margin: unset !important;
+    font-weight: unset !important;
+    font-size: 16pt !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  footer.markdown h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    border-radius: 25px;
+    opacity: .6;
+  }
+
+  footer.markdown ul {
+    list-style: circle !important;
+    margin-left: 1em !important;
+    margin-bottom: 10px;
   }
 </style>
