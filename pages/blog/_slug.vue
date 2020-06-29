@@ -22,7 +22,7 @@
       :classes="`h-54 w-full object-cover ${imagePosition}`"
       alt="avatar"
     />
-    <footer class="w-4/5 markdown md:w-2/4 mt-6 mx-auto text-justify mb-3">
+    <footer class="w-4/5 markdown mt-6 mx-auto text-justify mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
           <time class="text-xs"> {{ new Date(date).toLocaleDateString('pt') }} </time>
