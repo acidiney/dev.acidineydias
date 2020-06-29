@@ -266,6 +266,7 @@ footer .head-post .categories p {
     padding-left: 20px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 2;
+    text-align: left;
   }
 
   footer.markdown h3::before {
