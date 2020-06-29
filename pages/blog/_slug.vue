@@ -1,6 +1,6 @@
 <template>
   <div class="text-white pt-10">
-    <header class="w-4/5 md:w-2/4 mx-auto mb-3 text-white">
+    <header class="w-4/5 mx-auto mb-3 text-white">
       <h1 class="text-5xl">Acidiney blog</h1>
       <p class="w-3/4">
         FullStack Developer | Writer | Teacher | YouTuber | Netflix Lover | Tecnology lover | Open Source enthusiast
