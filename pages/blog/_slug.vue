@@ -236,7 +236,7 @@ footer .head-post .categories p {
     margin: 1.2rem 0;
     text-align: left;
     font-size: 13pt;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, Source Serif Pro, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.5rem;
   }
 
