@@ -40,6 +40,9 @@
           :static-render-funcs="staticRenderFuncs"
         />
       </client-only>
+      <div class="adx-sense">
+        <adsbygoogle />
+      </div>
     </footer>
     <nuxt-link class="my-5 block text-center" to='/'> <i class="icon-arrow-left"></i> Go Home</nuxt-link>
     <div class="comments w-4/5 md:w-2/4 mx-auto">
@@ -185,6 +188,11 @@ a:hover {
   color: #fff;  
 }
 
+.adx-sense {
+  height: 100px;
+  width: 100%;
+}
+
 .icon-2x:hover::before {
   color:rgba(148, 148, 149, 0.9);
 }
@@ -220,11 +228,16 @@ footer .head-post .categories p {
 <style>
   footer.markdown a {
     border-bottom: 1px dashed #fff;
+    color: rgb(128, 128, 253);
     font-weight: 600 !important;
   }
 
-  footer.markdown p {
-    margin-bottom: 10px;
+  footer.markdown .dynamicMarkdown p {
+    margin: 1.2rem 0;
+    text-align: left;
+    font-size: 13pt;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, Source Serif Pro, sans-serif;
+    line-height: 1.5rem;
   }
 
   footer.markdown p::first-line {
@@ -246,11 +259,13 @@ footer .head-post .categories p {
   footer.markdown h3 {
     margin: unset !important;
     font-weight: unset !important;
-    font-size: 16pt !important;
+    font-size: 20pt !important;
     position: relative;
     display: flex;
     align-items: center;
     padding-left: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 2;
   }
 
   footer.markdown h3::before {

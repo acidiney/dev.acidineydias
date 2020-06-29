@@ -56,7 +56,7 @@ module.exports = {
       { rel: 'mask-icon', type: 'image/png', href: '/favicon/safari-pinned-tab.svg', color: '#c1c1c1' },
       { rel: 'stylesheet', type: 'text/css', href: '/style.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/prims-dracula.css' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;400;700&display=swap' }
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;400;700&family=Source+Serif+Pro&display=swap' }
     ]
   },
   /*
@@ -99,8 +99,14 @@ module.exports = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-adsense'
   ],
+
+  'google-adsense': {
+    id: 'ca-pub-4289453933940031'
+  },
+
   sitemap: {
     hostname: 'https://acidineydias.me',
     lastmod: builtAt,
