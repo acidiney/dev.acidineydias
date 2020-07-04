@@ -57,8 +57,8 @@
             v-for="article in articles"
             :key="article.link"
             v-observe-visibility="(isVisible, entry) => loadFrontMatterDescription(isVisible, entry, article.link)"
-            class="py-6 px-6 relative">
-            <nuxt-link :to="`/blog/${article.link}`">
+            class="relative">
+            <nuxt-link class="py-6 px-6" href-lang="pt" :to="`/blog/${article.link}`">
               <header>
                 <div class="categories flex-wrap flex">
                   <p v-for="(category, i) in article.categories" :key="category + i" class="mr-2 text-xs rounded">
@@ -82,8 +82,8 @@
           <article
             v-for="repo in repos"
             :key="repo.id"
-            class="py-6 px-6 relative">
-            <a :href="repo.html_url" target="__blank">
+            class="relative">
+            <a  class="py-6 px-6" :href="repo.html_url" target="__blank" rel="noreferrer">
               <header>
                 <div class="categories flex-wrap flex">
                   <p class="mr-2 text-xs rounded">
@@ -201,10 +201,36 @@ export default {
     this.loadArticles()
   },
   head () {
+    const { fullPath } = this.$route
     return {
       title: 'Acidiney Dias | Full stack developer',
       meta: [
+        {
+          hid:'og:image',
+          name: 'og:image',
+          content: `https://acidineydias.me/images/avatar.jpg`
+        },
+        {
+          vmid:'og:url',
+          name: 'og:url',
+          content: `https://acidineydias.me${fullPath}`
+        },
         { hid: 'description', name: 'description', content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.' },
+        {
+          hid:'twitter:image',
+          name: 'twitter:image',
+          content: `https://acidineydias.me/images/avatar.jpg`
+        },
+        {
+          hid:'twitter:title',
+          name: 'twitter:title',
+          content: 'Acidiney Dias | Full stack developer'
+        },
+        {
+          hid:'twitter:description',
+          name: 'twitter:description',
+          content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
+        }
       ]
     }
   }
@@ -269,6 +295,11 @@ export default {
   text-transform: uppercase;
 }
 
+.articles article a {
+  display: block;
+  height: 100%;
+}
+
 .articles article a h2 {
   font-weight: 400;
   color: #fff;
@@ -285,24 +316,8 @@ export default {
   font-weight: 100;
 }
 
-/* open-source */
- .githubCornerSVG{
-    fill:#1db954;
-    color:#fff;
-    position: absolute;
-    top: 0!important;
-    border: 0;
-    right: 0;
-    z-index: 999;
-    height: 65px;
-    width:65px;
-}
 
 @media (min-width: 768px) {
-  .githubCornerSVG{
-        height: 50px;
-        width: 50px;
-  }
   .root {
     height: 100vh;
   }

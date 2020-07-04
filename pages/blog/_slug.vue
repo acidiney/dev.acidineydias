@@ -109,52 +109,52 @@ export default {
       title: this.title + '- Acidiney Dias\' Blog',
       meta: [
         {
-          vmid: 'description',
+          hid: 'description',
           name: 'description',
           content: this.description,
         },
         {
-          vmid:'og:image',
+          hid:'og:image',
           name: 'og:image',
-          content: `https://acidineydias.me/blog/${this.image}`
+          content: `https://acidineydias.me/images/blog/${this.image}`
         },
         {
-          vmid:'og:type',
+          hid:'og:type',
           name: 'og:type',
           content: 'article'
         },
         {
-          vmid:'og:url',
+          hid:'og:url',
           name: 'og:url',
           content: `https://acidineydias.me${fullPath}`
         },
         {
-          vmid:'og:title',
+          hid:'og:title',
           name: 'og:title',
           content: this.title
         },
         {
-          vmid:'og:description',
+          hid:'og:description',
           name: 'og:description',
           content: this.description
         },
         {
-          vmid:'twitter:image',
+          hid:'twitter:image',
           name: 'twitter:image',
-          content: `https://acidineydias.me/blog/${this.image}`
+          content: `https://acidineydias.me/images/blog/${this.image}`
         },
         {
-          vmid:'twitter:title',
+          hid:'twitter:title',
           name: 'twitter:title',
           content: this.title
         },
         {
-          vmid:'twitter:description',
+          hid:'twitter:description',
           name: 'twitter:description',
           content: this.description
         },
         {
-          vmid:'twitter:card',
+          hid:'twitter:card',
           name: 'twitter:card',
           content: 'summary'
         }
