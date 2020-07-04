@@ -211,11 +211,20 @@ export default {
           content: `https://acidineydias.me/images/avatar.jpg`
         },
         {
-          vmid:'og:url',
+          hid:'og:description',
+          name: 'og:description',
+          content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
+        },
+         {
+          hid:'og:title',
+          name: 'og:title',
+          content: 'Acidiney Dias | Full stack developer'
+        },
+        {
+          hid:'og:url',
           name: 'og:url',
           content: `https://acidineydias.me${fullPath}`
         },
-        { hid: 'description', name: 'description', content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.' },
         {
           hid:'twitter:image',
           name: 'twitter:image',
@@ -230,7 +239,8 @@ export default {
           hid:'twitter:description',
           name: 'twitter:description',
           content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
-        }
+        },
+        { hid: 'description', name: 'description', content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.' }
       ]
     }
   }
