@@ -206,6 +206,11 @@ export default {
       title: 'Acidiney Dias | Full stack developer',
       meta: [
         {
+          hid:'keywords',
+          name: 'keywords',
+          content: `Acidiney, Acidiney Dias, Acidiney Dias'Blog, Acidiney Dias Portfolio, Acidiney Dias Webiste, Acidiney Dias Github, Acidiney Dias Youtube`
+        },
+        {
           hid:'og:image',
           name: 'og:image',
           content: `https://acidineydias.me/images/avatar.jpg`
@@ -215,7 +220,7 @@ export default {
           name: 'og:description',
           content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
         },
-         {
+        {
           hid:'og:title',
           name: 'og:title',
           content: 'Acidiney Dias | Full stack developer'
