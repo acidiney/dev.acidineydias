@@ -211,22 +211,22 @@ export default {
           content: `Acidiney, Acidiney Dias, Acidiney Dias'Blog, Acidiney Dias Portfolio, Acidiney Dias Webiste, Acidiney Dias Github, Acidiney Dias Youtube`
         },
         {
-          hid:'og:image',
+          vmid:'og:image',
           name: 'og:image',
           content: `https://acidineydias.me/images/avatar.jpg`
         },
         {
-          hid:'og:description',
+          vmid:'og:description',
           name: 'og:description',
           content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
         },
         {
-          hid:'og:title',
+          vmid:'og:title',
           name: 'og:title',
           content: 'Acidiney Dias | Full stack developer'
         },
         {
-          hid:'og:url',
+          vmid:'og:url',
           name: 'og:url',
           content: `https://acidineydias.me${fullPath}`
         },
