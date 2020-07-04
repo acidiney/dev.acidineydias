@@ -34,14 +34,14 @@
         <div class="social mt-4 flex-col flex">
           <ul class="flex mb-2">
             <li v-for="social in socials[0]" :key="'content' + social.icon">
-              <a class="text" :href="social.link">
+              <a class="text block" :href="social.link">
                 <i class="icon-2x" :class="social.icon" />
               </a>
             </li>
           </ul>
           <ul class="flex">
             <li v-for="social in socials[1]" :key="'social' + social.icon">
-              <a class="text" :href="social.link">
+              <a class="text block" :href="social.link">
                 <i class="icon-2x" :class="social.icon" />
               </a>
             </li>
