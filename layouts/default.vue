@@ -1,10 +1,78 @@
 <template>
-  <div>
-    <nuxt />
+  <div :class="`theme-${theme} overflow-y-auto box-border`">
+    <div class="w-4/5 mx-auto pb-6">
+      <nav class="py-6">
+        <ul class="left hidden items-center md:flex">
+          <template v-for="item in menuItens">
+            <li :key="item.slug" class="flex">
+              <button :class="{'active': currentMenu === item.slug}">
+                {{ item.text }}
+              </button>
+              <span v-if="item.separator" class="separator" />
+            </li>
+          </template>
+        </ul>
+        <ul class="right">
+          <li>
+            <button @click="changeTheme(theme)">
+              <i :class="`extra-${ theme === 'dark' ? 'light' : 'dark' }`" />
+            </button>
+          </li>
+        </ul>
+        <button class="collapse flex md:hidden">
+          <i class="extra-th-menu" />
+        </button>
+      </nav>
+      <nuxt />
+    </div>
   </div>
 </template>
 
-<style>
+<script>
+export default {
+  computed: {
+    theme () {
+      return this.$store.getters.theme
+    },
+    currentMenu () {
+      return this.$store.getters.currentMenu
+    },
+    menuItens () {
+      return [
+        {
+          slug: 'blog-articles',
+          text: 'Blog Articles',
+          separator: true
+        },
+        {
+          slug: 'technologies',
+          text: 'Technologies',
+          separator: true
+        },
+        {
+          slug: 'experiences',
+          text: 'Experiences',
+          separator: true
+        },
+        {
+          slug: 'projects',
+          text: 'Projects',
+          separator: false
+        }
+      ]
+    }
+  },
+  methods: {
+    changeTheme (currentTheme) {
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark'
+      this.$store.commit('setTheme', nextTheme)
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+@import "@/assets/scss/index";
 html {
   font-family: "Gothic A1", 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -15,38 +83,23 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background: #212121;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-/* Scroll 2 */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  ul.left {
+    span.separator {
+      margin: 0 5px;
+    }
+  }
+  ul.left, ul.right {
+    button {
+      outline: none;
+      display: flex;
+    }
+  }
 }
-::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #11171a;
-  border-radius: 10px;
-}
-
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all .4s ease;
-}
-.slide-fade-enter,
-.slide-fade-leave-to {
-  transform: translateX(50px);
-  opacity: 0;
-}
-
 </style>

@@ -1,11 +1,10 @@
 <template>
   <div
-    v-lazy-container="{ selector: 'img' }"
     :class="`image-placeholder`"
   >
     <img
-      :data-src="imageRequired"
-      :data-loading="imageRequired.placeholder"
+      :data-src="imageUrl"
+      :data-loading="imageUrl"
       :width="width"
       :height="height"
       :class="classes"
@@ -17,7 +16,7 @@
 <script>
 export default {
   props: {
-    imageURL: {
+    imageUrl: {
       type: String,
       default: ''
     },
@@ -36,11 +35,6 @@ export default {
     classes: {
       type: String,
       default: ''
-    }
-  },
-  computed: {
-    imageRequired () {
-      return require(`../assets/images/${this.imageURL}`)
     }
   }
 }

@@ -1,21 +1,4 @@
 const builtAt = new Date().toISOString()
-const path = require('path')
-const fs = require('fs')
-const Mode = require('frontmatter-markdown-loader/mode')
-const MarkdownIt = require('markdown-it')
-const mip = require('markdown-it-prism')
-
-function getPaths (type) {
-  return fs.readdirSync(path.resolve(__dirname, 'content'))
-    .filter(filename => path.extname(filename) === '.md')
-    .map(filename => `${type}/${path.parse(filename).name}`)
-}
-
-const md = new MarkdownIt({
-  html: true,
-  typographer: true
-})
-md.use(mip)
 
 module.exports = {
   mode: 'universal',
@@ -54,9 +37,7 @@ module.exports = {
       { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-152x152.png', sizes: '152x152' },
       { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-180x180.png', sizes: '180x180' },
       { rel: 'mask-icon', type: 'image/png', href: '/favicon/safari-pinned-tab.svg', color: '#c1c1c1' },
-      { rel: 'stylesheet', type: 'text/css', href: '/style.css' },
-      { rel: 'stylesheet', type: 'text/css', href: '/prims-dracula.css' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;400;700&family=Source+Serif+Pro&display=swap' }
+      { rel: 'stylesheet', type: 'text/css', href: '/style.css' }
     ]
   },
   /*
@@ -73,7 +54,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/disqus',
-    '~/plugins/lazyload',
+    // '~/plugins/lazyload',
     // '~/plugins/ga',
     '~/plugins/image'
 
@@ -98,10 +79,20 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxt/content',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-adsense'
   ],
+
+  content: {
+    markdown: {
+      remarkPlugins: ['remark-emoji'],
+      prism: {
+        theme: 'prism-themes/themes/prism-dracula.css'
+      }
+    }
+  },
 
   'google-adsense': {
     id: 'ca-pub-4289453933940031'
@@ -110,7 +101,7 @@ module.exports = {
   sitemap: {
     hostname: 'https://acidineydias.me',
     lastmod: builtAt,
-    routes: [].concat(getPaths('blog'))
+    routes: []
   },
   pwa: {
     manifest: {
@@ -130,42 +121,9 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-      const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/i')
-      config.module.rules.splice(config.module.rules.indexOf(rule), 1)
-
-      config.module.rules.push({
-        test: /\.md$/,
-        include: path.resolve(__dirname, 'content'),
-        loader: 'frontmatter-markdown-loader',
-        options: {
-          mode: [Mode.VUE_RENDER_FUNCTIONS, Mode.VUE_COMPONENT],
-          vue: {
-            root: 'dynamicMarkdown'
-          },
-          markdown (body) {
-            return md.render(body)
-          }
-        }
-      }, {
-        test: /\.(jpe?g|png)$/i,
-        loader: 'responsive-loader',
-        options: {
-          placeholder: true,
-          quality: 60,
-          size: 1400,
-          adapter: require('responsive-loader/sharp')
-        }
-      }, {
-        test: /\.(gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 1000,
-          name: 'img/[name].[hash:7].[ext]'
-        }
-      })
     }
   },
   generate: {
-    routes: [].concat(getPaths('blog'))
+    routes: []
   }
 }

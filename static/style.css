@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;300;400;600;700&family=Roboto&display=swap');
+
 @font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?fviqtv');
@@ -8,6 +10,33 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
+}
+
+@font-face {
+  font-family: 'extra';
+  src:  url('fonts/extra.eot?7zsq12');
+  src:  url('fonts/extra.eot?7zsq12#iefix') format('embedded-opentype'),
+    url('fonts/extra.ttf?7zsq12') format('truetype'),
+    url('fonts/extra.woff?7zsq12') format('woff'),
+    url('fonts/extra.svg?7zsq12#extra') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="extra-"], [class*=" extra-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'extra' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -305,4 +334,14 @@
 .icon-zoom:before {
   content: "\e941";
   color: #2d8cff;
+}
+
+.extra-light:before {
+  content: "\e980";
+}
+.extra-dark:before {
+  content: "\e981";
+}
+.extra-th-menu:before {
+  content: "\e900";
 }

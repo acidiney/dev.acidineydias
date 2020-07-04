@@ -1,0 +1,89 @@
+$dark_primary_color: #212121;
+$dark_secondary_color: #BABABA;
+$dark_white_color: #fafafa;
+$white: #fff;
+
+.theme-dark {
+  background-color: $dark_primary_color;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  nav {
+    ul.left {
+      color: $dark_white_color;
+      button {
+        font-weight: 100;
+        transition: all .26s linear;
+
+        &:hover {
+          font-weight: 300;
+        }
+      }
+      button.active {
+        font-weight: 400;
+      }
+    }
+
+    ul.right {
+      li {
+        button {
+          i::before {
+            color: $dark_secondary_color;
+            font-size: 18pt;
+          }
+        }
+      }
+    }
+
+    .collapse {
+      height: 30px;
+      width: 30px;
+      align-items: center;
+      outline: none;
+      justify-content: center;
+      border: 1.5px solid $dark_secondary_color;
+      border-radius: 25px;
+      i::before {
+        color: $dark_secondary_color;
+      }
+
+      &:hover {
+        border-color: $dark_white_color;
+
+        i::before {
+          color: $dark_white_color;
+        }
+      }
+    }
+  }
+
+  .about-me {
+    h1 {
+      color: $dark_white_color;
+    }
+
+    p {
+      color: #BABABA;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    .icon-2x:hover::before {
+      color:rgba(148, 148, 149, 0.9);
+    }
+    
+    .icon-2x::before {
+      font-size: 2em;
+      color: #fff;
+    }
+  }
+
+  .articles {
+    h2.sub-title {
+      color: $dark_white_color;
+    }
+  }
+}

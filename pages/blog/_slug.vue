@@ -1,7 +1,9 @@
 <template>
   <div class="text-white pt-10">
     <header class="w-4/5 mx-auto mb-3 text-white">
-      <h1 class="text-5xl">Acidiney blog</h1>
+      <h1 class="text-5xl">
+        Acidiney blog
+      </h1>
       <p class="w-3/4">
         FullStack Developer | Writer | Teacher | YouTuber | Netflix Lover | Tecnology lover | Open Source enthusiast
       </p>
@@ -13,46 +15,43 @@
         </li>
       </ul>
 
-      <nuxt-link to='/'> <i class="icon-arrow-left"></i>Go Back </nuxt-link>
+      <nuxt-link to="/">
+        <i class="icon-arrow-left" />Go Back
+      </nuxt-link>
     </header>
-    <hr />
+    <hr>
     <ImageResponsive
-      v-if="image"
-      :imageURL="'blog/' + image"
-      :classes="`h-54 w-full object-cover ${imagePosition}`"
+      v-if="page.image"
+      :image-url=" page.image"
+      :classes="`h-54 w-full object-cover ${page.imagePosition}`"
       alt="avatar"
     />
     <footer class="w-4/5 markdown mt-6 mx-auto text-justify mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
-          <time class="text-xs"> {{ new Date(date).toLocaleDateString('pt') }} </time>
+          <time class="text-xs"> {{ new Date(page.date).toLocaleDateString('pt') }} </time>
           <div class="categories flex-wrap flex">
-            <p v-for="(category, i) in categories" :key="category + i" class="mr-2 text-xs rounded">
-              {{ category }}
+            <p class="mr-2 text-xs rounded capitalize">
+              {{ page.category }}
             </p>
           </div>
         </div>
-        <h2 class="text-left">{{ title }}</h2>
+        <h2 class="text-left">
+          {{ page.title }}
+        </h2>
       </div>
-      <client-only>
-        <DynamicMarkdown
-          :render-func="renderFunc"
-          :static-render-funcs="staticRenderFuncs"
-        />
-      </client-only>
-      <div class="adx-sense">
-        <adsbygoogle />
-      </div>
+      <nuxt-content :document="page" />
     </footer>
-    <nuxt-link class="my-5 block text-center" to='/'> <i class="icon-arrow-left"></i> Go Home</nuxt-link>
+    <nuxt-link class="my-5 block text-center" to="/">
+      <i class="icon-arrow-left" /> Go Home
+    </nuxt-link>
     <div class="comments w-4/5 md:w-2/4 mx-auto">
-      <vue-disqus shortname="acidineydias" :identifier="getUrl" :url="getUrl"></vue-disqus>
+      <vue-disqus shortname="acidineydias" :identifier="getUrl" :url="getUrl" />
     </div>
   </div>
 </template>
 
 <script>
-import DynamicMarkdown from '~/components/Markdown/DynamicMarkdown'
 export default {
   name: 'Blog',
   validate (context) {
@@ -63,33 +62,15 @@ export default {
 
     context.redirect('/')
   },
-  data () {
+  async asyncData ({ $content, params }) {
+    const page = await $content(params.slug).fetch()
     return {
-      attributes: {}
+      page
     }
   },
-  async asyncData({params}) {
-    try {
-      let post = await import(`~/content/${params.slug}.md`)
-      return {
-        date: post.attributes.date,
-        title: post.attributes.title,
-        image: post.attributes.image,
-        imagePosition: post.attributes.imagePosition,
-        categories: post.attributes.categories.split(','),
-        // extraComponent: post.attributes.extraComponent,
-        renderFunc: `(${post.vue.render})`,
-        staticRenderFuncs: `[${post.vue.staticRenderFns}]`,
-      }
-    } catch (err) {
-      console.debug(err)
-      return false
-    }
-  },
-  components: { DynamicMarkdown },
   computed: {
     socials () {
-    return [
+      return [
         { link: 'https://github.com/acidiney', icon: 'icon-github' },
         { link: 'https://www.youtube.com/channel/UCMjOcKmA1UjiimzRDNZ_uOQ', icon: 'icon-youtube' },
         { link: 'https://medium.com/@acidiney', icon: 'icon-medium' }
@@ -106,55 +87,55 @@ export default {
   head () {
     const { fullPath } = this.$route
     return {
-      title: this.title + '- Acidiney Dias\' Blog',
+      title: this.page.title + '- Acidiney Dias\' Blog',
       meta: [
         {
           vmid: 'description',
           name: 'description',
-          content: this.description,
+          content: this.page.description
         },
         {
-          vmid:'og:image',
+          vmid: 'og:image',
           name: 'og:image',
-          content: `https://acidineydias.me/blog/${this.image}`
+          content: this.page.image
         },
         {
-          vmid:'og:type',
+          vmid: 'og:type',
           name: 'og:type',
           content: 'article'
         },
         {
-          vmid:'og:url',
+          vmid: 'og:url',
           name: 'og:url',
           content: `https://acidineydias.me${fullPath}`
         },
         {
-          vmid:'og:title',
+          vmid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.page.title
         },
         {
-          vmid:'og:description',
+          vmid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.page.description
         },
         {
-          vmid:'twitter:image',
+          vmid: 'twitter:image',
           name: 'twitter:image',
-          content: `https://acidineydias.me/blog/${this.image}`
+          content: this.page.image
         },
         {
-          vmid:'twitter:title',
+          vmid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.page.title
         },
         {
-          vmid:'twitter:description',
+          vmid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.page.description
         },
         {
-          vmid:'twitter:card',
+          vmid: 'twitter:card',
           name: 'twitter:card',
           content: 'summary'
         }
@@ -185,12 +166,7 @@ header p {
   color: rgba(148, 148, 149, 0.9);
 }
 a:hover {
-  color: #fff;  
-}
-
-.adx-sense {
-  height: 100px;
-  width: 100%;
+  color: #fff;
 }
 
 .icon-2x:hover::before {
@@ -232,7 +208,7 @@ footer .head-post .categories p {
     font-weight: 600 !important;
   }
 
-  footer.markdown .dynamicMarkdown p {
+  footer.markdown .nuxt-content p {
     margin: 1.2rem 0;
     text-align: left;
     font-size: 13pt;
@@ -247,7 +223,6 @@ footer .head-post .categories p {
   footer code {
     word-break: break-all;
     font-family: monospace, monospace;
-    background-color: #282a36;
     padding: 2px 10px;
     border-radius: 12px;
     display: inline-block;
