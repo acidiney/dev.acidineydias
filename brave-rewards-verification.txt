@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: acidineydias.me
+Token: 54c85c4eb66697d92f4c4356af004df73d8d3741b2a320db7b915c5ac9b10150
