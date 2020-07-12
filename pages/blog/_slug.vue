@@ -75,11 +75,12 @@ export default {
         date: post.attributes.date,
         title: post.attributes.title,
         image: post.attributes.image,
+        renderFunc: `(${post.vue.render})`,
+        description: post.attributes.description,
         imagePosition: post.attributes.imagePosition,
         categories: post.attributes.categories.split(','),
-        // extraComponent: post.attributes.extraComponent,
-        renderFunc: `(${post.vue.render})`,
         staticRenderFuncs: `[${post.vue.staticRenderFns}]`,
+        // extraComponent: post.attributes.extraComponent,
       }
     } catch (err) {
       console.debug(err)
