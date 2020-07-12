@@ -18,30 +18,30 @@
         </h1>
 
         <p>
-          I'm full stack developer, currently working as Frontend Lead at
+          I'm full stack developer, currently working as Software Developer at
           <a
-            href="https://www.digitalfactory.co.ao"
+            href="https://www.itgest.co.ao/"
             target="__blank"
-          >Digital Factory Angola</a>. I'm a frontend addict and user experience, I love css with passion
+          >ITGest</a>. I'm a frontend addict and user experience, I love css with passion
           and always keep my mouth open when I discover a new possibilities. I
           love to see my systems working from front to back. I share my
           learnings on Youtube/Medium and anywhere that accepts me.
         </p>
-        <a class="text-left md:mr-5 block" href="https://drive.google.com/file/d/1yVMbA1UqreruBaAi2mUT3otRwq2Wt4XB/view?usp=sharing" target="__blank">
+        <a class="text-left md:mr-5 block" href="https://drive.google.com/file/d/1c8FWpHmk_kSCIgeb5FSOfXN3PhwT-aM1/view?usp=sharing" target="__blank">
           <i class="icon-download"></i> Download my CV.
         </a>
 
         <div class="social mt-4 flex-col flex">
           <ul class="flex mb-2">
             <li v-for="social in socials[0]" :key="'content' + social.icon">
-              <a class="text" :href="social.link">
+              <a class="text block" :href="social.link">
                 <i class="icon-2x" :class="social.icon" />
               </a>
             </li>
           </ul>
           <ul class="flex">
             <li v-for="social in socials[1]" :key="'social' + social.icon">
-              <a class="text" :href="social.link">
+              <a class="text block" :href="social.link">
                 <i class="icon-2x" :class="social.icon" />
               </a>
             </li>
@@ -211,22 +211,22 @@ export default {
           content: `Acidiney, Acidiney Dias, Acidiney Dias'Blog, Acidiney Dias Portfolio, Acidiney Dias Webiste, Acidiney Dias Github, Acidiney Dias Youtube`
         },
         {
-          hid:'og:image',
+          vmid:'og:image',
           name: 'og:image',
           content: `https://acidineydias.me/images/avatar.jpg`
         },
         {
-          hid:'og:description',
+          vmid:'og:description',
           name: 'og:description',
           content: 'Hello, I\'m Acidiney Dias a software developer, and it is my little home.'
         },
         {
-          hid:'og:title',
+          vmid:'og:title',
           name: 'og:title',
           content: 'Acidiney Dias | Full stack developer'
         },
         {
-          hid:'og:url',
+          vmid:'og:url',
           name: 'og:url',
           content: `https://acidineydias.me${fullPath}`
         },
