@@ -97,7 +97,10 @@ export default {
       ]
     },
     getUrl () {
-      return 'https://www.acidineydias.me' + this.$route.fullPath
+      if (process.isServer) {
+        return ''
+      }
+      return window.location.href
     }
   },
   transition: {
@@ -186,7 +189,7 @@ header p {
   color: rgba(148, 148, 149, 0.9);
 }
 a:hover {
-  color: #fff;  
+  color: #fff;
 }
 
 .adx-sense {
