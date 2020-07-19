@@ -97,7 +97,7 @@ export default {
       ]
     },
     getUrl () {
-      if (process.isServer) {
+      if (process.server) {
         return ''
       }
       return window.location.href
