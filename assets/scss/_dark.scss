@@ -74,7 +74,7 @@ $white: #fff;
     .icon-2x:hover::before {
       color:rgba(148, 148, 149, 0.9);
     }
-    
+
     .icon-2x::before {
       font-size: 2em;
       color: #fff;
@@ -84,6 +84,24 @@ $white: #fff;
   .articles {
     h2.sub-title {
       color: $dark_white_color;
+    }
+  }
+
+  .article {
+    color: $dark_white_color;
+
+    header {
+
+      & p {
+        color:rgba(148, 148, 149, 0.9);
+      }
+      .icon-2x::before {
+        color: $dark_white_color;
+      }
+
+      .icon-2x:hover::before {
+        color:rgba(148, 148, 149, 0.9);
+      }
     }
   }
 }

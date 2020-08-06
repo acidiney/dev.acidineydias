@@ -42,7 +42,7 @@
       </footer>
     </div>
     <div class="porfolio md:h-full md:w-2/4">
-      <component :is="currentMenu" />
+      <component :is="currentMenu" :articles="posts" />
     </div>
   </div>
 </template>
@@ -54,9 +54,9 @@ export default {
   },
   async asyncData ({ $content }) {
     const posts = await $content()
-      .only(['title', 'slug', 'date', 'image', 'categories'])
+      .only(['title', 'slug', 'date', 'image', 'categories', 'link'])
       .sortBy('date', 'desc')
-      .limit(3)
+      .limit(4)
       .fetch()
 
     return {
@@ -74,20 +74,12 @@ export default {
         { link: 'https://www.youtube.com/channel/UCMjOcKmA1UjiimzRDNZ_uOQ', icon: 'icon-youtube' },
         // { link: 'https://medium.com/@acidiney', icon: 'icon-medium' },
         { link: 'https://linkedin.com/in/acidineydias', icon: 'icon-linkedin' },
-        { link: 'https://twitter.com/acidiney', icon: 'icon-twitter' },
+        { link: 'https://twitter.com/acidineydias', icon: 'icon-twitter' },
         { link: 'https://www.instagram.com/acidineydias/', icon: 'icon-instagram' }
       ]
     },
     currentMenu () {
       return this.$store.getters.currentMenu
-    }
-  },
-  mounted () {
-    this.loadArticles()
-  },
-  methods: {
-    loadArticles () {
-      this.$store.commit('setPosts', this.posts)
     }
   },
   head () {

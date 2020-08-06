@@ -75,10 +75,28 @@ $light_white_color: #fafafa;
     .icon-2x:hover::before {
       color:rgba(148, 148, 149, 0.9);
     }
-    
+
     .icon-2x::before {
       font-size: 2em;
       color: #333;
+    }
+  }
+
+  .article {
+    color: $light_secondary_color;
+
+    header {
+      & p {
+        color: #777;
+      }
+
+      .icon-2x::before {
+        color: $light_secondary_color;
+      }
+
+      .icon-2x:hover::before {
+        color:rgba(148, 148, 149, 0.9);
+      }
     }
   }
 }

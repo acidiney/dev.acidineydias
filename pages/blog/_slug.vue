@@ -1,6 +1,6 @@
 <template>
-  <div class="text-white pt-10">
-    <header class="w-4/5 mx-auto mb-3 text-white">
+  <div class="article pt-10">
+    <header class="mx-auto mb-3">
       <h1 class="text-5xl">
         Acidiney blog
       </h1>
@@ -20,12 +20,18 @@
       </nuxt-link>
     </header>
     <hr>
-    <ImageResponsive
-      v-if="page.image"
-      :image-url=" page.image"
-      :classes="`h-54 w-full object-cover ${page.imagePosition}`"
-      alt="avatar"
-    />
+    <figure v-if="page.image" class="picture">
+      <picture>
+        <source :data-srcset="page.image + '?webp'" type="image/webp">
+        <source :data-srcset="page.image" type="image/png">
+        <img
+          :data-src="page.image"
+          :class="`lazyload h-54 w-full object-cover ${page.imagePosition}`"
+          alt="Alternate text for the image"
+        >
+      </picture>
+    </figure>
+
     <footer class="w-4/5 markdown mt-6 mx-auto text-justify mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
@@ -46,7 +52,7 @@
       <i class="icon-arrow-left" /> Go Home
     </nuxt-link>
     <div class="comments w-4/5 md:w-2/4 mx-auto">
-      <vue-disqus shortname="acidineydias" :identifier="getUrl" :url="getUrl" />
+      <vue-disqus v-if="renderComponent" shortname="acidineydias" :identifier="getUrl" :url="getUrl" />
     </div>
   </div>
 </template>
@@ -61,6 +67,22 @@ export default {
     }
 
     context.redirect('/')
+  },
+  data () {
+    return {
+      renderComponent: true
+    }
+  },
+  watch: {
+    theme () {
+      this.renderComponent = false
+      this.$nextTick(() => {
+        // Add the component back in
+        setTimeout(() => {
+          this.renderComponent = true
+        }, 1000)
+      })
+    }
   },
   async asyncData ({ $content, params }) {
     const page = await $content(params.slug).fetch()
@@ -78,6 +100,9 @@ export default {
     },
     getUrl () {
       return 'https://www.acidineydias.me' + this.$route.fullPath
+    },
+    theme () {
+      return this.$store.getters.theme
     }
   },
   transition: {
@@ -154,7 +179,6 @@ header h1 {
 
 header p {
   font-weight: 300;
-  color:rgba(148, 148, 149, 0.9);
 }
 
 .icon-2x {
@@ -169,13 +193,8 @@ a:hover {
   color: #fff;
 }
 
-.icon-2x:hover::before {
-  color:rgba(148, 148, 149, 0.9);
-}
-
 .icon-2x::before {
   font-size: 1.5em;
-  color: #fff;
 }
 
 footer .head-post {
@@ -229,6 +248,10 @@ footer .head-post .categories p {
     font-weight: 100;
     border: 0;
     outline: none;
+  }
+
+  .h-54 {
+    height: 80vh !important;
   }
 
   footer.markdown h3 {

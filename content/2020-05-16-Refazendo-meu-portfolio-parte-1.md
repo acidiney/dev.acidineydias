@@ -4,7 +4,7 @@ title: Refazendo meu portfolio parte 1
 image: https://res.cloudinary.com/dsfsfcdyo/image/upload/v1593874698/AcidineyDias.me/2020-16-05-rebuild-portfolio/2020-16-05-rebuild-portfolio_qlmp8j.jpg
 categories: Javascript, Nuxtjs, PWA, SSG, Markdown, JAMStack, Front-matter
 description: Passo a passo de como foi refazer o portfolio
-
+link: /blog/2020-05-16-Refazendo-meu-portfolio-parte-1
 ---
 
 Opa, boas?

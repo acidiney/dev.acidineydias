@@ -2,6 +2,7 @@ const builtAt = new Date().toISOString()
 
 module.exports = {
   mode: 'universal',
+  target: 'static',
   /*
   ** Headers of the page
   */
@@ -15,7 +16,7 @@ module.exports = {
       { name: 'theme-color', content: '#212121' },
       { name: 'robots', content: 'index, blog, follow' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@acidiney' },
+      { name: 'twitter:site', content: '@acidineydias' },
       { name: 'linkedin:site', content: 'acidineydias' },
       { name: 'medium:site', content: '@acidiney' },
       { name: 'github:site', content: 'acidiney' },
@@ -78,11 +79,13 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/feed',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxt/content',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-adsense'
+    '@nuxtjs/google-adsense',
+    '@bazzite/nuxt-optimized-images'
   ],
 
   content: {
@@ -92,6 +95,65 @@ module.exports = {
         theme: 'prism-themes/themes/prism-dracula.css'
       }
     }
+  },
+
+  optimizedImages: {
+    inlineImageLimit: -1,
+    handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
+    optimizeImages: true,
+    optimizeImagesInDev: false,
+    defaultImageLoader: 'img-loader',
+    mozjpeg: {
+      quality: 85
+    },
+    optipng: false,
+    pngquant: {
+      speed: 7,
+      quality: [0.65, 0.8]
+    },
+    webp: {
+      quality: 85
+    }
+  },
+
+  feed () {
+    const baseUrlBlog = 'https://acidineydias.me/blog'
+    const baseLinkFeedArticles = '/feed/articles'
+    const feedFormats = {
+      rss: { type: 'rss2', file: 'rss.xml' },
+      json: { type: 'json1', file: 'feed.json' }
+    }
+
+    const createFeedArticles = async function (feed) {
+      feed.options = {
+        title: 'Acidiney Dias\' Blog',
+        description: 'I write about programming and my personal live',
+        link: baseUrlBlog
+      }
+      const { $content } = require('@nuxt/content')
+      const articles = await $content().fetch()
+
+      articles.forEach((article) => {
+        const url = `${baseUrlBlog}/${article.slug}`
+
+        feed.addItem({
+          id: url,
+          link: url,
+          date: new Date(article.date),
+          title: article.title,
+          content: article.description,
+          categories: article.categories,
+          description: article.description,
+          author: ['Acidiney Dias']
+        })
+      })
+    }
+
+    return Object.values(feedFormats).map(({ file, type }) => ({
+      path: `${baseLinkFeedArticles}/${file}`,
+      type,
+      create: createFeedArticles
+    }))
   },
 
   'google-adsense': {
@@ -110,7 +172,7 @@ module.exports = {
       lang: 'en',
       theme_color: '#212121',
       background_color: '#212121',
-      twitterCreator: '@acidiney'
+      twitterCreator: '@acidineydias'
     }
   },
   /*
@@ -120,7 +182,11 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend (config, { isDev, isClient, loaders: { vue } }) {
+      if (isClient) {
+        vue.transformAssetUrls.img = ['data-src', 'src']
+        vue.transformAssetUrls.source = ['data-srcset', 'srcset']
+      }
     }
   },
   generate: {

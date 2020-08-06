@@ -3,14 +3,14 @@
     <h2 class="sub-title text-xl text-left mb-3 font-light">
       Blog Articles  😊
     </h2>
-    <section class="flex flex-wrap mx-auto">
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto">
       <article
         v-for="article in articles"
         :key="article.link"
         :style="{ backgroundImage: `url(${article.image})` }"
         class="relative"
       >
-        <nuxt-link class="py-6 px-6" :to="`/blog/${article.slug}`">
+        <nuxt-link class="py-6 px-6" :to="article.link">
           <header>
             <span class="bottom-0 mb-6">{{ article.date | formateDate }}</span>
           </header>
@@ -38,9 +38,10 @@ export default {
     capitalize,
     formateDate
   },
-  computed: {
-    articles () {
-      return this.$store.getters.posts
+  props: {
+    articles: {
+      type: Array,
+      default: () => []
     }
   }
 }
@@ -50,22 +51,12 @@ export default {
 
 .articles article {
   min-height: 280px;
-  width: 350px;
   background-size: cover;
   margin-bottom: 20px;
   border-radius: 25px;
   transition: all .26s linear;
   cursor: pointer;
   overflow: hidden;
-}
-@media (min-width: 768px) {
-  .articles article {
-    margin-right: 20px;
-  }
-}
-
-.articles article:nth-child(2n) {
-  margin-right: 0;
 }
 
 .articles article a {

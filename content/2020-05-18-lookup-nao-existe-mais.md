@@ -4,6 +4,7 @@ title: Lookup não exite mais!
 image: ''
 categories: Nodejs, Javascript, API, Umbler, Break-changes, Nestjs
 description: Break-changes no projecto lookup-ao
+link: /blog/2020-06-28-pare-de-limitar-o-frontend
 ---
 
 Opa, boas?
