@@ -82,6 +82,13 @@ $white: #fff;
   }
 
   .articles {
+    article a {
+      background-color: rgba(21,21,21, .82);
+
+      .categories p, h2, span {
+        color: $dark_white_color;
+      }
+    }
     h2.sub-title {
       color: $dark_white_color;
     }

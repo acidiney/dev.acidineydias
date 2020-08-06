@@ -82,8 +82,21 @@ $light_white_color: #fafafa;
     }
   }
 
+  .articles {
+    article a {
+      background-color: #3b3b3bbd;
+
+      .categories p, h2, span {
+        color: $light_primary_color;
+      }
+    }
+    h2.sub-title {
+      color: rgba(21,21,21, .82);
+    }
+  }
+
   .article {
-    color: $light_secondary_color;
+    color: #555;
 
     header {
       & p {

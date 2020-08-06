@@ -62,7 +62,6 @@ export default {
 .articles article a {
   display: block;
   height: 100%;
-  background-color:rgba(21,21,21, .82);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -71,13 +70,13 @@ export default {
 .articles article a header .categories p {
   font-weight: 100;
   font-family: 'Gothic A1';
-  color: white;
+  /* color: white; */
   text-transform: uppercase;
 }
 
 .articles article a h2 {
   font-weight: 400;
-  color: #fff;
+  /* color: #fff; */
   font-family: 'Roboto', sans-serif;
 }
 
@@ -86,7 +85,7 @@ export default {
 }
 
 .articles article a span {
-  color: #fff;
+  /* color: #fff; */
   font-family: 'Gothic A1', sans-serif;
   font-weight: 100;
 }

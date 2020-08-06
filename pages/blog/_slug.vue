@@ -68,26 +68,15 @@ export default {
 
     context.redirect('/')
   },
-  data () {
-    return {
-      renderComponent: true
-    }
-  },
-  watch: {
-    theme () {
-      this.renderComponent = false
-      this.$nextTick(() => {
-        // Add the component back in
-        setTimeout(() => {
-          this.renderComponent = true
-        }, 1000)
-      })
-    }
-  },
   async asyncData ({ $content, params }) {
     const page = await $content(params.slug).fetch()
     return {
       page
+    }
+  },
+  data () {
+    return {
+      renderComponent: true
     }
   },
   computed: {
@@ -103,6 +92,17 @@ export default {
     },
     theme () {
       return this.$store.getters.theme
+    }
+  },
+  watch: {
+    theme () {
+      this.renderComponent = false
+      this.$nextTick(() => {
+        // Add the component back in
+        setTimeout(() => {
+          this.renderComponent = true
+        }, 1000)
+      })
     }
   },
   transition: {
@@ -231,8 +231,16 @@ footer .head-post .categories p {
     margin: 1.2rem 0;
     text-align: left;
     font-size: 13pt;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 100;
     line-height: 1.5rem;
+  }
+
+  .nuxt-content p, h4 {
+    font-family:  -apple-system, BlinkMacSystemFont, 'Operator mono', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  h4 {
+    font-size: 14pt;
   }
 
   footer.markdown p::first-line {
@@ -241,7 +249,8 @@ footer .head-post .categories p {
 
   footer code {
     word-break: break-all;
-    font-family: monospace, monospace;
+    font-family: 'Operator mono', monospace;
+    font-weight: 400;
     padding: 2px 10px;
     border-radius: 12px;
     display: inline-block;
@@ -262,7 +271,7 @@ footer .head-post .categories p {
     display: flex;
     align-items: center;
     padding-left: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 2;
     text-align: left;
   }

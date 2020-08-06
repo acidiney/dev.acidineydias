@@ -4,7 +4,7 @@ title: Pare de limitar o frontend!
 image: https://res.cloudinary.com/dsfsfcdyo/image/upload/v1593874655/AcidineyDias.me/2020-06-28-pare-de-limitar-o-frontend/2020-06-28-pare-de-limitar-o-frontend_chbyab.jpg
 categories: programação, frontend, UI/UX, design, imagination
 description: É bom prestar atenção que podemos dois tipos de usuários no nosso sistema, os que gostam do sistema e usam por isto, e aqueles que se desse nunca mais usava... simplesmente usa porque não pode mudar ( quanto a isso podem ser vários motivos ).
-link: /blog/2020-05-18-lookup-nao-existe-mais
+link: /blog/2020-06-28-pare-de-limitar-o-frontend
 ---
 
 Opa boas?
