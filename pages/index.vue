@@ -152,13 +152,13 @@ export default {
     socials () {
       return [
         [
-          { link: 'https://github.com/acidiney', icon: 'icon-github' },
+          { link: 'https://github.com/acidineydias', icon: 'icon-github' },
           { link: 'https://www.youtube.com/channel/UCMjOcKmA1UjiimzRDNZ_uOQ', icon: 'icon-youtube' },
-          { link: 'https://medium.com/@acidiney', icon: 'icon-medium' }
+          { link: 'https://medium.com/@acidineydias', icon: 'icon-medium' }
         ],
         [
           { link: 'https://linkedin.com/in/acidineydias', icon: 'icon-linkedin' },
-          { link: 'https://twitter.com/acidiney', icon: 'icon-twitter' },
+          { link: 'https://twitter.com/acidineydias', icon: 'icon-twitter' },
           { link: 'https://www.instagram.com/acidineydias/', icon: 'icon-instagram' }
         ]
       ]
