@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .articles article {
-  min-height: 280px;
+  height: 280px;
   background-size: cover;
   margin-bottom: 20px;
   border-radius: 25px;
