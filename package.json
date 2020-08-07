@@ -21,13 +21,15 @@
     "@nuxtjs/sitemap": "^2.3.0",
     "cross-env": "^5.2.0",
     "express": "^4.17.1",
+    "js-cookie": "^2.2.1",
     "lazysizes": "^5.2.2",
     "nuxt": "^2.14.0",
     "prism-themes": "^1.4.0",
     "remark-emoji": "^2.1.0",
     "sass": "^1.26.9",
     "vue-disqus": "^3.0.5",
-    "vue-infinite-scroll": "^2.0.2"
+    "vue-infinite-scroll": "^2.0.2",
+    "vuex-persistedstate": "^3.1.0"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.4.0",
@@ -40,9 +42,9 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.0",
-    "nodemon": "^2.0.4",
-    "webp-loader": "^0.6.0",
     "node-sass": "^4.14.1",
-    "sass-loader": "^9.0.1"
+    "nodemon": "^2.0.4",
+    "sass-loader": "^9.0.1",
+    "webp-loader": "^0.6.0"
   }
 }

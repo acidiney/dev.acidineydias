@@ -18,7 +18,7 @@
           </h1>
 
           <p class="md:w-4/5">
-            I'm full stack developer, currently working as Frontend Lead at
+            I'm full stack developer, currently working as Software Developer at
             <a
               href="https://www.itgest.co.ao"
               target="__blank"

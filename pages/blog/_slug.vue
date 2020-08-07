@@ -38,7 +38,7 @@
           <time class="text-xs"> {{ new Date(page.date).toLocaleDateString('pt') }} </time>
           <div class="categories flex-wrap flex">
             <p class="mr-2 text-xs rounded capitalize">
-              {{ page.category }}
+              {{ page.categories }}
             </p>
           </div>
         </div>
@@ -115,52 +115,52 @@ export default {
       title: this.page.title + '- Acidiney Dias\' Blog',
       meta: [
         {
-          vmid: 'description',
+          hid: 'description',
           name: 'description',
           content: this.page.description
         },
         {
-          vmid: 'og:image',
+          hid: 'og:image',
           name: 'og:image',
           content: this.page.image
         },
         {
-          vmid: 'og:type',
+          hid: 'og:type',
           name: 'og:type',
           content: 'article'
         },
         {
-          vmid: 'og:url',
+          hid: 'og:url',
           name: 'og:url',
           content: `https://acidineydias.me${fullPath}`
         },
         {
-          vmid: 'og:title',
+          hid: 'og:title',
           name: 'og:title',
           content: this.page.title
         },
         {
-          vmid: 'og:description',
+          hid: 'og:description',
           name: 'og:description',
           content: this.page.description
         },
         {
-          vmid: 'twitter:image',
+          hid: 'twitter:image',
           name: 'twitter:image',
           content: this.page.image
         },
         {
-          vmid: 'twitter:title',
+          hid: 'twitter:title',
           name: 'twitter:title',
           content: this.page.title
         },
         {
-          vmid: 'twitter:description',
+          hid: 'twitter:description',
           name: 'twitter:description',
           content: this.page.description
         },
         {
-          vmid: 'twitter:card',
+          hid: 'twitter:card',
           name: 'twitter:card',
           content: 'summary'
         }

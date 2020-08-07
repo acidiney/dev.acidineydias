@@ -1,4 +1,6 @@
-export default () => ({
-  theme: 'dark',
-  currentMenu: 'blog-articles'
-})
+export default () => {
+  return {
+    theme: 'dark',
+    currentMenu: 'blog-articles'
+  }
+}

@@ -62,7 +62,8 @@ module.exports = {
     '~/plugins/image',
     // '~/plugins/update.client.js',
     '~/plugins/title.component.js',
-    { src: '~/plugins/lazyload.js', mode: 'client' }
+    { src: '~/plugins/lazyload.js', mode: 'client' },
+    { src: '~/plugins/localStorage.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
