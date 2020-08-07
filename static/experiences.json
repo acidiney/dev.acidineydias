@@ -1,0 +1,35 @@
+{
+  "scheme": "technologies",
+  "description": "List of all my professional experiences",
+  "author": "Acidiney Dias <hello@acidineydias.me>",
+  "version": "0.1.0",
+  "experiences": [
+    {
+      "companyLogo": "https://avatars1.githubusercontent.com/u/47317779?s=200&v=4",
+      "companyName": "KiandaStream",
+      "website": "http://kianda.stream",
+      "role": "Frontend Developer",
+      "startDate": "Jan. 2019",
+      "endDate": "Mar. 2019",
+      "location": "Maianga, Angola"
+    },
+    {
+      "companyLogo": "https://avatars1.githubusercontent.com/u/55786188?s=200&v=4",
+      "companyName": "Digital Factory Angola",
+      "website": "http://digitalfactory.co.ao",
+      "role": "Frontend Team Leader",
+      "startDate": "Mar. 2019",
+      "endDate": "Jun. 2020",
+      "location": "Talatona, Angola"
+    },
+    {
+      "companyLogo": "https://itgest.co.ao/wp-content/uploads/2018/06/logo_itgest.svg",
+      "companyName": "ITGest",
+      "website": "http://itgest.co.ao",
+      "role": "Software Developer",
+      "startDate": "Jun. 2020",
+      "endDate": "Corrent",
+      "location": "Talatona, Angola"
+    }
+  ]
+}

@@ -1,5 +1,16 @@
 const builtAt = new Date().toISOString()
 
+const loadRoutes = async () => {
+  const { $content } = require('@nuxt/content')
+
+  const routes = await $content
+    .only(['slug'])
+    .fetch()
+
+  console.log(routes)
+  return routes
+}
+
 module.exports = {
   mode: 'universal',
   target: 'static',
@@ -57,8 +68,9 @@ module.exports = {
     '~/plugins/disqus',
     // '~/plugins/lazyload',
     // '~/plugins/ga',
-    '~/plugins/image'
-
+    '~/plugins/image',
+    '~/plugins/update.client.js',
+    '~/plugins/title.component.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -118,7 +130,7 @@ module.exports = {
 
   feed () {
     const baseUrlBlog = 'https://acidineydias.me/blog'
-    const baseLinkFeedArticles = '/feed/articles'
+    const baseLinkFeedArticles = '/blog'
     const feedFormats = {
       rss: { type: 'rss2', file: 'rss.xml' },
       json: { type: 'json1', file: 'feed.json' }
@@ -190,6 +202,11 @@ module.exports = {
     }
   },
   generate: {
-    routes: []
+    async ready () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content().only(['path']).fetch()
+
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
   }
 }

@@ -68,6 +68,7 @@
 }
 .icon-youtube-play:before {
   content: "\f16a";
+  color: #f00;
 }
 .icon-medium:before {
   content: "\f23a";

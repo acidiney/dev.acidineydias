@@ -95,6 +95,10 @@ $light_white_color: #fafafa;
     }
   }
 
+  .app-title.sub-title {
+    color: $light_secondary_color;
+  }
+
   .article {
     color: #555;
 
@@ -110,6 +114,29 @@ $light_white_color: #fafafa;
       .icon-2x:hover::before {
         color:rgba(148, 148, 149, 0.9);
       }
+    }
+  }
+
+  .technologies .tech-section h4 {
+    color: $light_secondary_color;
+  }
+
+  .icon-instagram::before, .icon-linkedin::before, .icon-twitter::before {
+    color: $light_secondary_color;
+  }
+
+  .experiences {
+
+    .content, .dot {
+      background-color:#fff;;
+    }
+
+    .content .description {
+      color: $light_secondary_color;
+    }
+
+    .line {
+      border-left: 1px solid #fff;
     }
   }
 }

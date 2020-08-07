@@ -1,8 +1,6 @@
 <template>
   <div class="articles">
-    <h2 class="sub-title text-xl text-left mb-3 font-light">
-      Blog Articles  😊
-    </h2>
+    <app-title>Blog Articles  😊</app-title>
     <section class="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto">
       <article
         v-for="article in articles"
@@ -38,17 +36,21 @@ export default {
     capitalize,
     formateDate
   },
-  props: {
-    articles: {
-      type: Array,
-      default: () => []
+  async asyncData ({ $content }) {
+    const articles = await $content()
+      .only(['title', 'slug', 'date', 'image', 'categories', 'link'])
+      .sortBy('date', 'desc')
+      .limit(4)
+      .fetch()
+
+    return {
+      articles
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 .articles article {
   min-height: 280px;
   background-size: cover;

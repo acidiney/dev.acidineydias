@@ -1,11 +1,11 @@
 <template>
   <div :class="`theme-${theme} overflow-y-auto box-border`">
-    <div class="w-4/5 mx-auto pb-6">
+    <div class="w-4/5 mx-auto pb-6 md:pb-0">
       <nav class="py-6">
         <ul class="left hidden items-center md:flex">
           <template v-for="item in menuItens">
             <li :key="item.slug" class="flex">
-              <button :class="{'active': currentMenu === item.slug}">
+              <button :class="{'active': $route.path === item.slug}" @click="changePage(item.slug)">
                 {{ item.text }}
               </button>
               <span v-if="item.separator" class="separator" />
@@ -40,22 +40,22 @@ export default {
     menuItens () {
       return [
         {
-          slug: 'blog-articles',
+          slug: '/',
           text: 'Blog Articles',
           separator: true
         },
         {
-          slug: 'technologies',
+          slug: '/technologies',
           text: 'Technologies',
           separator: true
         },
         {
-          slug: 'experiences',
+          slug: '/experiences',
           text: 'Experiences',
           separator: true
         },
         {
-          slug: 'projects',
+          slug: '/projects',
           text: 'Projects',
           separator: false
         }
@@ -66,6 +66,9 @@ export default {
     changeTheme (currentTheme) {
       const nextTheme = currentTheme === 'dark' ? 'light' : 'dark'
       this.$store.commit('setTheme', nextTheme)
+    },
+    changePage (nextPage) {
+      this.$router.push(nextPage)
     }
   }
 }

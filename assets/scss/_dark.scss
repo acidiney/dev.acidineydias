@@ -111,4 +111,30 @@ $white: #fff;
       }
     }
   }
+  .app-title.sub-title {
+    color: $white;
+  }
+
+  .technologies .tech-section h4 {
+    color: $dark_white_color;
+  }
+
+  .icon-github::before, .icon-medium::before, .icon-steam::before, .icon-rust::before, .icon-stylus::before, .icon-deno::before, .icon-jetbrains::before {
+    color: $dark_white_color;
+  }
+
+  .experiences {
+
+    .content, .dot {
+      background-color: rgba(21,21,21, .82);
+    }
+
+    .content .description {
+      color: $dark_white_color;
+    }
+
+    .line {
+      border-left: 1px solid rgba(21, 21, 21, .82);
+    }
+  }
 }
