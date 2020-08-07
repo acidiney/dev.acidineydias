@@ -10,14 +10,14 @@ $light_white_color: #fafafa;
 
   nav {
     ul.left {
-      button {
+      a {
         font-weight: 100;
 
         &:hover {
           font-weight: 300;
         }
       }
-      button.active {
+      a.active {
         font-weight: 400;
       }
     }
@@ -93,6 +93,21 @@ $light_white_color: #fafafa;
     h2.sub-title {
       color: rgba(21,21,21, .82);
     }
+  }
+
+  .projects {
+    article a {
+      background: #fff;
+
+      .categories p, h2, span {
+        color: #3b3b3bbd;
+      }
+
+      h2.sub-title {
+        color: #3b3b3bbd;
+      }
+    }
+
   }
 
   .app-title.sub-title {

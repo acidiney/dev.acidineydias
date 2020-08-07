@@ -5,9 +5,9 @@
         <ul class="left hidden items-center md:flex">
           <template v-for="item in menuItens">
             <li :key="item.slug" class="flex">
-              <button :class="{'active': $route.path === item.slug}" @click="changePage(item.slug)">
+              <nuxt-link :class="{'active': $route.path === item.slug}" :to="item.slug">
                 {{ item.text }}
-              </button>
+              </nuxt-link>
               <span v-if="item.separator" class="separator" />
             </li>
           </template>
@@ -99,7 +99,7 @@ nav {
     }
   }
   ul.left, ul.right {
-    button {
+    a {
       outline: none;
       display: flex;
     }

@@ -61,7 +61,9 @@
         }
 
         h4 {
-          font-weight: 200;
+          font-size: 12pt;
+          font-weight: 200 !important;
+          font-family: 'Gothic A1', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
       }
 

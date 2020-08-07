@@ -50,5 +50,11 @@ export default {
 }
  .h-90 {
     height: 86vh;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    &::webkit-scrollbar {
+      display: none;
+    }
   }
 </style>

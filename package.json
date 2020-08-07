@@ -28,9 +28,7 @@
     "sass": "^1.26.9",
     "sass-loader": "^9.0.1",
     "vue-disqus": "^3.0.5",
-    "vue-lazyload": "^1.3.3",
-    "vue-observe-visibility": "^0.4.6",
-    "vuebar": "0.0.20"
+    "vue-infinite-scroll": "^2.0.2"
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.4.0",

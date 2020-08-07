@@ -12,7 +12,7 @@ $white: #fff;
   nav {
     ul.left {
       color: $dark_white_color;
-      button {
+      a {
         font-weight: 100;
         transition: all .26s linear;
 
@@ -20,7 +20,7 @@ $white: #fff;
           font-weight: 300;
         }
       }
-      button.active {
+      a.active {
         font-weight: 400;
       }
     }
@@ -81,7 +81,7 @@ $white: #fff;
     }
   }
 
-  .articles {
+  .articles, .projects {
     article a {
       background-color: rgba(21,21,21, .82);
 

@@ -1,16 +1,5 @@
 const builtAt = new Date().toISOString()
 
-const loadRoutes = async () => {
-  const { $content } = require('@nuxt/content')
-
-  const routes = await $content
-    .only(['slug'])
-    .fetch()
-
-  console.log(routes)
-  return routes
-}
-
 module.exports = {
   mode: 'universal',
   target: 'static',
@@ -66,11 +55,11 @@ module.exports = {
   */
   plugins: [
     '~/plugins/disqus',
-    // '~/plugins/lazyload',
     // '~/plugins/ga',
     '~/plugins/image',
-    '~/plugins/update.client.js',
-    '~/plugins/title.component.js'
+    // '~/plugins/update.client.js',
+    '~/plugins/title.component.js',
+    { src: '~/plugins/lazyload.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
