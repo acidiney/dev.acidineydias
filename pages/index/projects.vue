@@ -12,7 +12,7 @@
         :key="repo.id"
         class="relative"
       >
-        <nuxt-link class="py-6 px-6" :to="repo.html_url">
+        <a target="_blank" class="py-6 px-6" rel="noreferrer" :href="repo.html_url">
           <span><i class="icon-star" /> {{ repo.stargazers_count }}</span>
 
           <header>
@@ -30,7 +30,7 @@
               {{ repo.language }}
             </p>
           </div>
-        </nuxt-link>
+        </a>
       </article>
     </section>
   </div>
