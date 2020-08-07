@@ -16,23 +16,16 @@
 </template>
 <script>
 import ExperienceItem from '~/components/experience-item'
+import Experiences from '~/assets/experiences.json'
+
 export default {
   name: 'Experiences',
   components: {
     ExperienceItem
   },
-  async asyncData ({ server }) {
-    let experiences = []
-    if (!server) {
-      await fetch('https://res.cloudinary.com/dsfsfcdyo/raw/upload/v1596766222/AcidineyDias.me/experiences_vn5x0h.json')
-        .then(redeable => redeable.json())
-        .then((data) => {
-          experiences = data.experiences && data.experiences.reverse()
-        })
-    }
-
+  asyncData ({ server }) {
     return {
-      experiences
+      experiences: Experiences.experiences.reverse()
     }
   }
 }

@@ -5,13 +5,13 @@
   "version": "0.1.0",
   "technologies": [
     {
-      "name": "Linguagens",
+      "name": "Programming Languages",
       "icons": [
         "icon-rust"
       ]
     },
     {
-      "name": "Frontend",
+      "name": "Frontend Tools",
       "icons": [
         "icon-html5",
         "icon-vue-dot-js",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "name": "Backend",
+      "name": "Backend Tools",
       "icons": [
         "icon-codeigniter",
         "icon-deno",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "name": "Testing",
+      "name": "Testing Tools",
       "icons": [
         "icon-jest",
         "icon-postman",
@@ -53,14 +53,14 @@
       ]
     },
     {
-      "name": "Banco de dados",
+      "name": "Database",
       "icons": [
         "icon-mysql",
         "icon-postgresql"
       ]
     },
     {
-      "name": "Editores",
+      "name": "Editors",
       "icons": [
         "icon-visualstudiocode",
         "icon-jetbrains",
@@ -69,13 +69,13 @@
       ]
     },
     {
-      "name": "Desenvolvimento Mobile",
+      "name": "Mobile development",
       "icons": [
         "icon-nativescript"
       ]
     },
     {
-      "name": "Ferramentas de desenvolvimento & DevOps",
+      "name": "Dev Tools & DevOps",
       "icons": [
         "icon-docker",
         "icon-jenkins",
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "name": "Ferramentas",
+      "name": "Extra tools",
       "icons": [
         "icon-openssl",
         "icon-snyk",
@@ -96,20 +96,20 @@
       ]
     },
     {
-      "name": "Navegadores",
+      "name": "Browsers",
       "icons": [
         "icon-tor"
       ]
     },
     {
-      "name": "Ferramentas de Gerenciamento e deploy de sites",
+      "name": "Management and deployment Tools",
       "icons": [
         "icon-cloudflare",
         "icon-netlify"
       ]
     },
     {
-      "name": "Plataformas de stream de vídeo",
+      "name": "Vídeo stream platforms",
       "icons": [
         "icon-youtube-play",
         "icon-crunchyroll",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "name": "Projectos",
+      "name": "Projects",
       "icons": [
         "icon-github",
         "icon-medium",
@@ -134,7 +134,7 @@
       ]
     },
     {
-      "name": "Redes sociais",
+      "name": "Social Medias",
       "icons": [
         "icon-twitter",
         "icon-linkedin",
@@ -146,19 +146,19 @@
       ]
     },
     {
-      "name": "Armazenamento",
+      "name": "Drive",
       "icons": [
         "icon-mega"
       ]
     },
     {
-      "name": "Tickets de eventos",
+      "name": "Event tickets",
       "icons": [
         "icon-meetup"
       ]
     },
     {
-      "name": "Sistemas Operativos",
+      "name": "Operational Systems",
       "icons": [
         "icon-apple",
         "icon-archlinux",
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "name": "Entusiasta",
+      "name": "Enthusiast",
       "icons": [
         "icon-monero",
         "icon-tensorflow"

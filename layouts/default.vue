@@ -316,7 +316,7 @@ $light_white_color: #fafafa;
   }
 
   .article {
-    color: #555;
+    color: #444;
 
     header {
       & p {

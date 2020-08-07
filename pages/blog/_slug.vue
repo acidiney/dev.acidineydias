@@ -26,8 +26,8 @@
         <source :data-srcset="page.image" type="image/png">
         <img
           :data-src="page.image"
-          :class="`lazyload h-54 w-full object-cover ${page.imagePosition}`"
-          alt="Alternate text for the image"
+          :class="`lazyload md:h-54 w-full object-cover ${page.imagePosition}`"
+          :alt="page.title"
         >
       </picture>
     </figure>
@@ -171,6 +171,14 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Operator Mono';
+  src: url('../../assets/blog/fonts/OperatorMono-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 header h1 {
   font-weight: 900;
   text-transform: uppercase;
@@ -259,10 +267,6 @@ footer .head-post .categories p {
     outline: none;
   }
 
-  .h-54 {
-    height: 80vh !important;
-  }
-
   footer.markdown h3 {
     margin: unset !important;
     font-weight: unset !important;
@@ -291,5 +295,11 @@ footer .head-post .categories p {
     list-style: circle !important;
     margin-left: 1em !important;
     margin-bottom: 10px;
+  }
+
+  @media (min-width:768px) {
+    .h-54 {
+      height: 80vh !important;
+    }
   }
 </style>

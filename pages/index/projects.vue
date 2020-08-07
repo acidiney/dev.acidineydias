@@ -27,7 +27,7 @@
             {{ repo.name.trim() | capitalize }}
           </h2>
           <p class="my-3">
-            {{ repo.description.trim() }}
+            {{ repo.description ? repo.description.trim() : '' }}
           </p>
           <br>
           <div class="categories flex-wrap flex">

@@ -14,20 +14,12 @@
   </div>
 </template>
 <script>
+import Technologies from '~/assets/technologies.json'
 export default {
   name: 'Technologies',
-  async asyncData ({ server }) {
-    let technologies = []
-    if (!server) {
-      await fetch('https://res.cloudinary.com/dsfsfcdyo/raw/upload/v1596766222/AcidineyDias.me/technologies_doam6l.json')
-        .then(redeable => redeable.json())
-        .then((data) => {
-          technologies = data.technologies
-        })
-    }
-
+  asyncData () {
     return {
-      technologies
+      technologies: Technologies.technologies
     }
   }
 }
