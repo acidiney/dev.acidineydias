@@ -1,5 +1,5 @@
 <template>
-  <div :class="`theme-${theme} overflow-y-auto box-border`">
+  <div :class="[{'overflow-hidden': showMenu}, `theme-${theme} overflow-y-auto box-border`]">
     <div class="w-4/5 mx-auto pb-6 md:pb-0">
       <nav class="py-6">
         <ul class="left hidden items-center md:flex">
@@ -19,17 +19,38 @@
             </button>
           </li>
         </ul>
-        <button class="collapse flex md:hidden">
+        <button class="collapse flex md:hidden" @click="toogleMenu">
           <i class="extra-th-menu" />
         </button>
       </nav>
       <nuxt />
     </div>
+    <transition name="fade">
+      <div v-if="showMenu" class="mobile-menu fixed h-full w-full left-0 top-0 ">
+        <button class="text-2xl absolute right-0 top-0" @click="toogleMenu">
+          &times;
+        </button>
+        <ul class="justify-center items-center flex h-full flex-col">
+          <template v-for="item in menuItens">
+            <li :key="item.slug" class="flex text-4xl mb-4">
+              <nuxt-link :class="{'active': $route.path === item.slug}" :to="item.slug">
+                {{ item.text }}
+              </nuxt-link>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      showMenu: false
+    }
+  },
   computed: {
     theme () {
       return this.$store.getters.theme
@@ -69,6 +90,9 @@ export default {
     },
     changePage (nextPage) {
       this.$router.push(nextPage)
+    },
+    toogleMenu () {
+      this.showMenu = !this.showMenu
     }
   }
 }
@@ -94,7 +118,12 @@ export default {
   transform: translateX(50px);
   opacity: 0;
 }
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 /* Scroll 2 */
 ::-webkit-scrollbar {
   width: 5px;
@@ -136,6 +165,21 @@ nav {
       outline: none;
       display: flex;
     }
+  }
+}
+
+.mobile-menu {
+  backdrop-filter: blur(2px);
+  button.absolute {
+    right: 10px;
+    top: 10px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: 35px;
+    border-radius:25px;
+    align-content: center;
   }
 }
 
@@ -194,6 +238,16 @@ $light_white_color: #fafafa;
           color: $light_secondary_color;
         }
       }
+    }
+  }
+
+  .mobile-menu {
+    background-color: rgb(231,231,231, 0.81);
+    color: $light_secondary_color;
+
+    button.absolute {
+      border: 1px solid $light_secondary_color;
+      color: $light_secondary_color;
     }
   }
 
@@ -355,6 +409,16 @@ $white: #fff;
           color: $dark_white_color;
         }
       }
+    }
+  }
+
+  .mobile-menu {
+    background-color: rgba(21,21,21, .82);
+    color: $dark_white_color;
+
+    button.absolute {
+      border: 1px solid #fff;
+      color: #fff;
     }
   }
 

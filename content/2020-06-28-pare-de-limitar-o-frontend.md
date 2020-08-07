@@ -144,4 +144,4 @@ Obrigado a todos os 30 que votaram sobre qual dos artigos lançar primeiro 🤗 
 
 Muito obrigado 😍
 
-<iframe src="https://get.cryptobrowser.site/pb/7/3930139/?t=simple,text,pro" style="width: 970px; height: 250px" frameborder="no"></iframe>
+<iframe src="https://get.cryptobrowser.site/pb/7/3930139/?t=simple,text,pro" style="width: 100%" frameborder="no"></iframe>

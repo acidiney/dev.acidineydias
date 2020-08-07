@@ -32,7 +32,7 @@
       </picture>
     </figure>
 
-    <footer class="w-4/5 markdown mt-6 mx-auto text-justify mb-3">
+    <footer class="md:w-4/5 markdown mt-6 mx-auto text-justify mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
           <time class="text-xs"> {{ new Date(page.date).toLocaleDateString('pt') }} </time>
