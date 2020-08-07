@@ -91,7 +91,7 @@ export default {
 <style lang="scss" scoped>
 
 .projects article {
-  min-height: 280px;
+  height: 280px;
   background-size: cover;
   margin-bottom: 20px;
   border-radius: 25px;
