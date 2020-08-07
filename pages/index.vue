@@ -1,6 +1,6 @@
 <template>
   <div class="root flex flex-col md:flex-row md:overflow-hidden">
-    <div class="about-me md:h-full md:w-2/4 flex flex-col">
+    <div :class="[{'hidden': !showPresentation}, 'about-me md:h-full md:w-2/4 flex-col md:flex']">
       <div class="">
         <header class="flex flex-col">
           <figure>
@@ -61,6 +61,11 @@ export default {
     name: 'slide-fade',
     mode: 'out-in'
   },
+  data () {
+    return {
+      showPresentation: true
+    }
+  },
   computed: {
     socials () {
       return [
@@ -80,6 +85,17 @@ export default {
     },
     currentMenu () {
       return this.$store.getters.currentMenu
+    }
+  },
+  watch: {
+    $route: {
+      handler () {
+        this.showPresentation = false
+        if (this.$route.path === '/') {
+          this.showPresentation = true
+        }
+      },
+      immediate: true
     }
   },
   head () {

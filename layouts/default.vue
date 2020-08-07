@@ -83,6 +83,11 @@ export default {
       ]
     }
   },
+  watch: {
+    $route () {
+      this.showMenu = false
+    }
+  },
   methods: {
     changeTheme (currentTheme) {
       const nextTheme = currentTheme === 'dark' ? 'light' : 'dark'

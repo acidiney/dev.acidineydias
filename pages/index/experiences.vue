@@ -1,7 +1,7 @@
 <template>
   <div class="experiences">
     <app-title>Experiences 👨‍🔧</app-title>
-    <div class="list-of-experiences md:overflow-y-auto overflow-x-hidden h-90 md:pt-6">
+    <div class="list-of-experiences md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6">
       <experience-item
         v-for="experience in experiences"
         :key="experience.companyName"
@@ -48,13 +48,15 @@ export default {
     width: 30px;
   }
 }
- .h-90 {
-    height: 86vh;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+.md\:h-90 {
+    @media (min-width:768px) {
+      height: 86vh;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
 
-    &::webkit-scrollbar {
-      display: none;
+      &::webkit-scrollbar {
+        display: none;
+      }
     }
   }
 </style>

@@ -1,14 +1,19 @@
 <template>
-  <div class="projects">
+  <div
+    v-infinite-scroll="loadMore"
+    infinite-scroll-disabled="busy"
+    infinite-scroll-distance="100"
+    class="projects"
+  >
     <app-title>Projects 🤜🏽</app-title>
     <section
       v-infinite-scroll="loadMore"
       infinite-scroll-disabled="busy"
       infinite-scroll-distance="100"
-      class="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto md:overflow-y-auto overflow-x-hidden h-90 md:pt-6"
+      class="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6"
     >
       <article
-        v-for="repo in repos"
+        v-for="repo in listRepos"
         :key="repo.id"
         class="relative"
       >
@@ -62,21 +67,22 @@ export default {
   },
   data () {
     return {
-      repos: [],
+      moreRepos: [],
       page: 1
     }
   },
-  async mounted () {
-    this.repos = await loadRepositories()
+  computed: {
+    listRepos () {
+      return [].concat(...this.repos).concat(...this.moreRepos)
+    }
   },
   methods: {
-    async loadMore ($state) {
+    async loadMore () {
       this.page++
-      this.repos = await loadRepositories(this.page)
-        .catch(() => {
-          $state.complete()
+      await loadRepositories(this.page)
+        .then((repos) => {
+          this.moreRepos.push(repos)
         })
-      $state.loaded()
     }
   }
 }
@@ -94,15 +100,17 @@ export default {
   overflow: hidden;
 }
 
-.h-90 {
-  height: 86vh;
-   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+.md\:h-90 {
+    @media (min-width:768px) {
+      height: 86vh;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
 
-  &::webkit-scrollbar {
-    display: none;
+      &::webkit-scrollbar {
+        display: none;
+      }
+    }
   }
-}
 
 .projects article a {
   display: block;

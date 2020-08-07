@@ -1,7 +1,7 @@
 <template>
   <div class="articles">
     <app-title>Blog Articles  😊</app-title>
-    <section class="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto md:overflow-y-auto overflow-x-hidden h-90 md:pt-6">
+    <section class="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6">
       <article
         v-for="article in articles"
         :key="article.link"
@@ -61,16 +61,17 @@ export default {
   overflow: hidden;
 }
 
-.h-90 {
-  height: 86vh;
- -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+.md\:h-90 {
+    @media (min-width:768px) {
+      height: 86vh;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
 
-  &::webkit-scrollbar {
-    display: none;
+      &::webkit-scrollbar {
+        display: none;
+      }
+    }
   }
-}
-
 .articles article a {
   display: block;
   height: 100%;

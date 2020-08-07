@@ -1,7 +1,7 @@
 <template>
   <div class="technologies">
     <app-title>Technologies ‍💻</app-title>
-    <div class="md:overflow-y-auto overflow-x-hidden h-90">
+    <div class="md:overflow-y-auto overflow-x-hidden md:h-90">
       <section v-for="tech in technologies" :key="tech.name" class="tech-section py-2">
         <h4 class="text-lg">
           {{ tech.name }}
@@ -46,13 +46,15 @@ export default {
     }
   }
 
-  .h-90 {
-    height: 86vh;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  .md\:h-90 {
+    @media (min-width:768px) {
+      height: 86vh;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
 
-    &::webkit-scrollbar {
-      display: none;
+      &::webkit-scrollbar {
+        display: none;
+      }
     }
   }
 </style>
