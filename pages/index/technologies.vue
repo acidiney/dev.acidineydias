@@ -19,7 +19,7 @@ export default {
   async asyncData ({ server }) {
     let technologies = []
     if (!server) {
-      await fetch('http://localhost:3000/technologies.json')
+      await fetch('https://res.cloudinary.com/dsfsfcdyo/raw/upload/v1596766222/AcidineyDias.me/technologies_doam6l.json')
         .then(redeable => redeable.json())
         .then((data) => {
           technologies = data.technologies

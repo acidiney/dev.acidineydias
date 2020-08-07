@@ -24,7 +24,7 @@ export default {
   async asyncData ({ server }) {
     let experiences = []
     if (!server) {
-      await fetch('http://localhost:3000/experiences.json')
+      await fetch('https://res.cloudinary.com/dsfsfcdyo/raw/upload/v1596766222/AcidineyDias.me/experiences_vn5x0h.json')
         .then(redeable => redeable.json())
         .then((data) => {
           experiences = data.experiences && data.experiences.reverse()
