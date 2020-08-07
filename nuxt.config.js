@@ -49,6 +49,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~/assets/scss/_dark.scss',
+    '~/assets/scss/_light.scss',
+    '~/assets/scss/index.scss'
   ],
   /*
   ** Plugins to load before mounting the App
