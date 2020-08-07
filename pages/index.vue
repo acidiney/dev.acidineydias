@@ -20,9 +20,9 @@
           <p class="md:w-4/5">
             I'm full stack developer, currently working as Frontend Lead at
             <a
-              href="https://www.digitalfactory.co.ao"
+              href="https://www.itgest.co.ao"
               target="__blank"
-            >Digital Factory Angola</a>. I'm a frontend addict and user experience, I love css with
+            >ITGest</a>. I'm a frontend addict and user experience, I love css with
             passion and always keep my mouth open when I discover a new
             possibilities. I love to see my systems working from front to back.
             I share my learnings on Youtube/Medium and anywhere that accepts me.
