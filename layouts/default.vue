@@ -78,6 +78,11 @@ export default {
         {
           slug: '/projects',
           text: 'Projects',
+          separator: true
+        },
+        {
+          slug: '/contact',
+          text: 'Contact',
           separator: false
         }
       ]
@@ -311,6 +316,28 @@ $light_white_color: #fafafa;
 
   }
 
+  .contact {
+    form {
+      p {
+        color: $light_secondary_color;
+      }
+
+      input::placeholder, textarea::placeholder {
+        color: #444;
+      }
+    }
+
+    button {
+      background: $light_secondary_color;
+      color: $light_primary_color;
+      padding: 12px 30px;
+      font-family: 'Gothic A1', sans-serif;
+      &:hover {
+        background:rgba(21, 21, 21, .82);
+      }
+    }
+  }
+
   .app-title.sub-title {
     color: $light_secondary_color;
   }
@@ -447,6 +474,33 @@ $white: #fff;
     .icon-2x::before {
       font-size: 2em;
       color: #fff;
+    }
+  }
+
+  .contact {
+    form {
+      p {
+        color: $dark_secondary_color;
+      }
+
+      input::placeholder, textarea::placeholder {
+        color:$dark_secondary_color;
+      }
+
+      input, textarea {
+        background-color:rgba(21, 21, 21, .82);
+        color:$white;
+      }
+    }
+
+    button {
+      background: rgba(21, 21, 21, .82);
+      color: $white;
+      padding: 12px 30px;
+      font-family: 'Gothic A1', sans-serif;
+      &:hover {
+        background: rgba(15, 15, 15, 1);
+      }
     }
   }
 
