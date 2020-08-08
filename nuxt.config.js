@@ -86,7 +86,6 @@ module.exports = {
     '@nuxt/content',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-adsense',
     '@bazzite/nuxt-optimized-images'
   ],
 
@@ -156,10 +155,6 @@ module.exports = {
       type,
       create: createFeedArticles
     }))
-  },
-
-  'google-adsense': {
-    id: 'ca-pub-4289453933940031'
   },
 
   sitemap: {
