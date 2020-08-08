@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <app-title>Contact 📩</app-title>
-    <form ref="contact" name="contact" method="POST" netlify>
+    <form ref="contact" name="contact" @submit.prevent.stop="sendContact" method="POST" netlify>
       <p>You can contact me using form above ^^</p>
       <form-input
         v-for="input in formInputs"
@@ -54,10 +54,9 @@ export default {
       this.formContact[name] = event.target.message
     },
     sendContact () {
-      const form = this.$refs.contact
       fetch({
         method: 'POST',
-        url: form.attribute('action').value,
+        url: '/',
         body: JSON.stringify(this.formContact)
       }).then(response => response.json())
         .then((response) => {
