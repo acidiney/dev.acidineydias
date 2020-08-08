@@ -63,7 +63,7 @@ export default {
 
 .md\:h-90 {
     @media (min-width:768px) {
-      height: 86vh;
+      max-height: 86vh;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 

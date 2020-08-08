@@ -55,6 +55,16 @@ $light_white_color: #fafafa;
     }
   }
 
+  .mobile-menu {
+    background-color: rgb(231,231,231, 0.81);
+    color: $light_secondary_color;
+
+    button.absolute {
+      border: 1px solid $light_secondary_color;
+      color: $light_secondary_color;
+    }
+  }
+
   .about-me {
     h1 {
       color: $light_secondary_color;
@@ -115,7 +125,7 @@ $light_white_color: #fafafa;
   }
 
   .article {
-    color: #555;
+    color: #444;
 
     header {
       & p {

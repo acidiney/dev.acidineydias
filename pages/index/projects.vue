@@ -27,7 +27,7 @@
             {{ repo.name.trim() | capitalize }}
           </h2>
           <p class="my-3">
-            {{ repo.description ? repo.description.trim() : '' }}
+            {{ repo.description.trim() }}
           </p>
           <br>
           <div class="categories flex-wrap flex">
@@ -91,7 +91,7 @@ export default {
 <style lang="scss" scoped>
 
 .projects article {
-  height: 280px;
+  min-height: 280px;
   background-size: cover;
   margin-bottom: 20px;
   border-radius: 25px;
@@ -103,6 +103,7 @@ export default {
 .md\:h-90 {
     @media (min-width:768px) {
       height: 86vh;
+      padding-bottom: 5em;
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 
