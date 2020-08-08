@@ -28,7 +28,7 @@
           </p>
           <a
             class="text-left md:mr-5 block"
-            href="https://drive.google.com/file/d/1yVMbA1UqreruBaAi2mUT3otRwq2Wt4XB/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Z4MJTGAmKNCsoTLzXNuqgsOvRM1poNmy/view?usp=sharing"
             target="__blank"
           >
             <i class="icon-download" /> Download my CV.
