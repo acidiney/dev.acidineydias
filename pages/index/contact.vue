@@ -4,7 +4,7 @@
     <form
       ref="contact"
       name="contact"
-      action="/"
+      @submit.prevent.stop="sendContact"
       method="POST"
       netlify
       netlify-honeypot="bot-field">
@@ -62,7 +62,7 @@ export default {
     sendContact () {
       fetch({
         method: 'POST',
-        url: '/contact',
+        url: '/',
         body: JSON.stringify(this.formContact)
       }).then(response => response.json())
         .then((response) => {
