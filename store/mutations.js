@@ -1,5 +1,8 @@
 export default {
-  setPosts (state, posts) {
-    state.posts = posts
+  setTheme (state, theme) {
+    state.theme = theme
+  },
+  setPage (state, currentMenu) {
+    state.currentMenu = currentMenu
   }
 }

@@ -4,6 +4,7 @@ const { Nuxt, Builder } = require('nuxt')
 const app = express()
 
 // Import and Set Nuxt.js options
+const compression = require('compression')
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
@@ -20,6 +21,7 @@ async function start () {
     await builder.build()
   }
 
+  app.use(compression())
   // Give nuxt middleware to express
   app.use(nuxt.render)
 

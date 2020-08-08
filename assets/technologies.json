@@ -1,0 +1,178 @@
+{
+  "scheme": "technologies",
+  "description": "List of tools that I use now",
+  "author": "Acidiney Dias <hello@acidineydias.me>",
+  "version": "0.1.0",
+  "technologies": [
+    {
+      "name": "Programming Languages",
+      "icons": [
+        "icon-rust"
+      ]
+    },
+    {
+      "name": "Frontend Tools",
+      "icons": [
+        "icon-html5",
+        "icon-vue-dot-js",
+        "icon-angular",
+        "icon-css3",
+        "icon-csswizardry",
+        "icon-d3-dot-js",
+        "icon-jquery",
+        "icon-react",
+        "icon-redux",
+        "icon-storybook",
+        "icon-stylus",
+        "icon-svelte",
+        "icon-tailwindcss",
+        "icon-typescript"
+      ]
+    },
+    {
+      "name": "Backend Tools",
+      "icons": [
+        "icon-codeigniter",
+        "icon-deno",
+        "icon-typescript"
+
+      ]
+    },
+    {
+      "name": "Testing Tools",
+      "icons": [
+        "icon-jest",
+        "icon-postman",
+        "icon-swagger"
+      ]
+    },
+    {
+      "name": "Package Manager",
+      "icons": [
+        "icon-yarn"
+      ]
+    },
+    {
+      "name": "Database",
+      "icons": [
+        "icon-mysql",
+        "icon-postgresql"
+      ]
+    },
+    {
+      "name": "Editors",
+      "icons": [
+        "icon-visualstudiocode",
+        "icon-jetbrains",
+        "icon-sublimetext",
+        "icon-visualstudio"
+      ]
+    },
+    {
+      "name": "Mobile development",
+      "icons": [
+        "icon-nativescript"
+      ]
+    },
+    {
+      "name": "Dev Tools & DevOps",
+      "icons": [
+        "icon-docker",
+        "icon-jenkins",
+        "icon-microsoftazure",
+        "icon-travisci"
+      ]
+    },
+    {
+      "name": "Extra tools",
+      "icons": [
+        "icon-openssl",
+        "icon-snyk",
+        "icon-teamviewer",
+        "icon-todoist",
+        "icon-trello",
+        "icon-skype",
+        "icon-zoom"
+      ]
+    },
+    {
+      "name": "Browsers",
+      "icons": [
+        "icon-tor"
+      ]
+    },
+    {
+      "name": "Management and deployment Tools",
+      "icons": [
+        "icon-cloudflare",
+        "icon-netlify"
+      ]
+    },
+    {
+      "name": "Vídeo stream platforms",
+      "icons": [
+        "icon-youtube-play",
+        "icon-crunchyroll",
+        "icon-netflix",
+        "icon-pluralsight",
+        "icon-ted"
+      ]
+    },
+    {
+      "name": "Gamming",
+      "icons": [
+        "icon-steam",
+        "icon-xsplit"
+      ]
+    },
+    {
+      "name": "Projects",
+      "icons": [
+        "icon-github",
+        "icon-medium",
+        "icon-producthunt"
+      ]
+    },
+    {
+      "name": "Social Medias",
+      "icons": [
+        "icon-twitter",
+        "icon-linkedin",
+        "icon-instagram",
+        "icon-discord",
+        "icon-quora",
+        "icon-reddit",
+        "icon-stackoverflow"
+      ]
+    },
+    {
+      "name": "Drive",
+      "icons": [
+        "icon-mega"
+      ]
+    },
+    {
+      "name": "Event tickets",
+      "icons": [
+        "icon-meetup"
+      ]
+    },
+    {
+      "name": "Operational Systems",
+      "icons": [
+        "icon-apple",
+        "icon-archlinux",
+        "icon-debian",
+        "icon-deepin",
+        "icon-microsoft"
+      ]
+    },
+    {
+      "name": "Enthusiast",
+      "icons": [
+        "icon-monero",
+        "icon-tensorflow"
+      ]
+    }
+  ]
+}

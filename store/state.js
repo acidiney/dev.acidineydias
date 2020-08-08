@@ -1,3 +1,6 @@
-export default () => ({
-  posts: []
-})
+export default () => {
+  return {
+    theme: 'dark',
+    currentMenu: 'blog-articles'
+  }
+}

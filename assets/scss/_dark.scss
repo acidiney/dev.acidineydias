@@ -1,0 +1,140 @@
+$dark_primary_color: #212121;
+$dark_secondary_color: #BABABA;
+$dark_white_color: #fafafa;
+$white: #fff;
+
+.theme-dark {
+  background-color: $dark_primary_color;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  nav {
+    ul.left {
+      color: $dark_white_color;
+      a {
+        font-weight: 100;
+        transition: all .26s linear;
+
+        &:hover {
+          font-weight: 300;
+        }
+      }
+      a.active {
+        font-weight: 400;
+      }
+    }
+
+    ul.right {
+      li {
+        button {
+          i::before {
+            color: $dark_secondary_color;
+            font-size: 18pt;
+          }
+        }
+      }
+    }
+
+    .collapse {
+      height: 30px;
+      width: 30px;
+      align-items: center;
+      outline: none;
+      justify-content: center;
+      border: 1.5px solid $dark_secondary_color;
+      border-radius: 25px;
+      i::before {
+        color: $dark_secondary_color;
+      }
+
+      &:hover {
+        border-color: $dark_white_color;
+
+        i::before {
+          color: $dark_white_color;
+        }
+      }
+    }
+  }
+
+  .about-me {
+    h1 {
+      color: $dark_white_color;
+    }
+
+    p {
+      color: #BABABA;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    .icon-2x:hover::before {
+      color:rgba(148, 148, 149, 0.9);
+    }
+
+    .icon-2x::before {
+      font-size: 2em;
+      color: #fff;
+    }
+  }
+
+  .articles, .projects {
+    article a {
+      background-color: rgba(21,21,21, .82);
+
+      .categories p, h2, span {
+        color: $dark_white_color;
+      }
+    }
+    h2.sub-title {
+      color: $dark_white_color;
+    }
+  }
+
+  .article {
+    color: $dark_white_color;
+
+    header {
+
+      & p {
+        color:rgba(148, 148, 149, 0.9);
+      }
+      .icon-2x::before {
+        color: $dark_white_color;
+      }
+
+      .icon-2x:hover::before {
+        color:rgba(148, 148, 149, 0.9);
+      }
+    }
+  }
+  .app-title.sub-title {
+    color: $white;
+  }
+
+  .technologies .tech-section h4 {
+    color: $dark_white_color;
+  }
+
+  .icon-github::before, .icon-medium::before, .icon-steam::before, .icon-rust::before, .icon-stylus::before, .icon-deno::before, .icon-jetbrains::before {
+    color: $dark_white_color;
+  }
+
+  .experiences {
+
+    .content, .dot {
+      background-color: rgba(21,21,21, .82);
+    }
+
+    .content .description {
+      color: $dark_white_color;
+    }
+
+    .line {
+      border-left: 1px solid rgba(21, 21, 21, .82);
+    }
+  }
+}

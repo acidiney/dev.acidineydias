@@ -12,20 +12,28 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@nuxt/content": "^1.4.1",
+    "@nuxt/content-theme-docs": "^0.3.1",
     "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/feed": "^2.0.0",
     "@nuxtjs/google-adsense": "^1.1.3",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/sitemap": "^2.3.0",
+    "compression": "^1.7.4",
     "cross-env": "^5.2.0",
-    "express": "^4.16.4",
-    "markdown-it": "^10.0.0",
-    "markdown-it-prism": "^2.0.5",
-    "nuxt": "^2.0.0",
+    "express": "^4.17.1",
+    "js-cookie": "^2.2.1",
+    "lazysizes": "^5.2.2",
+    "nuxt": "^2.14.0",
+    "prism-themes": "^1.4.0",
+    "remark-emoji": "^2.1.0",
+    "sass": "^1.26.9",
     "vue-disqus": "^3.0.5",
-    "vue-lazyload": "^1.3.3",
-    "vue-observe-visibility": "^0.4.6"
+    "vue-infinite-scroll": "^2.0.2",
+    "vuex-persistedstate": "^3.1.0"
   },
   "devDependencies": {
+    "@bazzite/nuxt-optimized-images": "^0.4.0",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/google-analytics": "^2.2.3",
@@ -33,9 +41,11 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "frontmatter-markdown-loader": "^3.1.0",
-    "nodemon": "^1.18.9",
-    "responsive-loader": "^1.2.0",
-    "sharp": "^0.23.4"
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "sass-loader": "^9.0.1",
+    "webp-loader": "^0.6.0"
   }
 }

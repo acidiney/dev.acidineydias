@@ -1,6 +1,4 @@
 import Vue from 'vue'
-import VueLazyload from 'vue-lazyload'
 
-Vue.use(VueLazyload, {
-  lazyComponent: true
-})
+import infiniteScroll from 'vue-infinite-scroll'
+Vue.use(infiniteScroll)

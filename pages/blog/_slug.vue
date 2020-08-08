@@ -1,7 +1,9 @@
 <template>
-  <div class="text-white pt-10">
-    <header class="w-4/5 mx-auto mb-3 text-white">
-      <h1 class="text-5xl">Acidiney blog</h1>
+  <div class="article pt-10">
+    <header class="mx-auto mb-3">
+      <h1 class="text-5xl">
+        Acidiney blog
+      </h1>
       <p class="w-3/4">
         FullStack Developer | Writer | Teacher | YouTuber | Netflix Lover | Tecnology lover | Open Source enthusiast
       </p>
@@ -13,46 +15,49 @@
         </li>
       </ul>
 
-      <nuxt-link to='/'> <i class="icon-arrow-left"></i>Go Back </nuxt-link>
+      <nuxt-link to="/">
+        <i class="icon-arrow-left" />Go Back
+      </nuxt-link>
     </header>
-    <hr />
-    <ImageResponsive
-      v-if="image"
-      :imageURL="'blog/' + image"
-      :classes="`h-54 w-full object-cover ${imagePosition}`"
-      alt="avatar"
-    />
-    <footer class="w-4/5 markdown mt-6 mx-auto text-justify mb-3">
+    <hr>
+    <figure v-if="page.image" class="picture">
+      <picture>
+        <source :data-srcset="page.image + '?webp'" type="image/webp">
+        <source :data-srcset="page.image" type="image/png">
+        <img
+          :data-src="page.image"
+          :class="`lazyload md:h-54 w-full object-cover ${page.imagePosition}`"
+          :alt="page.title"
+        >
+      </picture>
+    </figure>
+
+    <footer class="md:w-4/5 markdown mt-6 mx-auto text-justify mb-3">
       <div class="head-post">
         <div class="time-categories flex-col md:flex-row flex justify-between md:items-center">
-          <time class="text-xs"> {{ new Date(date).toLocaleDateString('pt') }} </time>
+          <time class="text-xs"> {{ new Date(page.date).toLocaleDateString('pt') }} </time>
           <div class="categories flex-wrap flex">
-            <p v-for="(category, i) in categories" :key="category + i" class="mr-2 text-xs rounded">
-              {{ category }}
+            <p class="mr-2 text-xs rounded capitalize">
+              {{ page.categories }}
             </p>
           </div>
         </div>
-        <h2 class="text-left">{{ title }}</h2>
+        <h2 class="text-left">
+          {{ page.title }}
+        </h2>
       </div>
-      <client-only>
-        <DynamicMarkdown
-          :render-func="renderFunc"
-          :static-render-funcs="staticRenderFuncs"
-        />
-      </client-only>
-      <div class="adx-sense">
-        <adsbygoogle />
-      </div>
+      <nuxt-content :document="page" />
     </footer>
-    <nuxt-link class="my-5 block text-center" to='/'> <i class="icon-arrow-left"></i> Go Home</nuxt-link>
+    <nuxt-link class="my-5 block text-center" to="/">
+      <i class="icon-arrow-left" /> Go Home
+    </nuxt-link>
     <div class="comments w-4/5 md:w-2/4 mx-auto">
-      <vue-disqus shortname="acidineydias" :identifier="getUrl" :url="getUrl"></vue-disqus>
+      <vue-disqus v-if="renderComponent" shortname="acidineydias" :identifier="getUrl" :url="getUrl" />
     </div>
   </div>
 </template>
 
 <script>
-import DynamicMarkdown from '~/components/Markdown/DynamicMarkdown'
 export default {
   name: 'Blog',
   validate (context) {
@@ -63,44 +68,41 @@ export default {
 
     context.redirect('/')
   },
+  async asyncData ({ $content, params }) {
+    const page = await $content(params.slug).fetch()
+    return {
+      page
+    }
+  },
   data () {
     return {
-      attributes: {}
+      renderComponent: true
     }
   },
-  async asyncData({params}) {
-    try {
-      let post = await import(`~/content/${params.slug}.md`)
-      return {
-        date: post.attributes.date,
-        title: post.attributes.title,
-        image: post.attributes.image,
-        renderFunc: `(${post.vue.render})`,
-        description: post.attributes.description,
-        imagePosition: post.attributes.imagePosition,
-        categories: post.attributes.categories.split(','),
-        staticRenderFuncs: `[${post.vue.staticRenderFns}]`,
-        // extraComponent: post.attributes.extraComponent,
-      }
-    } catch (err) {
-      console.debug(err)
-      return false
-    }
-  },
-  components: { DynamicMarkdown },
   computed: {
     socials () {
-    return [
+      return [
         { link: 'https://github.com/acidiney', icon: 'icon-github' },
         { link: 'https://www.youtube.com/channel/UCMjOcKmA1UjiimzRDNZ_uOQ', icon: 'icon-youtube' },
         { link: 'https://medium.com/@acidiney', icon: 'icon-medium' }
       ]
     },
     getUrl () {
-      if (process.server) {
-        return ''
-      }
-      return window.location.href
+      return 'https://www.acidineydias.me' + this.$route.fullPath
+    },
+    theme () {
+      return this.$store.getters.theme
+    }
+  },
+  watch: {
+    theme () {
+      this.renderComponent = false
+      this.$nextTick(() => {
+        // Add the component back in
+        setTimeout(() => {
+          this.renderComponent = true
+        }, 1000)
+      })
     }
   },
   transition: {
@@ -110,55 +112,55 @@ export default {
   head () {
     const { fullPath } = this.$route
     return {
-      title: this.title + '- Acidiney Dias\' Blog',
+      title: this.page.title + '- Acidiney Dias\' Blog',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.description,
+          content: this.page.description
         },
         {
-          hid:'og:image',
+          hid: 'og:image',
           name: 'og:image',
-          content: `https://acidineydias.me/images/blog/${this.image}`
+          content: this.page.image
         },
         {
-          hid:'og:type',
+          hid: 'og:type',
           name: 'og:type',
           content: 'article'
         },
         {
-          hid:'og:url',
+          hid: 'og:url',
           name: 'og:url',
           content: `https://acidineydias.me${fullPath}`
         },
         {
-          hid:'og:title',
+          hid: 'og:title',
           name: 'og:title',
-          content: this.title
+          content: this.page.title
         },
         {
-          hid:'og:description',
+          hid: 'og:description',
           name: 'og:description',
-          content: this.description
+          content: this.page.description
         },
         {
-          hid:'twitter:image',
+          hid: 'twitter:image',
           name: 'twitter:image',
-          content: `https://acidineydias.me/images/blog/${this.image}`
+          content: this.page.image
         },
         {
-          hid:'twitter:title',
+          hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title
+          content: this.page.title
         },
         {
-          hid:'twitter:description',
+          hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.page.description
         },
         {
-          hid:'twitter:card',
+          hid: 'twitter:card',
           name: 'twitter:card',
           content: 'summary'
         }
@@ -169,6 +171,14 @@ export default {
 </script>
 
 <style scoped>
+@font-face {
+  font-family: 'Operator Mono';
+  src: url('../../assets/blog/fonts/OperatorMono-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 header h1 {
   font-weight: 900;
   text-transform: uppercase;
@@ -177,7 +187,6 @@ header h1 {
 
 header p {
   font-weight: 300;
-  color:rgba(148, 148, 149, 0.9);
 }
 
 .icon-2x {
@@ -192,18 +201,8 @@ a:hover {
   color: #fff;
 }
 
-.adx-sense {
-  height: 100px;
-  width: 100%;
-}
-
-.icon-2x:hover::before {
-  color:rgba(148, 148, 149, 0.9);
-}
-
 .icon-2x::before {
   font-size: 1.5em;
-  color: #fff;
 }
 
 footer .head-post {
@@ -236,12 +235,20 @@ footer .head-post .categories p {
     font-weight: 600 !important;
   }
 
-  footer.markdown .dynamicMarkdown p {
+  footer.markdown .nuxt-content p {
     margin: 1.2rem 0;
     text-align: left;
     font-size: 13pt;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 100;
     line-height: 1.5rem;
+  }
+
+  .nuxt-content p, h4 {
+    font-family:  -apple-system, BlinkMacSystemFont, 'Operator mono', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  h4 {
+    font-size: 14pt;
   }
 
   footer.markdown p::first-line {
@@ -250,8 +257,8 @@ footer .head-post .categories p {
 
   footer code {
     word-break: break-all;
-    font-family: monospace, monospace;
-    background-color: #282a36;
+    font-family: 'Operator mono', monospace;
+    font-weight: 400;
     padding: 2px 10px;
     border-radius: 12px;
     display: inline-block;
@@ -268,7 +275,7 @@ footer .head-post .categories p {
     display: flex;
     align-items: center;
     padding-left: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 2;
     text-align: left;
   }
@@ -288,5 +295,11 @@ footer .head-post .categories p {
     list-style: circle !important;
     margin-left: 1em !important;
     margin-bottom: 10px;
+  }
+
+  @media (min-width:768px) {
+    .h-54 {
+      height: 80vh !important;
+    }
   }
 </style>

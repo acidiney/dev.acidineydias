@@ -1,10 +1,10 @@
 ---
 date: 2020-05-16
 title: Refazendo meu portfolio parte 1
-image: 2020-16-05-rebuild-portfolio.jpg
+image: https://res.cloudinary.com/dsfsfcdyo/image/upload/v1593874698/AcidineyDias.me/2020-16-05-rebuild-portfolio/2020-16-05-rebuild-portfolio_qlmp8j.jpg
 categories: Javascript, Nuxtjs, PWA, SSG, Markdown, JAMStack, Front-matter
 description: Passo a passo de como foi refazer o portfolio
-
+link: /blog/2020-05-16-refazendo-meu-portfolio-parte-1
 ---
 
 Opa, boas?
@@ -88,7 +88,7 @@ async loadFrontMatterDescription (visibility, entry, link) {
  })
 ```
 E *voila* eu tenho as minhas `description` só para os posts que estiverem visíveis.
-![Post With Description](/images/blog/2020-05-16-rebuild-meu-portfolio.png)
+![Post With Description](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1593874739/AcidineyDias.me/2020-16-05-rebuild-portfolio/2020-05-16-rebuild-meu-portfolio_m25dqw.png)
 Obrigado por ler,
 Com base nos feedbacks que obter nesse post posso criar uma segunda parte, citando outros situações que tive. 
 ^^
