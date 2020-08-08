@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <app-title>Contact 📩</app-title>
-    <form ref="contact" name="contact" @submit.prevent.stop="sendContact" method="POST" netlify>
+    <form ref="contact" name="contact" method="POST" netlify>
       <p>You can contact me using form above ^^</p>
       <form-input
         v-for="input in formInputs"
