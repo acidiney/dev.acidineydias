@@ -58,6 +58,16 @@ $white: #fff;
     }
   }
 
+  .mobile-menu {
+    background-color: rgba(21,21,21, .82);
+    color: $dark_white_color;
+
+    button.absolute {
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+
   .about-me {
     h1 {
       color: $dark_white_color;

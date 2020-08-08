@@ -18,18 +18,17 @@
           </h1>
 
           <p class="md:w-4/5">
-            I'm full stack developer, currently working as Software Developer at
-            <a
+            I'm a full stack developer, currently working as a Software Developer at <a
               href="https://www.itgest.co.ao"
               target="__blank"
-            >ITGest</a>. I'm a frontend addict and user experience, I love css with
-            passion and always keep my mouth open when I discover a new
-            possibilities. I love to see my systems working from front to back.
-            I share my learnings on Youtube/Medium and anywhere that accepts me.
+            >ITGest</a>.
+            I'm a frontend addict and an user experience enthusiast. I love css with passion and
+            I'm always eager to share new discoveries. I love to see my projects working front to back smoothly.
+            I try to share my learnings on Youtube/Medium and anywhere that allows me.
           </p>
           <a
             class="text-left md:mr-5 block"
-            href="https://drive.google.com/file/d/1yVMbA1UqreruBaAi2mUT3otRwq2Wt4XB/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Z4MJTGAmKNCsoTLzXNuqgsOvRM1poNmy/view?usp=sharing"
             target="__blank"
           >
             <i class="icon-download" /> Download my CV.
