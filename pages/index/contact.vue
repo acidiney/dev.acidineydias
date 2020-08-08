@@ -1,7 +1,13 @@
 <template>
   <div class="contact">
     <app-title>Contact 📩</app-title>
-    <form ref="contact" name="contact" @submit.prevent.stop="sendContact" method="POST" netlify>
+    <form
+      ref="contact"
+      name="contact"
+      action="/"
+      method="POST"
+      netlify
+      netlify-honeypot="bot-field">
       <p>You can contact me using form above ^^</p>
       <form-input
         v-for="input in formInputs"
@@ -56,7 +62,7 @@ export default {
     sendContact () {
       fetch({
         method: 'POST',
-        url: '/',
+        url: '/contact',
         body: JSON.stringify(this.formContact)
       }).then(response => response.json())
         .then((response) => {
