@@ -2,12 +2,11 @@
   <div class="contact">
     <app-title>Contact 📩</app-title>
     <form
-      ref="contact"
       name="contact"
-      @submit.prevent.stop="sendContact"
-      method="POST"
       netlify
-      netlify-honeypot="bot-field">
+      netlify-honeypot="bot-field"
+      @submit.prevent.stop="handleSubmit"
+    >
       <p>You can contact me using form above ^^</p>
       <form-input
         v-for="input in formInputs"
@@ -17,18 +16,23 @@
       />
 
       <textarea name="message" placeholder="You can write your message here..." rows="10" required minLength="10" />
-      <button type="submit" class="btn block rounded-full mx-auto mt-4">
-        Send Message
+      <button type="submit" class="btn block flex items-center justify-center rounded-full mx-auto mt-4">
+        <template v-if="!isLoading">
+          Send Message
+        </template>
+        <loading v-else />
       </button>
     </form>
   </div>
 </template>
 <script>
 import FormInput from '~/components/form-input'
+import CustomLoading from '~/components/custom-loading'
 export default {
   name: 'Experiences',
   components: {
-    FormInput
+    FormInput,
+    loading: CustomLoading
   },
   data () {
     return {
@@ -36,7 +40,8 @@ export default {
         name: '',
         email: '',
         message: ''
-      }
+      },
+      isLoading: true
     }
   },
   computed: {
@@ -59,14 +64,35 @@ export default {
     WritePost (name, event) {
       this.formContact[name] = event.target.message
     },
-    sendContact () {
-      fetch({
-        method: 'POST',
-        url: '/',
-        body: JSON.stringify(this.formContact)
-      }).then(response => response.json())
-        .then((response) => {
-          console.log(response)
+    encode (data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join('&')
+    },
+    handleSubmit () {
+      this.isLoading = true
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      this.$axios.post('/', this.encode({
+        'form-name': 'contact',
+        ...this.formContact
+      }, axiosConfig))
+        .then(() => {
+          this.$toast.global.sended()
+          this.formContact = {
+            name: '',
+            email: '',
+            message: ''
+          }
+        })
+        .catch(() => {
+          this.$toast.global.not_sended()
+        })
+        .finally(() => {
+          this.isLoading = false
         })
     }
   }
@@ -88,6 +114,11 @@ export default {
     }
   }
 }
+
+button[type="submit"] {
+  width: 250px;
+}
+
 .md\:h-90 {
     @media (min-width:768px) {
       height: 86vh;

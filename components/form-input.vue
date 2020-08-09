@@ -1,5 +1,5 @@
 <template functional>
-  <input :type="props.type" :name="props.name" :placeholder="props.placeholder" @input="props.writeText(props.name, $event)" required>
+  <input :type="props.type" :name="props.name" required :placeholder="props.placeholder" @input="props.writeText(props.name, $event)">
 </template>
 <style lang="scss" scoped>
 input {
