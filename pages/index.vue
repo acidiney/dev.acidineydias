@@ -44,6 +44,15 @@
             </ul>
           </div>
         </footer>
+        <!-- <form class="w-4/5" submit.prevent="addToNewsLetter" name="newsletter" method="POST" data-netlify="true">
+          <p> You can subscribe to my newsletter </p>
+          <form-input
+            name="email"
+            type="email"
+            placeholder="E-mail"
+            :write-text="WritePost"
+          />
+        </form> -->
       </div>
     </div>
     <div class="porfolio md:h-full md:w-2/4">
@@ -55,10 +64,14 @@
 </template>
 
 <script>
+// import FormInput from '~/components/form-input'
 export default {
   transition: {
     name: 'slide-fade',
     mode: 'out-in'
+  },
+  components: {
+    // FormInput
   },
   data () {
     return {
@@ -96,6 +109,9 @@ export default {
       },
       immediate: true
     }
+  },
+  methods: {
+    WritePost (name, event) {}
   },
   head () {
     return {

@@ -67,11 +67,12 @@ export default {
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 
-      &::webkit-scrollbar {
-        display: none;
-      }
+    &::webkit-scrollbar {
+      display: none;
     }
   }
+}
+
 .articles article a {
   display: block;
   height: 100%;

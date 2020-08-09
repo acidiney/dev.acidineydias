@@ -86,9 +86,31 @@ module.exports = {
     '@nuxt/content',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-adsense',
+    '@nuxtjs/toast',
+    '@nuxtjs/axios',
     '@bazzite/nuxt-optimized-images'
   ],
+
+  toast: {
+    position: 'top-right',
+    register: [ // Register custom toasts
+      {
+        name: 'not-sended',
+        title: 'Oops...Could not send your contact',
+        message: 'try send direct using hello@acidineydias.me',
+        options: {
+          type: 'error'
+        }
+      },
+      {
+        name: 'sended',
+        message: 'Contact was sended, thanks ^^',
+        options: {
+          type: 'success'
+        }
+      }
+    ]
+  },
 
   content: {
     markdown: {
@@ -156,10 +178,6 @@ module.exports = {
       type,
       create: createFeedArticles
     }))
-  },
-
-  'google-adsense': {
-    id: 'ca-pub-4289453933940031'
   },
 
   sitemap: {
