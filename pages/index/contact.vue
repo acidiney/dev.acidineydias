@@ -15,7 +15,14 @@
         :write-text="WritePost"
       />
 
-      <textarea name="message" placeholder="You can write your message here..." rows="10" required minLength="10" />
+      <textarea
+        v-model="formContact.message"
+        name="message"
+        placeholder="You can write your message here..."
+        rows="10"
+        required
+        minLength="10"
+      />
       <button type="submit" class="btn block flex items-center justify-center rounded-full mx-auto mt-4" :disabled="isLoading">
         <template v-if="!isLoading">
           Send Message
@@ -62,7 +69,7 @@ export default {
   },
   methods: {
     WritePost (name, event) {
-      this.formContact[name] = event.target.message
+      this.formContact[name] = event.target.value
     },
     encode (data) {
       return Object.keys(data)
