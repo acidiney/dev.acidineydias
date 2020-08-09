@@ -16,7 +16,7 @@
       />
 
       <textarea name="message" placeholder="You can write your message here..." rows="10" required minLength="10" />
-      <button type="submit" class="btn block flex items-center justify-center rounded-full mx-auto mt-4">
+      <button type="submit" class="btn block flex items-center justify-center rounded-full mx-auto mt-4" :disabled="isLoading">
         <template v-if="!isLoading">
           Send Message
         </template>
@@ -41,7 +41,7 @@ export default {
         email: '',
         message: ''
       },
-      isLoading: true
+      isLoading: false
     }
   },
   computed: {
