@@ -141,8 +141,7 @@ module.exports = {
   },
 
   feed () {
-    const baseUrlBlog = 'https://acidineydias.me'
-    const baseLinkFeedArticles = '/blog'
+    const baseUrlBlog = 'https://acidineydias.me/blog'
     const feedFormats = {
       rss: { type: 'rss2', file: 'feed.xml' },
       json: { type: 'json1', file: 'feed.json' }
@@ -174,7 +173,7 @@ module.exports = {
     }
 
     return Object.values(feedFormats).map(({ file, type }) => ({
-      path: `${baseLinkFeedArticles}/${file}`,
+      path: `/${file}`,
       type,
       create: createFeedArticles
     }))
