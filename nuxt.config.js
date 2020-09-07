@@ -141,7 +141,7 @@ module.exports = {
   },
 
   feed () {
-    const baseUrlBlog = 'https://acidineydias.me/blog'
+    const baseUrlBlog = 'https://acidineydias.me'
     const baseLinkFeedArticles = '/blog'
     const feedFormats = {
       rss: { type: 'rss2', file: 'rss.xml' },
