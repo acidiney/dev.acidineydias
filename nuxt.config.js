@@ -73,6 +73,14 @@ module.exports = {
     '@nuxtjs/google-analytics'
   ],
 
+  content: {
+  markdown: {
+    prism: {
+      theme: 'prism-themes/themes/prism-material-dracula.css'
+    }
+  }
+}
+
   googleAnalytics: {
     id: 'UA-111254529-3'
   },
@@ -138,6 +146,11 @@ module.exports = {
     webp: {
       quality: 85
     }
+  },
+
+  env: {
+    SERVICE_ID: process.env.SERVICE_ID,
+    USER_ID: process.env.USER_ID
   },
 
   feed () {
