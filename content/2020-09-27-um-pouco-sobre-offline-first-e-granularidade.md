@@ -363,7 +363,7 @@ export const removeTodo = (id) => {
 E na view fiz um simples if para só listar o que não foi removido.
 
 ```javascript
-// app.mjs
+// app.svelte
 {#if !todo.removed}
         <tr>
           <td>{todo.id}</td>
@@ -430,6 +430,7 @@ sync: async () => {
 E é aqui onde tudo se encaixa, as propriedades `diff`, `removed` e `created`, que até então existiam sem nenhum propósito. Basicamente eu envio todas as linhas que foram modificadas para o servidor, essas linhas podem ser updates, deletes ou create, eu sei isso no frontend pelo diff.
 
 ```javascript
+// database.mjs
 export const diffData = () => db.todos.where('diff').equals(1).toArray();
 
 export const deleteAll = async () => {
