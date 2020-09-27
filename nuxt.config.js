@@ -92,10 +92,10 @@ module.exports = {
   ],
 
   toast: {
-    position: 'top-right',
+    position: 'bottom-center',
     register: [ // Register custom toasts
       {
-        name: 'not-sended',
+        name: 'notSended',
         title: 'Oops...Could not send your contact',
         message: 'try send direct using hello@acidineydias.me',
         options: {

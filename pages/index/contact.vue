@@ -3,8 +3,6 @@
     <app-title>Contact 📩</app-title>
     <form
       name="contact"
-      netlify
-      netlify-honeypot="bot-field"
       @submit.prevent.stop="handleSubmit"
     >
       <p>You can contact me using form above ^^</p>
@@ -35,8 +33,9 @@
 <script>
 import FormInput from '~/components/form-input'
 import CustomLoading from '~/components/custom-loading'
+
 export default {
-  name: 'Experiences',
+  name: 'Contact',
   components: {
     FormInput,
     loading: CustomLoading
@@ -71,22 +70,21 @@ export default {
     WritePost (name, event) {
       this.formContact[name] = event.target.value
     },
-    encode (data) {
-      return Object.keys(data)
-        .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join('&')
-    },
     handleSubmit () {
       this.isLoading = true
       const axiosConfig = {
         header: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }
-      this.$axios.post('/', this.encode({
-        'form-name': 'contact',
-        ...this.formContact
-      }, axiosConfig))
+      this.$axios.post('https://api.emailjs.com/api/v1.0/email/send', {
+        service_id: process.env.SERVICE_ID,
+        template_id: 'template_d6my7pf',
+        user_id: process.env.USER_ID,
+        template_params: {
+          from_name: this.formContact.name,
+          reply_to: this.formContact.email,
+          message: this.formContact.message
+        }
+      }, axiosConfig)
         .then(() => {
           this.$toast.global.sended()
           this.formContact = {
@@ -96,7 +94,7 @@ export default {
           }
         })
         .catch(() => {
-          this.$toast.global.not_sended()
+          this.$toast.global.notSended()
         })
         .finally(() => {
           this.isLoading = false

@@ -21,6 +21,7 @@
     "@nuxtjs/toast": "^3.3.1",
     "compression": "^1.7.4",
     "cross-env": "^5.2.0",
+    "emailjs-com": "^2.6.3",
     "express": "^4.17.1",
     "js-cookie": "^2.2.1",
     "lazysizes": "^5.2.2",
@@ -39,13 +40,16 @@
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/tailwindcss": "^1.0.0",
     "babel-eslint": "^10.0.1",
+    "bl": "^4.0.3",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "sass-loader": "^9.0.1",
+    "serialize-javascript": "^5.0.1",
     "webp-loader": "^0.6.0"
   }
 }
