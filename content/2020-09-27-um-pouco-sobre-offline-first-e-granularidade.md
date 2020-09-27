@@ -2,7 +2,7 @@
 
 date: 2020-09-27
 title: Um pouco sobre offline first e granularidade!
-image: https://res.cloudinary.com/dsfsfcdyo/image/upload/q_30/v1593874655/AcidineyDias.me/2020-06-28-pare-de-limitar-o-frontend/2020-06-28-pare-de-limitar-o-frontend_chbyab.jpg
+image: https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601219127/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/mike-szczepanski-MnSYYYqunXA-unsplash_jbel6h.jpg
 categories: programação, javascript, indexdb
 description: Hoje escrevo sobre um assunto que fiz uma POC, para perceber como poderia funcionar toda essa maracutaia que é offline first ( Esse assunto é absurdamente grande, o que vou trazer hoje  é apenas um pedaço desse tópico ). Caso tenha interesse em saber mais sobre, podemos trocar umas ideias na secção dos comentários abaixo 😉.
 link: /blog/2020-09-27-um-pouco-sobre-offline-first-e-granularidade
