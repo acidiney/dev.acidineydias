@@ -26,6 +26,7 @@
         <source :data-srcset="page.image" type="image/png">
         <img
           :data-src="page.image"
+          loading="lazy"
           :class="`lazyload md:h-54 w-full object-cover ${page.imagePosition}`"
           :alt="page.title"
         >
