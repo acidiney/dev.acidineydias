@@ -73,13 +73,13 @@ module.exports = {
     '@nuxtjs/google-analytics'
   ],
 
-  content: {
+content: {
   markdown: {
     prism: {
       theme: 'prism-themes/themes/prism-material-dracula.css'
     }
   }
-}
+},
 
   googleAnalytics: {
     id: 'UA-111254529-3'
