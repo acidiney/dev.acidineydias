@@ -207,14 +207,14 @@ $light_white_color: #fafafa;
   nav {
     ul.left {
       a {
-        font-weight: 100;
+        font-weight: 300;
 
         &:hover {
-          font-weight: 300;
+          font-weight: 800;
         }
       }
       a.active {
-        font-weight: 400;
+        font-weight: 800;
       }
     }
 
@@ -399,15 +399,15 @@ $white: #fff;
     ul.left {
       color: $dark_white_color;
       a {
-        font-weight: 100;
+        font-weight: 300;
         transition: all .26s linear;
 
         &:hover {
-          font-weight: 300;
+          font-weight: 800;
         }
       }
       a.active {
-        font-weight: 400;
+        font-weight: 800;
       }
     }
 
