@@ -109,7 +109,7 @@ Quanto ao Express e o Sqlite não tem muito a dizer, é só para o backend mesmo
 
 Uma vez que vocês já sabem qual é o segredo da minha POC que foi o uso da `proxy` praticamente, fica mais simples explicar as funcionalidades. Para essa POC fiz uma simples TODO APP.
 
-### Recuperando todos os todos
+### Recuperando dados
 
 Basicamente quando eu estou conectado a Internet eu atualizo a minha BD local com as novas informações sempre:
 
