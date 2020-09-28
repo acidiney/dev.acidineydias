@@ -109,13 +109,17 @@ Quanto ao Express e o Sqlite não tem muito a dizer, é só para o backend mesmo
 
 Uma vez que vocês já sabem qual é o segredo da minha POC que foi o uso da `proxie` praticamente, fica mais simples explicar as funcionalidades. Para essa POC fiz uma simples TODO APP.
 
-### Pegando dados online
+### Recuperando todos os todos
 
 Basicamente quando eu estou conectado a Internet eu atualizo a minha BD local com as novas informações sempre:
 
 ```javascript
-// online.mjs 
-todos: () => {
+// online.mjs
+import { API_URL } from '../../../constants.mjs'
+import { insertData } from '../../database/index.mjs'
+
+module.exports  = {
+  todos: () => {
     return fetch(API_URL)
       .then(requestModifier)
       .then((data) => data.map(todo => ({
@@ -124,21 +128,36 @@ todos: () => {
       })))
       .then(insertData)
   },
+  // ...
+}
 ```
 
 Já já explico o `diff`, por enquanto esqueça.
 
 ```javascript
 // offline.mjs
-todos: function () {
+import { select } from '../../database/index.mjs'
+
+module.exports  = {
+  todos: function () {
     console.log('[Database]> Query local data')
     return select()
+  },
+  // ...
 }
 ```
 
 ```javascript
 // database.mjs
 
+/**
+ *
+ * Receive an array and save into local database
+ *
+ * @param { Array<Object> } data
+ * @param { String } data.*.todo
+ * @param { String } data.*.done
+ */
 export const insertData = async (data) => {
   db.todos.bulkPut(data)
     .then(() => {
@@ -147,11 +166,16 @@ export const insertData = async (data) => {
   return data
 }
 
+/**
+ * Returns an array of todos from local database
+ *
+ * @return { Array }
+ */
 export const select = () => db.todos.toArray()
 ```
 
-```javascript
-// app.svelte
+```html
+<!-- app.svelte -->
 <script>
   import network from "../assets/js/resources/network/index.mjs";
   import { onMount } from "svelte";
@@ -176,7 +200,17 @@ Bem, uma vez que eu já tenho os dados listados de boa e já tenho a minha BD at
 
 ```javascript
 //online.mjs
-updateTodo: (id) => {
+// ... imports
+import { updateTodoLocal } from '../../database/index.mjs'
+
+module.exports = {
+  // ...
+  /**
+   * Change state of todo, and after update local database
+   *
+   * @param { Number } id
+   */
+  updateTodo: (id) => {
     return fetch(API_URL + `/${id}`, {
       method: 'PUT'
     })
@@ -186,22 +220,48 @@ updateTodo: (id) => {
         diff: false
       })))
       .then(updateTodoLocal)
-  },
+  }
+}
 ```
+
+Quando offline...
 
 ```javascript
 // offline.mjs
-updateTodo: (id, done) => {
+import { updateTodoLocal } from '../../database/index.mjs'
+import event from '../../eventjs'
+
+module.exports = {
+  //...
+
+  /**
+   * Update `done` of todo locally and emit reload event
+   * 
+   * @param { Number } id
+   * @param { Boolean } done
+   */
+  updateTodo: (id, done) => {
     done = !done
     updateTodoLocal([{ id, done, diff: true }])
     event.emit('reload')
-  },
+  }
+}
 ```
 
 o `event.emit` é o `mitt` é um event emmiter bem similar ao `vue.$emit` super recomendo.. eu sei ele para mandar a instrução para atualizar toda a lista quando a alteração foi feita, isso porque ao contrário do server que me retornava o novo estado da da linha, ao usar a db local que é síncrona se não atualizar os dados na tela ficariam atrasados embora a db já estivesse atualizada.
 
 ```javascript
 // database.mjs
+
+/**
+ *
+ * Get an array of todos and update in local database 
+ *
+ * @param { Array<Object> } todos
+ * @param { Number } data.*.id
+ * @param { String } data.*.done
+ * @param { Boolean } data.*.diff
+ */
 export const updateTodoLocal = (todos) => {
   todos.forEach(todo => {
     db.todos.where('id').equals(todo.id).modify({ done: todo.done, diff: todo.diff ? 1 : 0 });
@@ -211,15 +271,14 @@ export const updateTodoLocal = (todos) => {
 
 Por algum motivo muito estranho no dexie quando fazes queries e aplicas um boolean no where ele dá erro por isso tive que transformar em `0 e 1` o diff.
 
-```javascript
-//app.svelte
+```html
+<!-- app.svelte -->
 <script>
   import network from "../assets/js/resources/network/index.mjs";
 
   function onChange(id, done) {
     network.updateTodo(id, done);
   }
-
 </script>
 
 <main>
@@ -246,10 +305,9 @@ Por algum motivo muito estranho no dexie quando fazes queries e aplicas um boole
     {/each}
   </table>
 </main>
-
 ```
 
-A API do Svelte bebe muito do Vuejs e do React então foi bem de boa ver as coisas e aplicar.
+A API (interface de uso) do Svelte bebe muito do Vuejs e do React então foi bem de boa ver as coisas e aplicar.
 
 ### Criar um novo todo
 
@@ -261,9 +319,15 @@ Resolvi isso adicionando mais uma key no indexDB chamado created, que só existe
 
 ```javascript
 /// online.mjs
+
+// ... imports
+import event from '../../event.js'
+
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
+module.exports = {
+  // ...
   createTodo: (todo) => {
     return fetch(API_URL, {
       method: 'POST',
@@ -273,27 +337,38 @@ myHeaders.append("Content-Type", "application/json");
       headers: myHeaders
     })
     .then(() => {
-      event.emit('reload')
+      event.emit('reload') // este event usei o mitt para propagar o evento para atualizar a lista de tudos
     })
-  },
+  }
+}
 ```
+
+Quando offline ...
 
 ```javascript
 /// offline.mjs
-createTodo(todo) {
+
+// ... imports
+import { insertData } from '../../database/index.mjs'
+import event from '../../event.js'
+
+module.exports = {
+  // ...
+  createTodo(todo) {
     return (new Promise(function () {
-        insertData([{ todo, created: 1, diff: 1, done: 0 }])
-        event.emit('reload')
+      insertData([{ todo, created: 1, diff: 1, done: 0 }])
+      event.emit('reload') // este event usei o mitt para propagar o evento para atualizar a lista de tudos
     }))
-},
+  }
+}
 ```
 
-E novamente aquela situação do `true` e da interface estar desatualizada.
+Aqui eu passei o `diff` com o valor de `1`, mas poderia ser `true`, porque já tinha tratado lá dentro... viajei ... E quanto a interface estar desatualizada em relação a base de dados local o `mitt` resolveu o assunto.
 
 Não colocarei o código da database por já ter mandado uma vez... só reutilizei aqui 😉.
 
-```javascript
-/// app.svelte
+```html
+<!-- app.svelte -->
 <script>
   import network from "../assets/js/resources/network/index.mjs";
 
@@ -305,8 +380,6 @@ Não colocarei o código da database por já ter mandado uma vez... só reutiliz
       todo = "";
     });
   }
-
-
 </script>
 
 <main>
@@ -319,8 +392,6 @@ Não colocarei o código da database por já ter mandado uma vez... só reutiliz
 
 ```
 
-
-
 Pensei em validar mais depois fiquei com preguiça kkkk, desculpa.
 
 ### Eliminando informação.
@@ -330,7 +401,18 @@ Bem aí tem uma armadilha... ou talvez não... não sei kkkk são 4h, e ainda n�
 O fluxo de eliminar é bem normal quando você está online, porém quando você está offline é que tem que se tomar cuidado porque você não apaga os dados, porque quando for sincronizar o servidor precisa de saber que aquele dado foi apagado, para ele seguir caminho.
 
 ```javascript
-/// online.mjs
+// online.mjs
+
+import { removeTodo } from '../../database/index.mjs'
+
+module.exports = {
+  // ...
+
+  /**
+   * Remove todo from server, and emit reload event
+   * 
+   * @param { Number } id
+   */
   deleteTodo: (id) => {
     return fetch(API_URL + `/${id}`, {
       method: 'DELETE'
@@ -341,20 +423,42 @@ O fluxo de eliminar é bem normal quando você está online, porém quando você
         event.emit('reload')
       })
   },
+}
+
 ```
+
+Quando offline ...
 
 ```javascript
 // offline.mjs
-deleteTodo(id) {
+import { updateTodoLocal } from '../../database/index.mjs'
+
+module.exports = {
+  // ... 
+  /**
+   * When client is offline the logic is not remove but set a removed field to true
+   * Will be removed in next sync
+   *
+   * @param { Number } id
+   */
+  deleteTodo(id) {
     updateTodoLocal([{ id, removed: 1, diff: true, done: 1 }])
     event.emit('reload')
   },
+}
+
 ```
 
 Eu resolvi o problema simplesmente adicionando uma propriedade `removed` que é o "bool" também
 
 ```javascript
 // database.mjs
+
+/**
+ * Remove an todo from local database
+ *
+ * @param { Number } id
+ */
 export const removeTodo = (id) => {
   db.todos.where('id').equals(id).delete()
 }
@@ -362,23 +466,23 @@ export const removeTodo = (id) => {
 
 E na view fiz um simples if para só listar o que não foi removido.
 
-```javascript
-// app.svelte
+```html
+<!-- app.svelte -->
 {#if !todo.removed}
-        <tr>
-          <td>{todo.id}</td>
-          <td>{todo.todo}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={todo.done}
-              on:change={() => onChange(todo.id, todo.done)} />
-          </td>
-          <td>
-            <button on:click={() => onDelete(todo.id)}>Eliminar</button>
-          </td>
-        </tr>
-      {/if}
+  <tr>
+    <td>{todo.id}</td>
+    <td>{todo.todo}</td>
+    <td>
+      <input
+        type="checkbox"
+        checked={todo.done}
+        on:change={() => onChange(todo.id, todo.done)} />
+    </td>
+    <td>
+      <button on:click={() => onDelete(todo.id)}>Eliminar</button>
+    </td>
+  </tr>
+{/if}
 ```
 
 Com isso fechei os métodos básicos... 
@@ -392,7 +496,7 @@ Bem, para isso usei um método nativo do browser o `navigator.onLine` que retorn
 ```javascript
 // network.mjs
 window.addEventListener('online', function () {
-   api.sync()
+  api.sync()
 })
 ```
 
@@ -402,11 +506,19 @@ Então, basicamente essa função faz isso aqui:
 
 ```javascript
 // online.mjs
+import { deleteAll } from '../../database/index.mjs'
 
-sync: async () => {
+module.exports = {
+  // ...
+
+  /**
+   * Syncronise local database with server and vice versa
+   */
+  sync: async () => {
     console.log('[app]> sync...')
 
     const todosWithDiff = await diffData()
+
     return fetch(API_URL, {
       method: 'PATCH',
       body: JSON.stringify({
@@ -425,52 +537,56 @@ sync: async () => {
         console.log('[app]> sync end :-)')
       })
   }
+}
 ```
 
 E é aqui onde tudo se encaixa, as propriedades `diff`, `removed` e `created`, que até então existiam sem nenhum propósito. Basicamente eu envio todas as linhas que foram modificadas para o servidor, essas linhas podem ser updates, deletes ou create, eu sei isso no frontend pelo diff.
 
 ```javascript
 // database.mjs
+
+// Retorna todos os todos com o diff a true ou 1 em outras palavras ^^
 export const diffData = () => db.todos.where('diff').equals(1).toArray();
 
+// Talvez tenha outra forma de fazer isso com o dexie, mas eu não vi na doc... então apelei mesmo aqui kkkkk
 export const deleteAll = async () => {
   await db.todos.where("done").anyOf(1, 0).delete()
 }
 ```
 
-e no servidor eu tenho o meu método que recebe e trata
+e no servidor eu tenho o meu método que recebe e trata cada caso especifico de atualização no arquivo.
 
 ```javascript
 // algures no backend
-  app.patch('/todos', function (req, res) {
-    const { todos = [] } = req.body
-    todos.forEach(todo => {
-      if(todo.created) {
-        db.create({ todo: todo.todo, done: todo.done })
-        return
-      }
+app.patch('/todos', function (req, res) {
+  const { todos = [] } = req.body
+  todos.forEach(todo => {
+    if(todo.created) {
+      db.create({ todo: todo.todo, done: todo.done })
+      return
+    }
 
-      if (todo.removed) {
-        db.delete(todo.id)
-        return
-      }
+    if (todo.removed) {
+      db.delete(todo.id)
+      return
+    }
 
-      db.update({ done: todo.done }, todo.id)
-    });
-    return res.json(todos)
-  })
-
+    db.update({ done: todo.done }, todo.id)
+  });
+  return res.json(todos)
+})
 ```
+
+**Nota**: Para essa POC não considerei o centario de Database Lock, ou seja dois devices a usarem e ambos atualizarem, ao simplesmente confiar no client isso pode gerar uma desatualização dos dados do server... Para resolver isso, eu usário assim, rápido um sistema de versionamento do server para os clientes... de modo a poder saber qual versão pretende modificar os dados... Mas isso é assunto para outro artigo. ^^
 
 Depois de receber a confirmação de atualização do servidor, o frontend elimina todos os dados anteriores e recarrega a base de dados local enviando um event `reload` para o observador que executará essa chamada.
 
-e é isso, um breve resumo de como foi fazer a POC... Espero que tenham gostado e tenham aprendido alguma coisa comigo ^-^.
+E é isso,
+um breve resumo de como foi fazer a POC... Espero que tenham gostado e tenham aprendido alguma coisa comigo ^-^.
 
 Bye bye...
 
 Acidiney Dias
-
-
 
 ## Links úteis
 
