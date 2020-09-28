@@ -38,7 +38,8 @@ module.exports = {
       { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-152x152.png', sizes: '152x152' },
       { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-180x180.png', sizes: '180x180' },
       { rel: 'mask-icon', type: 'image/png', href: '/favicon/safari-pinned-tab.svg', color: '#c1c1c1' },
-      { rel: 'stylesheet', type: 'text/css', href: '/style.css' }
+      { rel: 'stylesheet', type: 'text/css', href: '/style.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/dracula.css' }
     ]
   },
   /*
@@ -49,9 +50,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/scss/_dark.scss',
-    '~/assets/scss/_light.scss',
-    '~/assets/scss/index.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -76,6 +74,14 @@ module.exports = {
     '@nuxtjs/google-analytics'
   ],
 
+content: {
+  markdown: {
+    prism: {
+      theme: 'prism-themes/themes/prism-material-dracula.css'
+    }
+  }
+},
+
   googleAnalytics: {
     id: 'UA-111254529-3'
   },
@@ -89,9 +95,31 @@ module.exports = {
     '@nuxt/content',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-adsense',
+    '@nuxtjs/toast',
+    '@nuxtjs/axios',
     '@bazzite/nuxt-optimized-images'
   ],
+
+  toast: {
+    position: 'bottom-center',
+    register: [ // Register custom toasts
+      {
+        name: 'notSended',
+        title: 'Oops...Could not send your contact',
+        message: 'try send direct using hello@acidineydias.me',
+        options: {
+          type: 'error'
+        }
+      },
+      {
+        name: 'sended',
+        message: 'Contact was sended, thanks ^^',
+        options: {
+          type: 'success'
+        }
+      }
+    ]
+  },
 
   content: {
     markdown: {
@@ -121,11 +149,15 @@ module.exports = {
     }
   },
 
+  env: {
+    SERVICE_ID: process.env.SERVICE_ID,
+    USER_ID: process.env.USER_ID
+  },
+
   feed () {
     const baseUrlBlog = 'https://acidineydias.me/blog'
-    const baseLinkFeedArticles = '/blog'
     const feedFormats = {
-      rss: { type: 'rss2', file: 'rss.xml' },
+      rss: { type: 'rss2', file: 'feed.xml' },
       json: { type: 'json1', file: 'feed.json' }
     }
 
@@ -155,14 +187,10 @@ module.exports = {
     }
 
     return Object.values(feedFormats).map(({ file, type }) => ({
-      path: `${baseLinkFeedArticles}/${file}`,
+      path: `/${file}`,
       type,
       create: createFeedArticles
     }))
-  },
-
-  'google-adsense': {
-    id: 'ca-pub-4289453933940031'
   },
 
   sitemap: {
