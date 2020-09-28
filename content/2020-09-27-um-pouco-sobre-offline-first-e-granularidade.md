@@ -163,16 +163,16 @@ module.exports  = {
  *
  * Receive an array and save into local database
  *
- * @param { Array<Object> } data
- * @param { String } data.*.todo
- * @param { String } data.*.done
+ * @param { Array<Object> } todos
+ * @param { String } todos.*.todo
+ * @param { Boolean } todos.*.done
  */
-export const insertData = async (data) => {
-  db.todos.bulkPut(data)
+export const insertData = async (todos) => {
+  db.todos.bulkPut(todos)
     .then(() => {
       console.log('[Database]> Updated')
     })
-  return data
+  return todos
 }
 
 /**
