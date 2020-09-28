@@ -66,9 +66,9 @@ export const select = () => db.todos.toArray()
 
 Olha no meio disso tem uma coisa que gostei muito no IndexDB pelo menos no do Chromium é que ele é bem otimizado e bem inteligente quanto a inserts e tal... deixou com certeza o meu trabalho mais simples.
 
-### Proxies 
+### Proxy
 
-O vídeo no YT explica melhor o que é... mas por agora entenda que uma proxie é basicamente um estrada essa estrada pode te levar por vários caminhos até você chegar ao teu destino final.
+O vídeo no YT explica melhor o que é... mas por agora entenda que uma proxy é basicamente um estrada essa estrada pode te levar por vários caminhos até você chegar ao teu destino final.
 
 (🥱 Estou orgulhoso dessa definição OMG 😱😱😱😱😱)
 
@@ -107,7 +107,7 @@ Basicamente se eu chamar o método `getTodos()` de `api` ele vai verificar se es
 
 Quanto ao Express e o Sqlite não tem muito a dizer, é só para o backend mesmo... 
 
-Uma vez que vocês já sabem qual é o segredo da minha POC que foi o uso da `proxie` praticamente, fica mais simples explicar as funcionalidades. Para essa POC fiz uma simples TODO APP.
+Uma vez que vocês já sabem qual é o segredo da minha POC que foi o uso da `proxy` praticamente, fica mais simples explicar as funcionalidades. Para essa POC fiz uma simples TODO APP.
 
 ### Recuperando todos os todos
 
@@ -119,6 +119,10 @@ import { API_URL } from '../../../constants.mjs'
 import { insertData } from '../../database/index.mjs'
 
 module.exports  = {
+  /**
+   * Retrive all todos from server
+   * And save into local database
+   */
   todos: () => {
     return fetch(API_URL)
       .then(requestModifier)
@@ -134,11 +138,16 @@ module.exports  = {
 
 Já já explico o `diff`, por enquanto esqueça.
 
+Quando offline...
+
 ```javascript
 // offline.mjs
 import { select } from '../../database/index.mjs'
 
 module.exports  = {
+  /**
+   * Get all todos from local database
+   */
   todos: function () {
     console.log('[Database]> Query local data')
     return select()
