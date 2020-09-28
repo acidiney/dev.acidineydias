@@ -586,7 +586,7 @@ app.patch('/todos', function (req, res) {
 })
 ```
 
-**Nota**: Para essa POC não considerei o centario de Database Lock, ou seja dois devices a usarem e ambos atualizarem, ao simplesmente confiar no client isso pode gerar uma desatualização dos dados do server... Para resolver isso, eu usário assim, rápido um sistema de versionamento do server para os clientes... de modo a poder saber qual versão pretende modificar os dados... Mas isso é assunto para outro artigo. ^^
+**Nota**: Para essa POC não considerei o centario de Database Lock, ou seja dois devices a usarem e ambos atualizarem, ao simplesmente confiar no cliente isso pode gerar uma desatualização dos dados do server... Para resolver isso, eu usária um sistema de versionamento semelhante ao do `git` ou próximo, para os clientes... de modo a poder saber qual versão pretende modificar os dados... Mas isso é assunto para outro artigo. ^^
 
 Depois de receber a confirmação de atualização do servidor, o frontend elimina todos os dados anteriores e recarrega a base de dados local enviando um event `reload` para o observador que executará essa chamada.
 
