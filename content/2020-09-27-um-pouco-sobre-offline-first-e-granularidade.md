@@ -623,7 +623,7 @@ Depois de receber a confirmação de atualização do servidor, o frontend elimi
 
 E é isso,
 
-Um breve resumo de como foi fazer a PoC... Espero que tenham gostado e tenham aprendido alguma coisa comigo ^-^.Bye bye...
+Um breve resumo de como foi fazer a PoC... Espero que tenham gostado e tenham aprendido alguma coisa comigo ^-^.
 
 ## Links úteis
 
