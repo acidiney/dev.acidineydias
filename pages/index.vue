@@ -114,7 +114,6 @@ export default {
     WritePost (name, event) {}
   },
   head () {
-    const { fullPath } = this.$route
     return {
       title: 'Acidiney Dias | Full stack developer',
       meta: [

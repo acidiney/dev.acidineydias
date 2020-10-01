@@ -10,7 +10,7 @@
       v-infinite-scroll="loadMore"
       infinite-scroll-disabled="busy"
       infinite-scroll-distance="100"
-      class="grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6"
+      class="grid grid-cols-1 sm:grid-cols-2 gap-5 px-3 mx-auto md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6"
     >
       <article
         v-for="repo in listRepos"
@@ -27,7 +27,7 @@
             {{ repo.name.trim() | capitalize }}
           </h2>
           <p class="my-3">
-            {{ repo.description.trim() }}
+            {{ repo.description && repo.description.trim().slice(0, 60) }}...
           </p>
           <br>
           <div class="categories flex-wrap flex">
@@ -91,7 +91,7 @@ export default {
 <style lang="scss" scoped>
 
 .projects article {
-  min-height: 280px;
+  height: 250px;
   background-size: cover;
   margin-bottom: 20px;
   border-radius: 25px;
@@ -101,17 +101,17 @@ export default {
 }
 
 .md\:h-90 {
-    @media (min-width:768px) {
-      height: 86vh;
-      padding-bottom: 5em;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+  @media (min-width:768px) {
+    height: 86vh;
+    padding-bottom: 5em;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 
-      &::webkit-scrollbar {
-        display: none;
-      }
+    &::webkit-scrollbar {
+      display: none;
     }
   }
+}
 
 .projects article a {
   display: block;
