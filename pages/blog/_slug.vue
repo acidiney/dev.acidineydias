@@ -268,10 +268,9 @@ footer .head-post .categories p {
     outline: none;
   }
 
-  footer.markdown h3 {
+  footer.markdown h3, footer.markdown h1, footer.markdown h2, footer.markdown h4, footer.markdown h5 {
     margin: unset !important;
     font-weight: unset !important;
-    font-size: 20pt !important;
     position: relative;
     display: flex;
     align-items: center;
@@ -281,7 +280,23 @@ footer .head-post .categories p {
     text-align: left;
   }
 
-  footer.markdown h3::before {
+  footer.markdown h1 {
+    font-size: 20pt !important;
+  }
+
+  footer.markdown h2 {
+    font-size: 18pt !important;
+  }
+
+  footer.markdown h3 {
+    font-size: 16pt !important;
+  }
+
+  footer.markdown h4 {
+    font-size: 14pt !important;
+  }
+
+  footer.markdown h3::before,  footer.markdown h1::before,  footer.markdown h2::before,  footer.markdown h4::before {
     content: '';
     position: absolute;
     left: 0;
