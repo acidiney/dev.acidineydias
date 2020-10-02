@@ -69,7 +69,7 @@ Então, para o browser eu poderia usar o LocalStorage Para armazenar os dados e 
 
 Olha, assim dando spoiler, se for usar nativamente não, não recomendo! A API do 
 
-IndexedDB, é muita confusa e ainda temos o problema de cada implementar como acha mais interessante. Então recomendo o uso de um wrapper para uniformizar o código, algumas soluções são o [pouchdb](https://pouchdb.com/) e o dexie, use o que você achar mais indicado. Para essa PoC eu usei o Dexie.
+IndexedDB, é muita confusa e ainda temos o problema de cada navegador implementar a API como acha mais interessante. Então recomendo o uso de um wrapper para uniformizar o código, algumas soluções são o [pouchdb](https://pouchdb.com/) e o [dexie](http://dexie.org), use o que você achar mais indicado. Para essa PoC eu usei o Dexie.
 
 ```javascript
 export const select = () => db.todos.toArray()
