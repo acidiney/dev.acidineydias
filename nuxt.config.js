@@ -83,7 +83,7 @@ content: {
 },
 
   googleAnalytics: {
-    id: 'UA-111254529-3'
+    id: process.env.GOOGLE_ANALYTICS_APP
   },
   /*
   ** Nuxt.js modules
