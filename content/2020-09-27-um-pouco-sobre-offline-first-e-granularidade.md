@@ -154,7 +154,7 @@ module.exports  = {
 
 Já já explico o `diff`, por enquanto esqueça.
 
-![Get todos online](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodos_lnoyau.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodos_lnoyau.png" format="webp" :placeholder="true" alt="Get todos offline"></nuxt-image>
 
 Quando offline...
 
@@ -217,7 +217,7 @@ export const select = () => db.todos.toArray()
 </script>
 ```
 
-![Get todos offline](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodosoffile_x1oziu.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodosoffile_x1oziu.png" format="webp" :placeholder="true" alt="Get todos offline"></nuxt-image>
 
 Eu tinha de início usado aquele helper que o svelte tem para as chamadas, no template `#await`, mas depois de um tempo parou de me resolver... talvez tem alguma forma de continuar usando ele ... mas no meu contexto e para as minhas skills com ele não achei então foi pelo caminho os hooks mesmo, que é o normal e tal.O problema que ele não estava a resolver é quando eu precisava de sincronizar e atualizar a lista....
 
@@ -392,7 +392,8 @@ module.exports = {
 }
 ```
 
-![Criando Todo](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/criado_arts74.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/criado_arts74.png" format="webp" :placeholder="true" alt="Criando todo"></nuxt-image>
+
 
 _Aqui eu passei o `diff` com o valor de `1`, mas poderia ser `true`, porque já tinha tratado lá dentro... viajei ... E quanto a interface estar desatualizada em relação a base de dados local o `mitt` resolveu o assunto._
 
@@ -519,8 +520,7 @@ E na view fiz um simples if para só listar o que não foi removido.
   </tr>
 {/if}
 ```
-
-![Remover todo](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/removed_uoipvm.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/removed_uoipvm.png" format="webp" :placeholder="true" alt="Remover todo"></nuxt-image>
 
 Com isso fechei os métodos básicos... 
 
@@ -614,9 +614,9 @@ app.patch('/todos', function (req, res) {
 })
 ```
 
-![Sincronizando](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/sync_vrq5pd.png)
-
-![No IndexDB](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/updated_fnrwww.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/sync_vrq5pd.png"  format="webp" :placeholder="true" alt="Sincronizando"></nuxt-image>
+<br />
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/updated_fnrwww.png" format="webp" :placeholder="true" alt="No IndexDB"></nuxt-image>
 
 **_Nota: Para essa PoC não considerei o cenário de Database Lock, ou seja dois devices a usarem e ambos atualizarem, ao simplesmente confiar no cliente isso pode gerar uma desatualização dos dados do server... Para resolver isso, eu usaria um sistema de versionamento semelhante ao do `git` ou próximo, para os clientes... de modo a poder saber qual versão pretende modificar os dados... Mas isso é assunto para outro artigo. ^^_**
 
