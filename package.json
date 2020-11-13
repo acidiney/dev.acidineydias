@@ -19,12 +19,10 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/sitemap": "^2.3.0",
     "@nuxtjs/toast": "^3.3.1",
-    "compression": "^1.7.4",
     "cross-env": "^5.2.0",
     "emailjs-com": "^2.6.3",
     "express": "^4.17.1",
     "js-cookie": "^2.2.1",
-    "lazysizes": "^5.2.2",
     "nuxt": "^2.14.0",
     "prism-themes": "^1.4.0",
     "remark-emoji": "^2.1.0",
@@ -35,6 +33,7 @@
   },
   "devDependencies": {
     "@bazzite/nuxt-optimized-images": "^0.4.0",
+    "@nuxt/image": "^0.0.4",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/google-analytics": "^2.2.3",
@@ -43,13 +42,10 @@
     "bl": "^4.0.3",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.0",
     "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "sass-loader": "^9.0.1",
-    "serialize-javascript": "^5.0.1",
-    "webp-loader": "^0.6.0"
+    "serialize-javascript": "^5.0.1"
   }
 }
