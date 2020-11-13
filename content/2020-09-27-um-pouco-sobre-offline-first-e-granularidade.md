@@ -72,6 +72,7 @@ Olha, assim dando spoiler, se for usar nativamente não, não recomendo! A API d
 IndexedDB, é muita confusa e ainda temos o problema de cada navegador implementar a API como acha mais interessante. Então recomendo o uso de um wrapper para uniformizar o código, algumas soluções são o [pouchdb](https://pouchdb.com/) e o [dexie](http://dexie.org), use o que você achar mais indicado. Para essa PoC eu usei o Dexie.
 
 ```javascript
+// offline.mjs
 export const select = () => db.todos.toArray()
 ```
 
@@ -153,7 +154,7 @@ module.exports  = {
 
 Já já explico o `diff`, por enquanto esqueça.
 
-![Get todos online](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodos_lnoyau.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodos_lnoyau.png" format="webp" :placeholder="true" alt="Get todos offline"></nuxt-image>
 
 Quando offline...
 
@@ -180,9 +181,9 @@ module.exports  = {
  *
  * Receive an array and save into local database
  *
- * @param { Array<Object> } todos
- * @param { String } todos.*.todo
- * @param { Boolean } todos.*.done
+ * @param { object[] } todos
+ * @param { string } todos.todo
+ * @param { boolean } todos.done
  */
 export const insertData = async (todos) => {
   db.todos.bulkPut(todos)
@@ -195,7 +196,7 @@ export const insertData = async (todos) => {
 /**
  * Returns an array of todos from local database
  *
- * @return { Array }
+ * @return { object[] }
  */
 export const select = () => db.todos.toArray()
 ```
@@ -216,7 +217,7 @@ export const select = () => db.todos.toArray()
 </script>
 ```
 
-![Get todos offline](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodosoffile_x1oziu.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/gettodosoffile_x1oziu.png" format="webp" :placeholder="true" alt="Get todos offline"></nuxt-image>
 
 Eu tinha de início usado aquele helper que o svelte tem para as chamadas, no template `#await`, mas depois de um tempo parou de me resolver... talvez tem alguma forma de continuar usando ele ... mas no meu contexto e para as minhas skills com ele não achei então foi pelo caminho os hooks mesmo, que é o normal e tal.O problema que ele não estava a resolver é quando eu precisava de sincronizar e atualizar a lista....
 
@@ -236,7 +237,7 @@ module.exports = {
   /**
    * Change state of todo, and after update local database
    *
-   * @param { Number } id
+   * @param { number } id
    */
   updateTodo: (id) => {
     return fetch(API_URL + `/${id}`, {
@@ -265,13 +266,13 @@ module.exports = {
   /**
    * Update `done` of todo locally and emit reload event
    * 
-   * @param { Number } id
-   * @param { Boolean } done
+   * @param { number } id
+   * @param { boolean } done
    */
   updateTodo: (id, done) => {
     done = !done
     updateTodoLocal([{ id, done, diff: true }])
-    event.emit('reload')
+    event.emit('reload') // este event usei o mitt para propagar o evento para atualizar a lista de todos
   }
 }
 ```
@@ -285,10 +286,10 @@ o `event.emit` é o vem do [mitt](https://github.com/developit/mitt) ele é um e
  *
  * Get an array of todos and update in local database 
  *
- * @param { Array<Object> } todos
- * @param { Number } data.*.id
- * @param { String } data.*.done
- * @param { Boolean } data.*.diff
+ * @param { object[] } todos
+ * @param { number } data.id
+ * @param { string } data.done
+ * @param { boolean } data.diff
  */
 export const updateTodoLocal = (todos) => {
   todos.forEach(todo => {
@@ -391,7 +392,8 @@ module.exports = {
 }
 ```
 
-![Criando Todo](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/criado_arts74.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/criado_arts74.png" format="webp" :placeholder="true" alt="Criando todo"></nuxt-image>
+
 
 _Aqui eu passei o `diff` com o valor de `1`, mas poderia ser `true`, porque já tinha tratado lá dentro... viajei ... E quanto a interface estar desatualizada em relação a base de dados local o `mitt` resolveu o assunto._
 
@@ -471,7 +473,7 @@ module.exports = {
    * When client is offline the logic is not remove but set a removed field to true
    * Will be removed in next sync
    *
-   * @param { Number } id
+   * @param { number } id
    */
   deleteTodo(id) {
     updateTodoLocal([{ id, removed: 1, diff: true, done: 1 }])
@@ -491,7 +493,7 @@ _Tanto no contexto do created quanto no do removed, precisam de uma atenção es
 /**
  * Remove an todo from local database
  *
- * @param { Number } id
+ * @param { number } id
  */
 export const removeTodo = (id) => {
   db.todos.where('id').equals(id).delete()
@@ -518,8 +520,7 @@ E na view fiz um simples if para só listar o que não foi removido.
   </tr>
 {/if}
 ```
-
-![Remover todo](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/removed_uoipvm.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/removed_uoipvm.png" format="webp" :placeholder="true" alt="Remover todo"></nuxt-image>
 
 Com isso fechei os métodos básicos... 
 
@@ -568,8 +569,8 @@ module.exports = {
         diff: false
       })))
       .finally(() => {
-        deleteAll()
-        event.emit('reload')
+        deleteAll() // Remove todos os todos registrados localmente, antes de atualizar
+        event.emit('reload') // este event usei o mitt para propagar o evento para atualizar a lista de todos
         console.log('[app]> sync end :-)')
       })
   }
@@ -613,9 +614,9 @@ app.patch('/todos', function (req, res) {
 })
 ```
 
-![Sincronizando](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/sync_vrq5pd.png)
-
-![No IndexDB](https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/updated_fnrwww.png)
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/sync_vrq5pd.png"  format="webp" :placeholder="true" alt="Sincronizando"></nuxt-image>
+<br />
+<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593482/AcidineyDias.me/2020-10-27-criando-uma-poc-de-granularidade-de-dado/updated_fnrwww.png" format="webp" :placeholder="true" alt="No IndexDB"></nuxt-image>
 
 **_Nota: Para essa PoC não considerei o cenário de Database Lock, ou seja dois devices a usarem e ambos atualizarem, ao simplesmente confiar no cliente isso pode gerar uma desatualização dos dados do server... Para resolver isso, eu usaria um sistema de versionamento semelhante ao do `git` ou próximo, para os clientes... de modo a poder saber qual versão pretende modificar os dados... Mas isso é assunto para outro artigo. ^^_**
 

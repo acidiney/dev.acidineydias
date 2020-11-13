@@ -14,12 +14,12 @@
   </div>
 </template>
 <script>
-import Technologies from '~/assets/technologies.json'
+import { technologies } from '~/assets/technologies.json'
 export default {
   name: 'Technologies',
   asyncData () {
     return {
-      technologies: Technologies.technologies
+      technologies
     }
   }
 }

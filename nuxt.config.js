@@ -56,11 +56,8 @@ module.exports = {
   */
   plugins: [
     '~/plugins/disqus',
-    // '~/plugins/ga',
-    '~/plugins/image',
-    // '~/plugins/update.client.js',
     '~/plugins/title.component.js',
-    { src: '~/plugins/lazyload.js', mode: 'client' },
+    { src: '~/plugins/infiniteScroll.js', mode: 'client' },
     { src: '~/plugins/localStorage.js', mode: 'client' }
   ],
   /*
@@ -74,14 +71,6 @@ module.exports = {
     '@nuxtjs/google-analytics'
   ],
 
-content: {
-  markdown: {
-    prism: {
-      theme: 'prism-themes/themes/prism-material-dracula.css'
-    }
-  }
-},
-
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_APP
   },
@@ -91,13 +80,12 @@ content: {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/feed',
-    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxt/image',
     '@nuxt/content',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
     '@nuxtjs/toast',
-    '@nuxtjs/axios',
-    '@bazzite/nuxt-optimized-images'
+    '@nuxtjs/axios'
   ],
 
   toast: {
@@ -121,31 +109,31 @@ content: {
     ]
   },
 
+  image: {
+    ipx: {
+      cacheDir: '~~/node_modules/.cache/nuxt-image',
+      clearCache: false,
+      sharp: {
+        blurSigma: 1
+      }
+    },
+    presets: [
+      {
+        name: 'jpg-cover',
+        modifiers: {
+          fit: 'cover',
+          format: 'jpg'
+        }
+      }
+    ],
+  },
+
   content: {
     markdown: {
       remarkPlugins: ['remark-emoji'],
       prism: {
         theme: 'prism-themes/themes/prism-dracula.css'
       }
-    }
-  },
-
-  optimizedImages: {
-    inlineImageLimit: -1,
-    handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
-    optimizeImages: true,
-    optimizeImagesInDev: false,
-    defaultImageLoader: 'img-loader',
-    mozjpeg: {
-      quality: 85
-    },
-    optipng: false,
-    pngquant: {
-      speed: 7,
-      quality: [0.65, 0.8]
-    },
-    webp: {
-      quality: 85
     }
   },
 
