@@ -72,6 +72,7 @@ Olha, assim dando spoiler, se for usar nativamente não, não recomendo! A API d
 IndexedDB, é muita confusa e ainda temos o problema de cada implementar como acha mais interessante. Então recomendo o uso de um wrapper para uniformizar o código, algumas soluções são o [pouchdb](https://pouchdb.com/) e o dexie, use o que você achar mais indicado. Para essa PoC eu usei o Dexie.
 
 ```javascript
+// offline.mjs
 export const select = () => db.todos.toArray()
 ```
 
@@ -180,9 +181,9 @@ module.exports  = {
  *
  * Receive an array and save into local database
  *
- * @param { Array<Object> } todos
- * @param { String } todos.*.todo
- * @param { Boolean } todos.*.done
+ * @param { object[] } todos
+ * @param { string } todos.todo
+ * @param { boolean } todos.done
  */
 export const insertData = async (todos) => {
   db.todos.bulkPut(todos)
@@ -195,7 +196,7 @@ export const insertData = async (todos) => {
 /**
  * Returns an array of todos from local database
  *
- * @return { Array }
+ * @return { object[] }
  */
 export const select = () => db.todos.toArray()
 ```
@@ -236,7 +237,7 @@ module.exports = {
   /**
    * Change state of todo, and after update local database
    *
-   * @param { Number } id
+   * @param { number } id
    */
   updateTodo: (id) => {
     return fetch(API_URL + `/${id}`, {
@@ -265,13 +266,13 @@ module.exports = {
   /**
    * Update `done` of todo locally and emit reload event
    * 
-   * @param { Number } id
-   * @param { Boolean } done
+   * @param { number } id
+   * @param { boolean } done
    */
   updateTodo: (id, done) => {
     done = !done
     updateTodoLocal([{ id, done, diff: true }])
-    event.emit('reload')
+    event.emit('reload') // este event usei o mitt para propagar o evento para atualizar a lista de todos
   }
 }
 ```
@@ -285,10 +286,10 @@ o `event.emit` é o vem do [mitt](https://github.com/developit/mitt) ele é um e
  *
  * Get an array of todos and update in local database 
  *
- * @param { Array<Object> } todos
- * @param { Number } data.*.id
- * @param { String } data.*.done
- * @param { Boolean } data.*.diff
+ * @param { object[] } todos
+ * @param { number } data.id
+ * @param { string } data.done
+ * @param { boolean } data.diff
  */
 export const updateTodoLocal = (todos) => {
   todos.forEach(todo => {
@@ -471,7 +472,7 @@ module.exports = {
    * When client is offline the logic is not remove but set a removed field to true
    * Will be removed in next sync
    *
-   * @param { Number } id
+   * @param { number } id
    */
   deleteTodo(id) {
     updateTodoLocal([{ id, removed: 1, diff: true, done: 1 }])
@@ -491,7 +492,7 @@ _Tanto no contexto do created quanto no do removed, precisam de uma atenção es
 /**
  * Remove an todo from local database
  *
- * @param { Number } id
+ * @param { number } id
  */
 export const removeTodo = (id) => {
   db.todos.where('id').equals(id).delete()
@@ -568,8 +569,8 @@ module.exports = {
         diff: false
       })))
       .finally(() => {
-        deleteAll()
-        event.emit('reload')
+        deleteAll() // Remove todos os todos registrados localmente, antes de atualizar
+        event.emit('reload') // este event usei o mitt para propagar o evento para atualizar a lista de todos
         console.log('[app]> sync end :-)')
       })
   }
