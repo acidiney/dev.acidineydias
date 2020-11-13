@@ -139,7 +139,8 @@ module.exports = {
 
   env: {
     SERVICE_ID: process.env.SERVICE_ID,
-    USER_ID: process.env.USER_ID
+    USER_ID: process.env.USER_ID,
+    GOOGLE_ANALYTICS_APP: process.env.GOOGLE_ANALYTICS_APP
   },
 
   feed () {
