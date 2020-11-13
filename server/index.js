@@ -14,11 +14,14 @@ async function start () {
 
   const { host, port } = nuxt.options.server
 
+
   await nuxt.ready()
   // Build only in dev mode
   if (config.dev) {
     const builder = new Builder(nuxt)
     await builder.build()
+    process.on('unhandledRejection', (error) => {});
+
   }
 
   app.use(compression())

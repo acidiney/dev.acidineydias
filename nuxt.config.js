@@ -110,13 +110,6 @@ module.exports = {
   },
 
   image: {
-    ipx: {
-      cacheDir: '~~/node_modules/.cache/nuxt-image',
-      clearCache: false,
-      sharp: {
-        blurSigma: 1
-      }
-    },
     presets: [
       {
         name: 'jpg-cover',
@@ -126,6 +119,11 @@ module.exports = {
         }
       }
     ],
+    providers: {
+      cloudinary: {
+        baseURL: 'https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/'
+      }
+    }
   },
 
   content: {

@@ -90,7 +90,7 @@ async loadFrontMatterDescription (visibility, entry, link) {
 E *voila* eu tenho as minhas `description` só para os posts que estiverem visíveis.
 ![]()
 
-<nuxt-image src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1593874739/AcidineyDias.me/2020-16-05-rebuild-portfolio/2020-05-16-rebuild-meu-portfolio_m25dqw.png" format="webp" :placeholder="true" alt="Post With Description"></nuxt-image>
+<img src="https://res.cloudinary.com/dsfsfcdyo/image/upload/v1593874739/AcidineyDias.me/2020-16-05-rebuild-portfolio/2020-05-16-rebuild-meu-portfolio_m25dqw.png" format="webp" :placeholder="true" alt="Post With Description"/>
 
 Obrigado por ler,
 Com base nos feedbacks que obter nesse post posso criar uma segunda parte, citando outros situações que tive. 

@@ -22,8 +22,8 @@
     </header>
     <hr>
     <nuxt-image
+      v-if="page.image"
       :src="page.image"
-      format="webp"
       :placeholder="true"
       :class="`lazyload md:h-54 w-full object-cover ${page.imagePosition}`"
       :alt="page.title"
