@@ -19,13 +19,17 @@ $light_white_color: #fafafa;
           font-weight: 800;
         }
       }
-      a.active {
+      a.nuxt-link-exact-active {
         font-weight: 800;
       }
     }
 
     ul.right {
       li {
+        a {
+          color: $light_secondary_color;
+          font-weight: 300;
+        }
         button {
           i::before {
             color: $light_secondary_color;

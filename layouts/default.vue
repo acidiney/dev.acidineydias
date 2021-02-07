@@ -2,7 +2,7 @@
   <div
     :class="[
       { 'overflow-hidden': showMenu },
-      `theme-${theme} overflow-y-auto box-border`
+      `theme-${theme} overflow-y-hidden box-border`
     ]"
   >
     <div class="w-4/5 mx-auto pb-6 md:pb-0">
@@ -12,7 +12,6 @@
             <li :key="item.url" class="flex">
               <nuxt-link
                 v-if="!item.external"
-                :class="{ active: $route.path === item.url }"
                 :to="item.url"
               >
                 {{ $t(item.text) }}
@@ -28,7 +27,16 @@
             </li>
           </template>
         </ul>
-        <ul class="right">
+        <ul class="right flex">
+          <li class="mr-4">
+            <nuxt-link
+              v-for="locale in availableLocales"
+              :key="locale.code"
+              :to="switchLocalePath(locale.code)"
+            >
+              {{ locale.name.toUpperCase() }}
+            </nuxt-link>
+          </li>
           <li>
             <button @click="changeTheme(theme)">
               <i :class="`extra-${theme === 'dark' ? 'light' : 'dark'}`" />
@@ -85,13 +93,16 @@ export default {
     theme () {
       return this.$store.getters.theme
     },
+    availableLocales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    },
     currentMenu () {
       return this.$store.getters.currentMenu
     },
     menuItens () {
       return [
         {
-          url: '/',
+          url: `${this.$i18n.locale === 'en' ? '/en' : '/'}`,
           text: 'menu.openSource',
           separator: true
         },
@@ -102,17 +113,17 @@ export default {
           external: true
         },
         {
-          url: '/technologies',
+          url: 'technologies',
           text: 'menu.technologies',
           separator: true
         },
         {
-          url: '/experiences',
+          url: 'experiences',
           text: 'menu.experiences',
           separator: true
         },
         {
-          url: '/contact',
+          url: 'contact',
           text: 'menu.contact',
           separator: false
         }

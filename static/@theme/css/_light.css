@@ -1,0 +1,133 @@
+.theme-light {
+  background-color: #f0f0f0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.theme-light nav ul.left a {
+  font-weight: 300;
+}
+.theme-light nav ul.left a:hover {
+  font-weight: 800;
+}
+.theme-light nav ul.left a.nuxt-link-exact-active {
+  font-weight: 800;
+}
+.theme-light nav ul.right li a {
+  color: #212121;
+  font-weight: 300;
+}
+.theme-light nav ul.right li button i::before {
+  color: #212121;
+  font-size: 18pt;
+}
+.theme-light nav .collapse {
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  outline: none;
+  justify-content: center;
+  border: 1.5px solid #212121;
+  border-radius: 25px;
+}
+.theme-light nav .collapse i::before {
+  color: #212121;
+}
+.theme-light nav .collapse:hover {
+  border-color: #212121;
+}
+.theme-light nav .collapse:hover i::before {
+  color: #212121;
+}
+.theme-light .mobile-menu {
+  background-color: rgba(231, 231, 231, 0.81);
+  color: #212121;
+}
+.theme-light .mobile-menu button.absolute {
+  border: 1px solid #212121;
+  color: #212121;
+}
+.theme-light .about-me h1 {
+  color: #212121;
+}
+.theme-light .about-me p {
+  color: #333333;
+}
+.theme-light .about-me p a {
+  color: #222;
+}
+.theme-light .about-me a {
+  color: #333;
+}
+.theme-light .about-me .icon-2x:hover::before {
+  color: rgba(148, 148, 149, 0.9);
+}
+.theme-light .about-me .icon-2x::before {
+  font-size: 2em;
+  color: #333;
+}
+.theme-light .articles article a {
+  background-color: #3b3b3bbd;
+}
+.theme-light .articles article a .categories p, .theme-light .articles article a h2, .theme-light .articles article a span {
+  color: #f0f0f0;
+}
+.theme-light .articles h2.sub-title {
+  color: rgba(21, 21, 21, 0.82);
+}
+.theme-light .projects article a {
+  background: #fff;
+}
+.theme-light .projects article a .categories p, .theme-light .projects article a h2, .theme-light .projects article a span {
+  color: #3b3b3bbd;
+}
+.theme-light .projects article a h2.sub-title {
+  color: #3b3b3bbd;
+}
+.theme-light .contact form p {
+  color: #212121;
+}
+.theme-light .contact form input::placeholder, .theme-light .contact form textarea::placeholder {
+  color: #444;
+}
+.theme-light .contact button {
+  background: #212121;
+  color: #f0f0f0;
+  padding: 12px 30px;
+  font-family: "Gothic A1", sans-serif;
+}
+.theme-light .contact button:hover {
+  background: rgba(21, 21, 21, 0.82);
+}
+.theme-light .app-title.sub-title {
+  color: #212121;
+}
+.theme-light .article {
+  color: #444;
+}
+.theme-light .article header p {
+  color: #777;
+}
+.theme-light .article header .icon-2x::before {
+  color: #212121;
+}
+.theme-light .article header .icon-2x:hover::before {
+  color: rgba(148, 148, 149, 0.9);
+}
+.theme-light .technologies .tech-section h4 {
+  color: #212121;
+}
+.theme-light .icon-instagram::before, .theme-light .icon-linkedin::before, .theme-light .icon-twitter::before {
+  color: #212121;
+}
+.theme-light .experiences .content, .theme-light .experiences .dot {
+  background-color: #fff;
+}
+.theme-light .experiences .content .description {
+  color: #212121;
+}
+.theme-light .experiences .line {
+  border-left: 1px solid #fff;
+}
+
+/*# sourceMappingURL=_light.css.map */

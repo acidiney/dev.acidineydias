@@ -22,7 +22,9 @@ export default {
     fromName: 'Escreva o seu nome aqui...',
     fromEmail: 'Escreva o seu e-mail aqui...',
     message: 'Ok, agora escreva sua mensagem...',
-    submit: 'Enviar para mim.'
+    submit: 'Enviar para mim.',
+    success: 'Mensagem enviada, irei responder o mais rápido possivel',
+    error: 'Oops, isso não deveria ter acontecido! Envie um e-mail para hello@acidineydias.me no lugar.'
   },
   downloadCV: 'Baixar o meu CV',
   technologies: {

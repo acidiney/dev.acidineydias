@@ -20,7 +20,9 @@ export default {
     fromName: 'Your name here...',
     fromEmail: 'Your email here...',
     message: 'You can write your message here...',
-    submit: 'Send Message'
+    submit: 'Send Message',
+    success: 'Message sended, I will respond as soon as possible.',
+    error: 'Oops, this should not have happened! Send an e-mail to hello@acidineydias.me instead.'
   },
   downloadCV: 'Download my CV',
   technologies: {

@@ -38,6 +38,9 @@ module.exports = {
       { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-180x180.png', sizes: '180x180' },
       { rel: 'mask-icon', type: 'image/png', href: '/favicon/safari-pinned-tab.svg', color: '#c1c1c1' },
       { rel: 'stylesheet', type: 'text/css', href: '/style.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/index.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_dark.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_light.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/dracula.css' }
     ]
   },
@@ -48,14 +51,8 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [],
-  styleResources: {
-    scss: [
-      '~/assets/@theme/scss/index.scss',
-      '~/assets/@theme/scss/_light.scss',
-      '~/assets/@theme/scss/_dark.scss'
-    ]
-  },
+  css: [
+  ],
   /*
   ** Plugins to load before mounting the App
   */
@@ -92,45 +89,35 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/toast',
     '@nuxtjs/axios',
-    'nuxt-i18n',
-    '@nuxtjs/style-resources',
+    'nuxt-i18n'
   ],
 
   i18n: {
     locales: [
       {
         code: 'en',
+        iso: 'en-US',
+        name: 'en',
         file: 'en-US.js'
       },
       {
         code: 'pt',
+        name: 'pt',
+        iso: 'pt-PT',
         file: 'pt-PT.js'
       }
     ],
     lazy: true,
+    baseUrl: 'https://acidineydias.me',
+    seo: true,
     langDir: 'lang/',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true // recommended
+    },
     defaultLocale: 'pt'
-  },
-
-  toast: {
-    position: 'bottom-center',
-    register: [ // Register custom toasts
-      {
-        name: 'notSended',
-        title: 'Oops...Could not send your contact',
-        message: 'try send direct using hello@acidineydias.me',
-        options: {
-          type: 'error'
-        }
-      },
-      {
-        name: 'sended',
-        message: 'Contact was sended, thanks ^^',
-        options: {
-          type: 'success'
-        }
-      }
-    ]
   },
 
   image: {
@@ -165,7 +152,7 @@ module.exports = {
     GOOGLE_ANALYTICS_APP: process.env.GOOGLE_ANALYTICS_APP
   },
 
-  feed() {
+  feed () {
     const baseUrlBlog = 'https://acidineydias.me/blog'
     const feedFormats = {
       rss: { type: 'rss2', file: 'feed.xml' },
@@ -226,7 +213,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, { isDev, isClient, loaders: { vue } }) {
+    extend (config, { isDev, isClient, loaders: { vue } }) {
       if (isClient) {
         vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
@@ -234,7 +221,7 @@ module.exports = {
     }
   },
   generate: {
-    async ready() {
+    async ready () {
       const { $content } = require('@nuxt/content')
       const files = await $content().only(['path']).fetch()
 

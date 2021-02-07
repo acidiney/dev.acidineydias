@@ -22,13 +22,17 @@ $white: #fff;
           font-weight: 800;
         }
       }
-      a.active {
+      a.nuxt-link-exact-active {
         font-weight: 800;
       }
     }
 
     ul.right {
       li {
+        a {
+          color: $dark_secondary_color;
+          font-weight: 300;
+        }
         button {
           i::before {
             color: $dark_secondary_color;

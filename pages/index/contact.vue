@@ -86,7 +86,10 @@ export default {
         }
       }, axiosConfig)
         .then(() => {
-          this.$toast.global.sended()
+          this.$toast.show(this.$t('success'), {
+            position: 'bottom-center',
+            type: 'success'
+          })
           this.formContact = {
             name: '',
             email: '',
@@ -94,7 +97,10 @@ export default {
           }
         })
         .catch(() => {
-          this.$toast.global.notSended()
+          this.$toast.show(this.$t('error'), {
+            position: 'bottom-center',
+            type: 'error'
+          })
         })
         .finally(() => {
           this.isLoading = false
