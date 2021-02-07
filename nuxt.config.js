@@ -153,7 +153,7 @@ module.exports = {
   },
 
   feed () {
-    const baseUrlBlog = 'https://acidineydias.me/blog'
+    const baseUrlBlog = 'https://blog.acidineydias.me'
     const feedFormats = {
       rss: { type: 'rss2', file: 'feed.xml' },
       json: { type: 'json1', file: 'feed.json' }
