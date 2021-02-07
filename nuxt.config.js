@@ -48,11 +48,14 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-    '~/assets/@theme/scss/index.scss',
-    '~/assets/@theme/scss/_light.scss',
-    '~/assets/@theme/scss/_dark.scss'
-  ],
+  css: [],
+  styleResources: {
+    scss: [
+      '~/assets/@theme/scss/index.scss',
+      '~/assets/@theme/scss/_light.scss',
+      '~/assets/@theme/scss/_dark.scss'
+    ]
+  },
   /*
   ** Plugins to load before mounting the App
   */
@@ -89,7 +92,8 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/toast',
     '@nuxtjs/axios',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    '@nuxtjs/style-resources',
   ],
 
   i18n: {
@@ -161,7 +165,7 @@ module.exports = {
     GOOGLE_ANALYTICS_APP: process.env.GOOGLE_ANALYTICS_APP
   },
 
-  feed () {
+  feed() {
     const baseUrlBlog = 'https://acidineydias.me/blog'
     const feedFormats = {
       rss: { type: 'rss2', file: 'feed.xml' },
@@ -222,7 +226,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, { isDev, isClient, loaders: { vue } }) {
+    extend(config, { isDev, isClient, loaders: { vue } }) {
       if (isClient) {
         vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
@@ -230,7 +234,7 @@ module.exports = {
     }
   },
   generate: {
-    async ready () {
+    async ready() {
       const { $content } = require('@nuxt/content')
       const files = await $content().only(['path']).fetch()
 
