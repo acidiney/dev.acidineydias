@@ -1,7 +1,6 @@
 const builtAt = new Date().toISOString()
 
 module.exports = {
-  mode: 'universal',
   target: 'static',
   /*
   ** Headers of the page
@@ -39,6 +38,9 @@ module.exports = {
       { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-180x180.png', sizes: '180x180' },
       { rel: 'mask-icon', type: 'image/png', href: '/favicon/safari-pinned-tab.svg', color: '#c1c1c1' },
       { rel: 'stylesheet', type: 'text/css', href: '/style.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/index.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_dark.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_light.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/dracula.css' }
     ]
   },
@@ -57,6 +59,7 @@ module.exports = {
   plugins: [
     '~/plugins/disqus',
     '~/plugins/title.component.js',
+    '~/plugins/project-item.component.js',
     { src: '~/plugins/infiniteScroll.js', mode: 'client' },
     { src: '~/plugins/localStorage.js', mode: 'client' }
   ],
@@ -85,28 +88,36 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
     '@nuxtjs/toast',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-i18n'
   ],
 
-  toast: {
-    position: 'bottom-center',
-    register: [ // Register custom toasts
+  i18n: {
+    locales: [
       {
-        name: 'notSended',
-        title: 'Oops...Could not send your contact',
-        message: 'try send direct using hello@acidineydias.me',
-        options: {
-          type: 'error'
-        }
+        code: 'en',
+        iso: 'en-US',
+        name: 'en',
+        file: 'en-US.js'
       },
       {
-        name: 'sended',
-        message: 'Contact was sended, thanks ^^',
-        options: {
-          type: 'success'
-        }
+        code: 'pt',
+        name: 'pt',
+        iso: 'pt-PT',
+        file: 'pt-PT.js'
       }
-    ]
+    ],
+    lazy: true,
+    baseUrl: 'https://acidineydias.me',
+    seo: true,
+    langDir: 'lang/',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true // recommended
+    },
+    defaultLocale: 'pt'
   },
 
   image: {

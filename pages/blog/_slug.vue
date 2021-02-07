@@ -117,6 +117,13 @@ export default {
     name: 'slide-fade',
     mode: 'out-in'
   },
+  beforeCreate () {
+    const { slug } = this.$route.params
+    if (slug && process.browser) {
+      // eslint-disable-next-line
+      window.location = `https://blog.acidineydias.me/articles/${slug}`
+    }
+  },
   head () {
     const { fullPath } = this.$route
     return {

@@ -1,0 +1,129 @@
+.theme-dark {
+  background-color: #212121;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.theme-dark nav ul.left {
+  color: #fafafa;
+}
+.theme-dark nav ul.left a {
+  font-weight: 300;
+  transition: all 0.26s linear;
+}
+.theme-dark nav ul.left a:hover {
+  font-weight: 800;
+}
+.theme-dark nav ul.left a.nuxt-link-exact-active {
+  font-weight: 800;
+}
+.theme-dark nav ul.right li a {
+  color: #BABABA;
+  font-weight: 300;
+}
+.theme-dark nav ul.right li button i::before {
+  color: #BABABA;
+  font-size: 18pt;
+}
+.theme-dark nav .collapse {
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  outline: none;
+  justify-content: center;
+  border: 1.5px solid #BABABA;
+  border-radius: 25px;
+}
+.theme-dark nav .collapse i::before {
+  color: #BABABA;
+}
+.theme-dark nav .collapse:hover {
+  border-color: #fafafa;
+}
+.theme-dark nav .collapse:hover i::before {
+  color: #fafafa;
+}
+.theme-dark .mobile-menu {
+  background-color: rgba(21, 21, 21, 0.82);
+  color: #fafafa;
+}
+.theme-dark .mobile-menu button.absolute {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.theme-dark .about-me h1 {
+  color: #fafafa;
+}
+.theme-dark .about-me p {
+  color: #BABABA;
+}
+.theme-dark .about-me p a {
+  color: #fff;
+}
+.theme-dark .about-me .icon-2x:hover::before {
+  color: rgba(148, 148, 149, 0.9);
+}
+.theme-dark .about-me .icon-2x::before {
+  font-size: 2em;
+  color: #fff;
+}
+.theme-dark .contact form p {
+  color: #BABABA;
+}
+.theme-dark .contact form input::placeholder, .theme-dark .contact form textarea::placeholder {
+  color: #BABABA;
+}
+.theme-dark .contact form input, .theme-dark .contact form textarea {
+  background-color: rgba(21, 21, 21, 0.82);
+  color: #fff;
+}
+.theme-dark .contact button {
+  background: rgba(21, 21, 21, 0.82);
+  color: #fff;
+  padding: 12px 30px;
+  font-family: "Gothic A1", sans-serif;
+}
+.theme-dark .contact button:hover {
+  background: #0f0f0f;
+}
+.theme-dark .articles article a, .theme-dark .projects article a {
+  background-color: rgba(21, 21, 21, 0.82);
+}
+.theme-dark .articles article a .categories p, .theme-dark .articles article a h2, .theme-dark .articles article a span, .theme-dark .projects article a .categories p, .theme-dark .projects article a h2, .theme-dark .projects article a span {
+  color: #fafafa;
+}
+.theme-dark .articles h2.sub-title, .theme-dark .projects h2.sub-title {
+  color: #fafafa;
+}
+.theme-dark .article {
+  color: #fafafa;
+}
+.theme-dark .article header p {
+  color: rgba(148, 148, 149, 0.9);
+}
+.theme-dark .article header .icon-2x::before {
+  color: #fafafa;
+}
+.theme-dark .article header .icon-2x:hover::before {
+  color: rgba(148, 148, 149, 0.9);
+}
+.theme-dark .app-title.sub-title {
+  color: #fff;
+}
+.theme-dark .technologies .tech-section h4 {
+  color: #fafafa;
+}
+.theme-dark .icon-github::before, .theme-dark .icon-medium::before, .theme-dark .icon-steam::before, .theme-dark .icon-rust::before, .theme-dark .icon-stylus::before, .theme-dark .icon-deno::before, .theme-dark .icon-jetbrains::before {
+  color: #fafafa;
+}
+.theme-dark .experiences .content, .theme-dark .experiences .dot {
+  background-color: rgba(21, 21, 21, 0.82);
+}
+.theme-dark .experiences .content .description {
+  color: #fafafa;
+}
+.theme-dark .experiences .line {
+  border-left: 1px solid rgba(21, 21, 21, 0.82);
+}
+
+/*# sourceMappingURL=_dark.css.map */

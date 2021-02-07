@@ -1,3 +1,5 @@
+
+/// light
 $light_primary_color: #f0f0f0;
 $light_secondary_color: #212121;
 $light_white_color: #fafafa;
@@ -11,19 +13,23 @@ $light_white_color: #fafafa;
   nav {
     ul.left {
       a {
-        font-weight: 100;
+        font-weight: 300;
 
         &:hover {
-          font-weight: 300;
+          font-weight: 800;
         }
       }
-      a.active {
-        font-weight: 400;
+      a.nuxt-link-exact-active {
+        font-weight: 800;
       }
     }
 
     ul.right {
       li {
+        a {
+          color: $light_secondary_color;
+          font-weight: 300;
+        }
         button {
           i::before {
             color: $light_secondary_color;
@@ -118,6 +124,28 @@ $light_white_color: #fafafa;
       }
     }
 
+  }
+
+  .contact {
+    form {
+      p {
+        color: $light_secondary_color;
+      }
+
+      input::placeholder, textarea::placeholder {
+        color: #444;
+      }
+    }
+
+    button {
+      background: $light_secondary_color;
+      color: $light_primary_color;
+      padding: 12px 30px;
+      font-family: 'Gothic A1', sans-serif;
+      &:hover {
+        background:rgba(21, 21, 21, .82);
+      }
+    }
   }
 
   .app-title.sub-title {
