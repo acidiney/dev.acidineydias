@@ -88,8 +88,25 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
     '@nuxtjs/toast',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-i18n'
   ],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js'
+      },
+      {
+        code: 'pt',
+        file: 'pt-PT.js'
+      }
+    ],
+    lazy: true,
+    langDir: 'lang/',
+    defaultLocale: 'pt'
+  },
 
   toast: {
     position: 'bottom-center',

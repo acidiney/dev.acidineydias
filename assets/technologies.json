@@ -5,13 +5,13 @@
   "version": "0.1.0",
   "technologies": [
     {
-      "name": "Programming Languages",
+      "name": "languages",
       "icons": [
         "icon-rust"
       ]
     },
     {
-      "name": "Frontend Tools",
+      "name": "frontendTools",
       "icons": [
         "icon-html5",
         "icon-vue-dot-js",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "name": "Backend Tools",
+      "name": "backendTools",
       "icons": [
         "icon-codeigniter",
         "icon-deno",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "name": "Testing Tools",
+      "name": "testingTools",
       "icons": [
         "icon-jest",
         "icon-postman",
@@ -47,20 +47,20 @@
       ]
     },
     {
-      "name": "Package Manager",
+      "name": "packageManager",
       "icons": [
         "icon-yarn"
       ]
     },
     {
-      "name": "Database",
+      "name": "database",
       "icons": [
         "icon-mysql",
         "icon-postgresql"
       ]
     },
     {
-      "name": "Editors",
+      "name": "editors",
       "icons": [
         "icon-visualstudiocode",
         "icon-jetbrains",
@@ -69,13 +69,13 @@
       ]
     },
     {
-      "name": "Mobile development",
+      "name": "mobileDevelopment",
       "icons": [
         "icon-nativescript"
       ]
     },
     {
-      "name": "Dev Tools & DevOps",
+      "name": "devToolsAndDevOps",
       "icons": [
         "icon-docker",
         "icon-jenkins",
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "name": "Extra tools",
+      "name": "extraTools",
       "icons": [
         "icon-openssl",
         "icon-snyk",
@@ -96,20 +96,20 @@
       ]
     },
     {
-      "name": "Browsers",
+      "name": "browser",
       "icons": [
         "icon-tor"
       ]
     },
     {
-      "name": "Management and deployment Tools",
+      "name": "managementAndDeploymentTools",
       "icons": [
         "icon-cloudflare",
         "icon-netlify"
       ]
     },
     {
-      "name": "Vídeo stream platforms",
+      "name": "videoStreamPlatforms",
       "icons": [
         "icon-youtube-play",
         "icon-crunchyroll",
@@ -119,14 +119,14 @@
       ]
     },
     {
-      "name": "Gamming",
+      "name": "gamming",
       "icons": [
         "icon-steam",
         "icon-xsplit"
       ]
     },
     {
-      "name": "Projects",
+      "name": "projects",
       "icons": [
         "icon-github",
         "icon-medium",
@@ -134,7 +134,7 @@
       ]
     },
     {
-      "name": "Social Medias",
+      "name": "socialMedia",
       "icons": [
         "icon-twitter",
         "icon-linkedin",
@@ -146,19 +146,19 @@
       ]
     },
     {
-      "name": "Drive",
+      "name": "drive",
       "icons": [
         "icon-mega"
       ]
     },
     {
-      "name": "Event tickets",
+      "name": "eventTickets",
       "icons": [
         "icon-meetup"
       ]
     },
     {
-      "name": "Operational Systems",
+      "name": "operationalSystems",
       "icons": [
         "icon-apple",
         "icon-archlinux",
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "name": "Enthusiast",
+      "name": "enthusiast",
       "icons": [
         "icon-monero",
         "icon-tensorflow"

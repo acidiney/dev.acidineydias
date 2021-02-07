@@ -6,8 +6,8 @@
     class="projects"
   >
     <app-title>
-      Open source projects 🤜🏽 <br>
-      <small class="font-light text-gray-200 gothic-font"> Find one and contribute 😄</small>
+      {{ $t('menu.openSource') }}<br>
+      <small class="font-light text-gray-200 gothic-font">{{ $t('findAnyProjectToContribute') }}</small>
     </app-title>
     <section
       v-infinite-scroll="loadMore"

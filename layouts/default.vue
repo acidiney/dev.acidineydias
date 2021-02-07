@@ -15,14 +15,14 @@
                 :class="{ active: $route.path === item.url }"
                 :to="item.url"
               >
-                {{ item.text }}
+                {{ $t(item.text) }}
               </nuxt-link>
               <a
                 v-else
                 :class="{ active: $route.path === item.url }"
                 :href="item.url"
               >
-                {{ item.text }}
+                {{ $t(item.text) }}
               </a>
               <span v-if="item.separator" class="separator" />
             </li>
@@ -57,14 +57,14 @@
                 :class="{ active: $route.path === item.url }"
                 :to="item.url"
               >
-                {{ item.text }}
+                {{ $t(item.text) }}
               </nuxt-link>
               <a
                 v-else
                 :class="{ active: $route.path === item.url }"
                 :href="item.url"
               >
-                {{ item.text }}
+                {{ $t(item.text) }}
               </a>
             </li>
           </template>
@@ -92,28 +92,28 @@ export default {
       return [
         {
           url: '/',
-          text: 'Open Source Projects',
+          text: 'menu.openSource',
           separator: true
         },
         {
           url: 'https://blog.acidineydias.me',
-          text: 'Blog Articles',
+          text: 'menu.blog',
           separator: true,
           external: true
         },
         {
           url: '/technologies',
-          text: 'Technologies',
+          text: 'menu.technologies',
           separator: true
         },
         {
           url: '/experiences',
-          text: 'Experiences',
+          text: 'menu.experiences',
           separator: true
         },
         {
           url: '/contact',
-          text: 'Contact',
+          text: 'menu.contact',
           separator: false
         }
       ]

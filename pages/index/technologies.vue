@@ -1,10 +1,10 @@
 <template>
   <div class="technologies">
-    <app-title>Technologies ‍💻</app-title>
+    <app-title>{{ $t('menu.technologies') }}</app-title>
     <div class="md:overflow-y-auto overflow-x-hidden md:h-90">
       <section v-for="tech in technologies" :key="tech.name" class="tech-section py-2">
         <h4 class="text-lg">
-          {{ tech.name }}
+          {{ $t(`technologies.${tech.name}`) }}
         </h4>
         <div class="grid grid-cols-5 md:grid-cols-10 xl:grid-cols-12 gap-5 icons py-2">
           <i v-for="(icon, idx) in tech.icons" :key="icon + idx" :class="icon" :title="icon" />

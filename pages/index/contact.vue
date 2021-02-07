@@ -1,11 +1,11 @@
 <template>
   <div class="contact">
-    <app-title>Contact 📩</app-title>
+    <app-title>{{ $t('menu.contact') }}</app-title>
     <form
       name="contact"
       @submit.prevent.stop="handleSubmit"
     >
-      <p>You can contact me using form above ^^</p>
+      <p>{{ $t('contact.subTitle') }}</p>
       <form-input
         v-for="input in formInputs"
         :key="input.name"
@@ -16,14 +16,14 @@
       <textarea
         v-model="formContact.message"
         name="message"
-        placeholder="You can write your message here..."
+        :placeholder="$t('contact.message')"
         rows="10"
         required
         minLength="10"
       />
       <button type="submit" class="btn block flex items-center justify-center rounded-full mx-auto mt-4" :disabled="isLoading">
         <template v-if="!isLoading">
-          Send Message
+          {{ $t('contact.submit') }}
         </template>
         <loading v-else />
       </button>
@@ -56,12 +56,12 @@ export default {
         {
           name: 'name',
           type: 'text',
-          placeholder: 'Your name'
+          placeholder: this.$t('contact.fromName')
         },
         {
           name: 'email',
           type: 'email',
-          placeholder: 'Your email here...'
+          placeholder: this.$t('contact.fromEmail')
         }
       ]
     }

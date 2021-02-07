@@ -1,6 +1,6 @@
 <template>
   <div class="experiences">
-    <app-title>Experiences 👨‍🔧</app-title>
+    <app-title>{{ $t('menu.experiences') }}</app-title>
     <div class="list-of-experiences md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6">
       <experience-item
         v-for="experience in experiences"
@@ -25,7 +25,7 @@ export default {
   },
   asyncData ({ server }) {
     return {
-      experiences: Experiences.experiences.reverse()
+      experiences: Experiences.experiences
     }
   }
 }

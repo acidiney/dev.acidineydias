@@ -5,33 +5,22 @@
         <header class="flex flex-col">
           <figure>
             <img
-              src="~/assets/images/avatar.jpg"
+              src="~/assets/images/avatar.jpeg"
               class="w-32 h-32 rounded-full mb-6 object-cover object-right-top"
               alt="avatar"
             >
           </figure>
         </header>
         <footer class="text-white">
-          <h1 class="text-5xl">
-            Hello, I’m <br>
-            Acidiney Dias.
-          </h1>
+          <h1 class="text-5xl" v-html="$t('hello')" />
 
-          <p class="md:w-4/5">
-            I'm a full stack developer, currently working as a Software Developer at <a
-              href="https://www.itgest.co.ao"
-              target="__blank"
-            >ITGest</a>.
-            I'm a frontend addict and an user experience enthusiast. I love css with passion and
-            I'm always eager to share new discoveries. I love to see my projects working front to back smoothly.
-            I try to share my learnings on Youtube/Medium and anywhere that allows me.
-          </p>
+          <p class="md:w-4/5" v-html="$t('cover')" />
           <a
             class="text-left md:mr-5 block"
             href="https://drive.google.com/file/d/1Z4MJTGAmKNCsoTLzXNuqgsOvRM1poNmy/view?usp=sharing"
             target="__blank"
           >
-            <i class="icon-download" /> Download my CV.
+            <i class="icon-download" /> {{ $t('downloadCV') }}.
           </a>
 
           <div class="social mt-4 md:fixed bottom-0 flex-col flex">
