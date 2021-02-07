@@ -2,7 +2,7 @@
   <div
     :class="[
       { 'overflow-hidden': showMenu },
-      `theme-${theme} overflow-y-hidden box-border`
+      `theme-${theme} md:overflow-y-hidden box-border`
     ]"
   >
     <div class="w-4/5 mx-auto pb-6 md:pb-0">
