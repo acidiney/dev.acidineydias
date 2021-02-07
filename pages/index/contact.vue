@@ -86,9 +86,10 @@ export default {
         }
       }, axiosConfig)
         .then(() => {
-          this.$toast.show(this.$t('success'), {
+          this.$toast.show(this.$t('contact.success'), {
             position: 'bottom-center',
-            type: 'success'
+            type: 'success',
+            duraction: 1000
           })
           this.formContact = {
             name: '',
@@ -97,9 +98,10 @@ export default {
           }
         })
         .catch(() => {
-          this.$toast.show(this.$t('error'), {
+          this.$toast.show(this.$t('contact.error'), {
             position: 'bottom-center',
-            type: 'error'
+            type: 'error',
+            duraction: 1500
           })
         })
         .finally(() => {
