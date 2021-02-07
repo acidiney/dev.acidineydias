@@ -1,7 +1,6 @@
 const builtAt = new Date().toISOString()
 
 module.exports = {
-  mode: 'universal',
   target: 'static',
   /*
   ** Headers of the page
@@ -50,6 +49,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~/assets/@theme/scss/index.scss',
+    '~/assets/@theme/scss/_light.scss',
+    '~/assets/@theme/scss/_dark.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -57,6 +59,7 @@ module.exports = {
   plugins: [
     '~/plugins/disqus',
     '~/plugins/title.component.js',
+    '~/plugins/project-item.component.js',
     { src: '~/plugins/infiniteScroll.js', mode: 'client' },
     { src: '~/plugins/localStorage.js', mode: 'client' }
   ],
