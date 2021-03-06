@@ -9,9 +9,6 @@
       <h2 class="text-2xl">
         {{ repo.name.trim() | capitalize }}
       </h2>
-      <p class="my-3">
-        {{ repo.description && repo.description.trim().slice(0, 60) }}...
-      </p>
       <br>
       <div class="categories flex-wrap flex">
         <p class="mr-2 text-xs rounded capitalize">
