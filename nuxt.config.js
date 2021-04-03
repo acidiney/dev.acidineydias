@@ -40,8 +40,7 @@ module.exports = {
       { rel: 'stylesheet', type: 'text/css', href: '/style.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/index.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_dark.css' },
-      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_light.css' },
-      { rel: 'stylesheet', type: 'text/css', href: '/dracula.css' }
+      { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_light.css' }
     ]
   },
   /*
@@ -57,7 +56,6 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/disqus',
     '~/plugins/title.component.js',
     '~/plugins/project-item.component.js',
     { src: '~/plugins/infiniteScroll.js', mode: 'client' },
@@ -82,9 +80,7 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/feed',
     '@nuxt/image',
-    '@nuxt/content',
     '@nuxtjs/dotenv',
     '@nuxtjs/sitemap',
     '@nuxtjs/toast',
@@ -120,75 +116,10 @@ module.exports = {
     defaultLocale: 'pt'
   },
 
-  image: {
-    presets: [
-      {
-        name: 'jpg-cover',
-        modifiers: {
-          fit: 'cover',
-          format: 'jpg'
-        }
-      }
-    ],
-    providers: {
-      cloudinary: {
-        baseURL: 'https://res.cloudinary.com/dsfsfcdyo/image/upload/v1601593480/AcidineyDias.me/'
-      }
-    }
-  },
-
-  content: {
-    markdown: {
-      remarkPlugins: ['remark-emoji'],
-      prism: {
-        theme: 'prism-themes/themes/prism-dracula.css'
-      }
-    }
-  },
-
   env: {
     SERVICE_ID: process.env.SERVICE_ID,
     USER_ID: process.env.USER_ID,
     GOOGLE_ANALYTICS_APP: process.env.GOOGLE_ANALYTICS_APP
-  },
-
-  feed () {
-    const baseUrlBlog = 'https://blog.acidineydias.me'
-    const feedFormats = {
-      rss: { type: 'rss2', file: 'feed.xml' },
-      json: { type: 'json1', file: 'feed.json' }
-    }
-
-    const createFeedArticles = async function (feed) {
-      feed.options = {
-        title: 'Acidiney Dias\' Blog',
-        description: 'I write about programming and my personal live',
-        link: baseUrlBlog
-      }
-      const { $content } = require('@nuxt/content')
-      const articles = await $content().fetch()
-
-      articles.forEach((article) => {
-        const url = `${baseUrlBlog}/${article.slug}`
-
-        feed.addItem({
-          id: url,
-          link: url,
-          date: new Date(article.date),
-          title: article.title,
-          content: article.description,
-          categories: article.categories,
-          description: article.description,
-          author: ['Acidiney Dias']
-        })
-      })
-    }
-
-    return Object.values(feedFormats).map(({ file, type }) => ({
-      path: `/${file}`,
-      type,
-      create: createFeedArticles
-    }))
   },
 
   sitemap: {
@@ -196,6 +127,7 @@ module.exports = {
     lastmod: builtAt,
     routes: []
   },
+
   pwa: {
     manifest: {
       name: 'Acidiney Dias | Full stack developer',
@@ -218,14 +150,6 @@ module.exports = {
         vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
-    }
-  },
-  generate: {
-    async ready () {
-      const { $content } = require('@nuxt/content')
-      const files = await $content().only(['path']).fetch()
-
-      return files.map(file => file.path === '/index' ? '/' : file.path)
     }
   }
 }

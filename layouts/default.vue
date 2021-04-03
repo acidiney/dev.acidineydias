@@ -2,7 +2,7 @@
   <div
     :class="[
       { 'overflow-hidden': showMenu },
-      `theme-${theme} md:overflow-y-hidden box-border`
+      `theme-${theme} md:fixed md:overflow-y-hidden box-border`
     ]"
   >
     <div class="w-4/5 mx-auto pb-6 md:pb-0">
@@ -10,10 +10,7 @@
         <ul class="left hidden items-center md:flex">
           <template v-for="item in menuItens">
             <li :key="item.url" class="flex">
-              <nuxt-link
-                v-if="!item.external"
-                :to="item.url"
-              >
+              <nuxt-link v-if="!item.external" :to="item.url">
                 {{ $t(item.text) }}
               </nuxt-link>
               <a
@@ -145,6 +142,14 @@ export default {
     },
     toogleMenu () {
       this.showMenu = !this.showMenu
+    }
+  },
+  head () {
+    return {
+      bodyAttrs: {
+        class:
+          'md:fixed'
+      }
     }
   }
 }
