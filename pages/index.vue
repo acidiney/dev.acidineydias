@@ -14,7 +14,7 @@
         <footer class="text-white">
           <h1 class="text-5xl" v-html="$t('hello')" />
 
-          <p class="md:w-4/5" v-html="$t('cover')" />
+          <p class="md:w-4/5" v-html.safe="$t('cover')" />
           <a
             class="text-left md:mr-5 block"
             href="https://drive.google.com/file/d/1Z4MJTGAmKNCsoTLzXNuqgsOvRM1poNmy/view?usp=sharing"
@@ -85,9 +85,6 @@ export default {
       },
       immediate: true
     }
-  },
-  methods: {
-    WritePost (name, event) {}
   },
   head () {
     return {
