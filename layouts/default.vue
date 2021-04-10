@@ -148,7 +148,7 @@ export default {
     return {
       bodyAttrs: {
         class:
-          'md:fixed'
+          `md:fixed theme-${this.theme}`
       }
     }
   }
