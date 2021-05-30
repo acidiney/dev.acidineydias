@@ -3,7 +3,7 @@ export default {
   cover: `
     E eu sou seu PAI!!!! TAN TAN TAN 🤪. <br />
     😂 Mentira, sou desenvolvedor de sistemas,<br />
-    Sou completamente viciado em frontend e um entusiasta da experiência do utilizador.
+    Sou completamente viciado em frontend e um entusiasta da experiência do utilizador.<br />
     Porém, acho íncrivel os processos do backstage também, desta forma me encantando mais com a 
     experiência de desenvolver do que necessáriamente uma parte especifica.<br />
     Recentemente tenho me interessado muito por finanças e investimentos em geral, e acabo perdendo algum
