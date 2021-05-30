@@ -1,12 +1,12 @@
 export default {
   hello: 'Hello, I\'m <br /> Acidiney Dias',
-  cover: `And I'm your DAD!!!! TAN TAN TAN 🤪.
-     😂 It is a lie, I'm a Software developer,
-     I'm completely addicted to frontend and a user experience enthusiast.
+  cover: `And I'm your DAD!!!! TAN TAN TAN 🤪.<br />
+     😂 It is a lie, I'm a Software developer,<br />
+     I'm completely addicted to frontend and a user experience enthusiast.<br />
      However, I think the backstage processes are amazing too, this way I am more enchanted with the
-     experience of developing than necessarily a specific part of development process.
+     experience of developing than necessarily a specific part of development process.<br />
      Recently I've been very interested in finance and investments in general, and I end up losing some
-     time studying about. My friends who tell you, we hardly ever spend time together again 😅 (Ah, there is also Corona).
+     time studying about. My friends who tell you, we hardly ever spend time together again 😅 (Ah, there is also Corona).<br />
      And I try to share my learnings on Youtube/Medium and anywhere I can.`,
   menu: {
     openSource: 'Open source projects 🤜🏽',
