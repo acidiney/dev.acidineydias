@@ -1,13 +1,13 @@
 export default {
   hello: 'Olá, eu sou o <br /> Acidiney Dias',
   cover: `
-    E eu sou seu PAI!!!! TAN TAN TAN 🤪.
-    😂 Mentira, sou desenvolvedor de sistemas,
+    E eu sou seu PAI!!!! TAN TAN TAN 🤪. <br />
+    😂 Mentira, sou desenvolvedor de sistemas,<br />
     Sou completamente viciado em frontend e um entusiasta da experiência do utilizador.
     Porém, acho íncrivel os processos do backstage também, desta forma me encantando mais com a 
-    experiência de desenvolver do que necessáriamente uma parte especifica.
+    experiência de desenvolver do que necessáriamente uma parte especifica.<br />
     Recentemente tenho me interessado muito por finanças e investimentos em geral, e acabo perdendo algum
-    tempo estudando sobre. Meus amigos que o digam, quase nunca mais estivemos juntos 😅 ( Ah, tem o Corona também ).
+    tempo estudando sobre. Meus amigos que o digam, quase nunca mais estivemos juntos 😅 ( Ah, tem o Corona também ).<br />
     E Tento partilhar os meus aprendizados no Youtube/Medium e em qualquer lugar que me permita.`,
   menu: {
     openSource: 'Projectos abertos 🤜🏽',
