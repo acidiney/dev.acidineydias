@@ -1,12 +1,13 @@
 export default {
   hello: 'Hello, I\'m <br /> Acidiney Dias',
-  cover: `I'm a full stack developer, currently working as a Software Developer at <a
-      href="https://www.itgest.co.ao"
-      target="__blank"
-    >ITGest</a>.
-    I'm a frontend addict and an user experience enthusiast. I love css with passion and
-    I'm always eager to share new discoveries. I love to see my projects working front to back smoothly.
-    I try to share my learnings on Youtube/Medium and anywhere that allows me.`,
+  cover: `And I'm your DAD!!!! TAN TAN TAN 🤪.
+     😂 It is a lie, I'm a Software developer,
+     I'm completely addicted to frontend and a user experience enthusiast.
+     However, I think the backstage processes are amazing too, this way I am more enchanted with the
+     experience of developing than necessarily a specific part of development process.
+     Recently I've been very interested in finance and investments in general, and I end up losing some
+     time studying about. My friends who tell you, we hardly ever spend time together again 😅 (Ah, there is also Corona).
+     And I try to share my learnings on Youtube/Medium and anywhere I can.`,
   menu: {
     openSource: 'Open source projects 🤜🏽',
     blog: 'Blog 😊',
