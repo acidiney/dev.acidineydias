@@ -1,13 +1,13 @@
 export default {
   hello: 'Olá, eu sou o <br /> Acidiney Dias',
   cover: `
-    Sou um desenvolvedor full-stack, actualmente trabalho como programador de software na <a
-    href="https://www.itgest.co.ao"
-    target="__blank"
-    >ITGest</a>.
+    E eu sou seu PAI!!!! TAN TAN TAN 🤪.
+    😂 Mentira, sou desenvolvedor de sistemas,
     Sou completamente viciado em frontend e um entusiasta da experiência do utilizador.
-    Adoro o css com paixão e estou sempre ansioso por partilhar novas descobertas.
-    Adoro ver os meus projectos a trabalhar de frente para trás.
+    Porém, acho íncrivel os processos do backstage também, desta forma me encantando mais com a 
+    experiência de desenvolver do que necessáriamente uma parte especifica.
+    Recentemente tenho me interessado muito por finanças e investimentos em geral, e acabo perdendo algum
+    tempo estudando sobre. Meus amigos que o digam, quase nunca mais estivemos juntos 😅 ( Ah, tem o Corona também ).
     E Tento partilhar os meus aprendizados no Youtube/Medium e em qualquer lugar que me permita.`,
   menu: {
     openSource: 'Projectos abertos 🤜🏽',
@@ -23,7 +23,7 @@ export default {
     fromEmail: 'Escreva o seu e-mail aqui...',
     message: 'Ok, agora escreva sua mensagem...',
     submit: 'Enviar para mim.',
-    success: 'Mensagem enviada, irei responder o mais rápido possivel',
+    success: 'Mensagem enviada, irei responder o mais rápido possível',
     error: 'Oops, isso não deveria ter acontecido! Envie um e-mail para hello@acidineydias.me no lugar.'
   },
   downloadCV: 'Baixar o meu CV',
