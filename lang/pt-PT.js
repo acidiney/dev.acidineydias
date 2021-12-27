@@ -10,11 +10,11 @@ export default {
     tempo estudando sobre. Meus amigos que o digam, quase nunca mais estivemos juntos 😅 ( Ah, tem o Corona também ).<br />
     E Tento partilhar os meus aprendizados no Youtube/Medium e em qualquer lugar que me permita.`,
   menu: {
-    openSource: 'Projectos abertos 🤜🏽',
-    blog: 'Blog 😊',
-    technologies: 'Tecnologias ‍💻',
-    experiences: 'Experiências 👨‍🔧',
-    contact: 'Contacte-me 📩'
+    openSource: 'Projectos abertos',
+    blog: 'Blog',
+    technologies: 'Tecnologias',
+    experiences: 'Experiências',
+    contact: 'Contacte-me'
   },
   findAnyProjectToContribute: 'Encontre algum projecto para contribuir 😄',
   contact: {
