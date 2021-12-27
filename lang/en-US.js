@@ -9,11 +9,11 @@ export default {
      time studying about. My friends who tell you, we hardly ever spend time together again 😅 (Ah, there is also Corona).<br />
      And I try to share my learnings on Youtube/Medium and anywhere I can.`,
   menu: {
-    openSource: 'Open source projects 🤜🏽',
-    blog: 'Blog 😊',
-    technologies: 'Technologies ‍💻',
-    experiences: 'Experiences 👨‍🔧',
-    contact: 'Contact 📩'
+    openSource: 'Open source projects',
+    // blog: 'Blog',
+    technologies: 'Technologies',
+    experiences: 'Experiences',
+    contact: 'Contact'
   },
   findAnyProjectToContribute: 'Find one and contribute 😄',
   contact: {
