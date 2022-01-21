@@ -10,7 +10,7 @@ export default {
      And I try to share my learnings on Youtube/Medium and anywhere I can.`,
   menu: {
     openSource: 'Open source projects',
-    // blog: 'Blog',
+    blog: 'Blog',
     technologies: 'Technologies',
     experiences: 'Experiences',
     contact: 'Contact'
