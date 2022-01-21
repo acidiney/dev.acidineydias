@@ -104,7 +104,7 @@ export default {
           separator: true
         },
         {
-          url: 'https://blog.acidineydias.me',
+          url: 'https://blog.acidineydias.dev',
           text: 'menu.blog',
           separator: true,
           external: true
