@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/eslint": "1.11.0",
     "@nuxt/image": "2.0.0",
+    "@nuxtjs/sitemap": "7.4.7",
     "@pinia/nuxt": "0.11.3",
     "eslint": "^9.0.0",
     "nuxt": "^4.2.1",

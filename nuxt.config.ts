@@ -4,7 +4,7 @@ const builtAt = new Date().toISOString()
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxt/eslint', '@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@pinia/nuxt'],
+  modules: ['@nuxt/image', '@nuxt/eslint', '@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@pinia/nuxt', '@nuxtjs/sitemap'],
     i18n: {
         defaultLocale: 'en',
         locales: [
