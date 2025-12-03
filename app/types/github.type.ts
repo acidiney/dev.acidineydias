@@ -6,5 +6,5 @@ export type GithubRepo = {
     description: string
     html_url: string
     language: string
-    updated_at: string
+    updated_at: Date
 }

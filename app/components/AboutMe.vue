@@ -13,10 +13,10 @@
         <footer>
           <h1 class="text-5xl" v-html="$t('hello')" />
 
-          <br />
+          <br>
           <p  class="md:w-4/5" v-html="$t('cover')" />
 
-          <br />
+          <br>
           <a
               class="text-left download-button md:mr-5 block"
               :href="$t('cv_link')"
@@ -25,6 +25,25 @@
           >
             <i class="icon-download" /> {{ $t('downloadCV') }}.
           </a>
+
+          <!-- last article published -->
+
+          <br />
+          <AppTitle>{{ $t('last-article')}}</AppTitle>
+          <section class="last-article w-4/5 py-6" >
+            <a v-if="lastPost" target="_blank" class="block  text-base/6" rel="noreferrer" :href="lastPost.link">
+              <span class="mt-4">{{ formateDate(lastPost.pubDate) }}</span>
+              <p class="title text-2xl">
+                {{ capitalize(lastPost.title.trim()) }}
+              </p>
+              <div class="categories flex-wrap mt-2 flex">
+                <p class="mr-2 text-xs rounded capitalize">
+                  {{ lastPost.description }}
+                </p>
+              </div>
+            </a>
+          </section>
+
 
           <div class="social mt-4 md:fixed bottom-0 flex-col flex">
             <ul class="flex mb-2">
@@ -47,6 +66,8 @@
 
 <script setup lang="ts">
 import SocialNetworks from '~/assets/social.json'
+import {capitalize, formateDate} from "~/filters";
+import AppTitle from "~/components/Title.vue";
 
 
 type SocialNetwork = {
@@ -66,6 +87,28 @@ useHead({
     }
   ]
 })
+
+type LastPost = {
+  title: string
+  link: string
+  pubDate: Date
+  description: string
+}
+
+const lastPost = ref<LastPost | null>(null)
+const loadingPost = ref(true)
+
+const fetchLatestPost = async () => {
+  try {
+    lastPost.value = await $fetch<LastPost | null>('/api/latest-article', { method: 'GET' })
+  } catch (e) {
+    lastPost.value = null
+  } finally {
+    loadingPost.value = false
+  }
+}
+
+onMounted(fetchLatestPost)
 </script>
 
 <script lang="ts">

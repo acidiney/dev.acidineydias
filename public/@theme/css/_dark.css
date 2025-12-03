@@ -126,4 +126,16 @@
   border-left: 1px solid rgba(21, 21, 21, 0.82);
 }
 
-/*# sourceMappingURL=_dark.css.map */
+.theme-dark .last-article a span {
+    color: rgba(148, 148, 149, 0.9);;
+}
+.theme-dark .last-article {
+    border:2px dashed rgba(21, 21, 21, 0.86);
+}
+.theme-dark .last-article:hover, .theme-dark .last-article:focus {
+    background-color: rgba(21, 21, 21, 0.82);
+}
+.theme-dark .last-article a p.title {
+    font-weight: bold;
+    color: #fafafa;
+}

@@ -75,9 +75,11 @@
 .theme-light .articles article a .categories p, .theme-light .articles article a h2, .theme-light .articles article a span {
   color: #f0f0f0;
 }
-.theme-light .articles h2.sub-title {
-  color: rgba(21, 21, 21, 0.82);
+.theme-light .last-article a p.title {
+font-weight: bold;
 }
+
+
 .theme-light .projects article a {
   background: #fff;
 }
@@ -132,5 +134,10 @@
 .theme-light .experiences .line {
   border-left: 1px solid #fff;
 }
+.theme-light .last-article {
+    border:2px dashed #fff;
+}
 
-/*# sourceMappingURL=_light.css.map */
+.theme-light .last-article:hover,.theme-light .last-article:focus  {
+    background-color: #fff;
+}

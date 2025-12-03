@@ -84,4 +84,9 @@ nav ul.left a, nav ul.right a {
   align-content: center;
 }
 
-/*# sourceMappingURL=index.css.map */
+.last-article {
+    padding: 15px;
+    margin: 15px 0;
+    font-family: "Gothic A1", sans-serif;
+
+}
