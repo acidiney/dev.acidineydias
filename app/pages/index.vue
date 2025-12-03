@@ -4,7 +4,7 @@
   >
     <AppTitle>
       {{ $t('menu.openSource') }}<br>
-      <small class="font-light text-gray-200 gothic-font">{{ $t('findAnyProjectToContribute') }}</small>
+      <small class="font-light gothic-font">{{ $t('findAnyProjectToContribute') }}</small>
     </AppTitle>
     <section
       class="grid grid-cols-1 sm:grid-cols-2 gap-5 px-3 mx-auto md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6"

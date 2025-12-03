@@ -4,7 +4,7 @@
         <header class="flex flex-col">
           <figure>
             <img
-                src="/images/avatar.jpeg"
+                src="/images/24493328.jpg"
                 class="w-32 h-32 rounded-full mb-6 object-cover object-right-top"
                 :alt="$t('avatar.alt')"
             >
