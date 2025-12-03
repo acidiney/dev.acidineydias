@@ -2,7 +2,7 @@
   <div
       :class="[
       { 'overflow-hidden': showMenu },
-      `theme-${website.theme} md:fixed md:overflow-y-hidden box-border`
+      `md:fixed theme-${website.theme} md:overflow-y-hidden box-border`
     ]"
   >
     <div class="w-4/5 mx-auto pb-6 md:pb-0">
@@ -108,7 +108,7 @@ const availableLocales = computed(() => {
 const menuItems  = computed(() => {
 
 
-  const basePath = locale.value === 'en' ? '' : `/${locale.value}`
+const basePath = locale.value === 'en' ? '' : `/${locale.value}`
 
 
 return      [
@@ -148,11 +148,17 @@ const toggleMenu = ()=> {
   showMenu.value = !showMenu.value
 }
 
+onMounted(() => {
+  website.initTheme()
+})
+
 useHead({
   bodyAttrs: {
-    class: computed(() =>
-      `md:fixed theme-${website.theme}`
-    )
+    class: {
+      'md:fixed': true,
+      'theme-light': () => website.theme === 'light',
+      'theme-dark': () => website.theme === 'dark'
+    }
   },
   htmlAttrs: {
     lang: computed(() => locale.value)
