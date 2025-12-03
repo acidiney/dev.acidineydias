@@ -1,0 +1,21 @@
+[
+  {
+    "aria-label": "links.github",
+    "link": "https://github.com/acidiney", "icon": "icon-github" },
+  {
+    "aria-label": "links.youtube",
+    "link": "https://www.youtube.com/channel/UCMjOcKmA1UjiimzRDNZ_uOQ",
+    "icon": "icon-youtube"
+  },
+  {
+    "aria-label": "links.linkedin",
+    "link": "https://linkedin.com/in/acidineydias", "icon": "icon-linkedin" },
+  {
+    "aria-label": "links.twitter",
+    "link": "https://x.com/acidineydias", "icon": "icon-twitter" },
+  {
+    "aria-label": "links.instagram",
+    "link": "https://www.instagram.com/acidineydias/",
+    "icon": "icon-instagram"
+  }
+]
