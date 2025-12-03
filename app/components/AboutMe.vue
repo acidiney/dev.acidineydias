@@ -13,11 +13,13 @@
         <footer>
           <h1 class="text-5xl" v-html="$t('hello')" />
 
+          <br />
           <p  class="md:w-4/5" v-html="$t('cover')" />
 
+          <br />
           <a
               class="text-left download-button md:mr-5 block"
-              href="https://drive.google.com/file/d/1Z4MJTGAmKNCsoTLzXNuqgsOvRM1poNmy/view?usp=sharing"
+              :href="$t('cv_link')"
               target="__blank"
               :aria-label="$t('downloadCV')"
           >
