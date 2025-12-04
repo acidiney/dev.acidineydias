@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('./fonts/icomoon.eot?fviqtv');
-  src:  url('./fonts/icomoon.eot?fviqtv#iefix') format('embedded-opentype'),
-    url('./fonts/icomoon.ttf?fviqtv') format('truetype'),
-    url('./fonts/icomoon.woff?fviqtv') format('woff'),
-    url('./fonts/icomoon.svg?fviqtv#icomoon') format('svg');
+  src:  url('../../../public/fonts/icomoon.eot?fviqtv');
+  src:  url('../../../public/fonts/icomoon.eot?fviqtv#iefix') format('embedded-opentype'),
+    url('../../../public/fonts/icomoon.ttf?fviqtv') format('truetype'),
+    url('../../../public/fonts/icomoon.woff?fviqtv') format('woff'),
+    url('../../../public/fonts/icomoon.svg?fviqtv#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -14,11 +14,11 @@
 
 @font-face {
   font-family: 'extra';
-  src:  url('./fonts/extra.eot?7zsq12');
-  src:  url('./fonts/extra.eot?7zsq12#iefix') format('embedded-opentype'),
-    url('./fonts/extra.ttf?7zsq12') format('truetype'),
-    url('./fonts/extra.woff?7zsq12') format('woff'),
-    url('./fonts/extra.svg?7zsq12#extra') format('svg');
+  src:  url('../../../public/fonts/extra.eot?7zsq12');
+  src:  url('../../../public/fonts/extra.eot?7zsq12#iefix') format('embedded-opentype'),
+    url('../../../public/fonts/extra.ttf?7zsq12') format('truetype'),
+    url('../../../public/fonts/extra.woff?7zsq12') format('woff'),
+    url('../../../public/fonts/extra.svg?7zsq12#extra') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

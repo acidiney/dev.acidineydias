@@ -55,11 +55,14 @@ export default defineNuxtConfig({
     { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-152x152.png', sizes: '152x152' },
     { rel: 'apple-touch-icon', href: '/favicon/apple-touch-icon-180x180.png', sizes: '180x180' },
     { rel: 'mask-icon', type: 'image/png', href: '/favicon/safari-pinned-tab.svg', color: '#c1c1c1' },
-    { rel: 'stylesheet', type: 'text/css', href: '/style.css' },
-    { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/index.css' },
-    { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_dark.css' },
-    { rel: 'stylesheet', type: 'text/css', href: '/@theme/css/_light.css' }
 ]
       }
-    }
+    },
+    css: [
+        '~/assets/css/style.css',
+        '~/assets/css/index.css',
+        '~/assets/css/dark.css',
+        '~/assets/css/light.css',
+
+    ]
 })
