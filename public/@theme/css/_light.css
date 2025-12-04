@@ -70,7 +70,7 @@
   color: #333;
 }
 .theme-light .articles article a {
-  background-color: #3b3b3bbd;
+  background-color: #1e1e1ebd;
 }
 .theme-light .articles article a .categories p, .theme-light .articles article a h2, .theme-light .articles article a span {
   color: #f0f0f0;
@@ -84,10 +84,10 @@ font-weight: bold;
   background: #fff;
 }
 .theme-light .projects article a .categories p, .theme-light .projects article a h2, .theme-light .projects article a span {
-  color: #3b3b3bbd;
+  color: #1e1e1ebd;
 }
 .theme-light .projects article a h2.sub-title {
-  color: #3b3b3bbd;
+  color: #1e1e1ebd;
 }
 .theme-light .contact form p {
   color: #212121;
