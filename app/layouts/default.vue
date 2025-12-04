@@ -1,5 +1,6 @@
 <template>
   <div
+      v-if="canRender"
       :class="[
       { 'overflow-hidden': showMenu },
       `md:fixed theme-${website.theme} md:overflow-y-hidden box-border`
@@ -100,6 +101,7 @@ const switchLocalePath = useSwitchLocalePath()
 const website = useWebsiteStore()
 
 const showMenu = ref(false)
+const canRender = ref(false)
 
 const availableLocales = computed(() => {
   return locales.value.filter(i => i.code !== locale.value)
@@ -150,6 +152,7 @@ const toggleMenu = ()=> {
 
 onMounted(() => {
   website.initTheme()
+  canRender.value = true
 })
 
 useHead({
