@@ -1,21 +1,16 @@
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY!);
+
 export default defineEventHandler(async (event) => {
-    const body = await readBody(event);
-    const config = useRuntimeConfig(event)
+  const body = await readBody(event);
 
-    console.log(body, "Send Mail")
+  await resend.emails.send({
+    from: `${body.name} <${body.email}>`,
+    to: ["hireme@acidineydias.dev"],
+    subject: "Contact Form Submission",
+    html: `<p>${body.message}</p>`,
+  });
 
-    return event.$fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        body: JSON.stringify({
-            service_id: config.serviceID,
-            template_id: 'template_d6my7pf',
-            user_id: config.userId,
-            template_params: {
-                from_name: body.name,
-                reply_to: body.email,
-                message: body.message
-            }
-        }),
-        headers: {'Content-Type': 'application/json'}
-    })
-})
+  return { success: true };
+});
