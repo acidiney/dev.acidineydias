@@ -53,15 +53,13 @@ article a {
 }
 
 article a header .categories p {
-  font-weight: 100;
+  font-weight: 200;
   font-family: 'Gothic A1',sans-serif;
-  /* color: white; */
   text-transform: uppercase;
 }
 
 article a h2 {
   font-weight: 400;
-  /* color: #fff; */
   font-family: 'Roboto', sans-serif;
 }
 
@@ -70,8 +68,7 @@ article a p {
 }
 
 article a span {
-  /* color: #fff; */
   font-family: 'Gothic A1', sans-serif;
-  font-weight: 100;
+  font-weight: 200;
 }
 </style>
