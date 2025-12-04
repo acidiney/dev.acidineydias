@@ -122,7 +122,7 @@ return      [
   },
         {
           url: `${basePath}/`,
-          text: 'menu.openSource',
+          text: 'menu.experiences',
           separator: true
         },
 
@@ -132,8 +132,8 @@ return      [
           separator: true
         },
         {
-          url: `${basePath}/experiences`,
-          text: 'menu.experiences',
+          url: `${basePath}/open-source`,
+          text: 'menu.openSource',
           separator: true
         },
         {
@@ -150,7 +150,7 @@ const toggleMenu = ()=> {
   showMenu.value = !showMenu.value
 }
 
-onMounted(() => {
+onBeforeMount(() => {
   website.initTheme()
   canRender.value = true
 })

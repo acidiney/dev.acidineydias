@@ -1,49 +1,70 @@
 <template>
-  <div
-    class="projects"
-  >
-    <AppTitle>
-      {{ $t('menu.openSource') }}<br>
-      <small class="font-light gothic-font">{{ $t('findAnyProjectToContribute') }}</small>
-    </AppTitle>
-    <section
-      class="grid grid-cols-1 sm:grid-cols-2 gap-5 px-3 mx-auto md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6"
-    >
-      <ProjectItem
-        v-for="repo of repos"
-        :key="repo.id"
-        :repo="repo"
+  <div class="experiences">
+    <AppTitle>{{ $t('menu.experiences') }}</AppTitle>
+    <div class="list-of-experiences md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6">
+      <ExperienceItem
+        v-for="experience in data?.experiences"
+        :key="experience.companyName"
+        :company-logo="experience.companyLogo"
+        :company-name="experience.companyName"
+        :role="experience.role"
+        :start-date="experience.startDate"
+        :end-date="experience.endDate"
+        :location="experience.location"
+        :website="experience.website"
       />
-    </section>
+      <section class="w-full flex items-center flex-col">
+        <span class="line" />
+        <div class="dot rounded-full" />
+      </section>
+    </div>
   </div>
 </template>
-
 <script setup lang="ts">
+import ExperienceItem from '~/components/ExperienceItem.vue'
 import AppTitle from "~/components/Title.vue";
-import ProjectItem from "~/components/ProjectItem.vue";
-import type {GithubRepo} from "~/types/github.type";
 
-
-
-const loadRepositories = async (page = 1) => {
-  return await $fetch<GithubRepo[]>('https://api.github.com/users/acidiney/repos?sort=created&page=' + page)
-      .then(repo => repo.filter(r => !r.fork))
-      .then(repo => repo.sort((a, b) => a.stargazers_count > b.stargazers_count ? -1 : 1))
+export interface Root {
+  scheme: string
+  description: string
+  author: string
+  version: string
+  experiences: Experience[]
 }
 
+export interface Experience {
+  companyLogo: string
+  companyName: string
+  website: string
+  role: string
+  startDate: string
+  endDate: string
+  location: string
+}
 
-const { data: repos } = await useAsyncData(() => loadRepositories(), { immediate: true })
-
+const {
+  data
+} = useAsyncData<Root>(() => import('~/assets/experiences.json'), { immediate: true })
 </script>
 
-
 <style scoped>
+.experiences .line {
+  display: block;
+  height: 70px;
+}
+.experiences .dot {
+  height: 30px;
+  width: 30px;
+}
 @media (min-width: 768px) {
   .md\:h-90 {
     height: 86vh;
-    padding-bottom: 5em;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .md\:h-90::webkit-scrollbar {
+    display: none;
+  }
 }
+
 </style>
