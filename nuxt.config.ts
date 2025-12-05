@@ -139,7 +139,7 @@ export default defineNuxtConfig({
       installPrompt: true,
     },
     manifest: {
-      id: "/",
+      id: "acidiney_dias_dev",
       name: "Acidiney Dias | Full stack developer",
       short_name: "acidiney_dias",
       lang: "en",
