@@ -1,36 +1,43 @@
-
-
-*,
-*:before,
-*:after {
+/* ---------------------------------------
+   Global Reset
+---------------------------------------- */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   transition: all 0.26s linear;
 }
 
-/* transaction animation */
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all 0.4s ease;
+/* ---------------------------------------
+   Transitions - Page Animations
+---------------------------------------- */
+.slide-fade {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.4s ease;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: translateX(50px);
+    opacity: 0;
+  }
 }
 
-.slide-fade-enter,
-.slide-fade-leave-to {
-  transform: translateX(50px);
-  opacity: 0;
+.fade {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity 0.5s;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-/* Scroll 2 */
+/* ---------------------------------------
+   Scrollbar
+---------------------------------------- */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -46,8 +53,13 @@
   border-radius: 10px;
 }
 
+/* ---------------------------------------
+   HTML Base Styles
+---------------------------------------- */
 html {
-  font-family: "Gothic A1", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-family: "Gothic A1", "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif !important;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -57,50 +69,49 @@ html {
   box-sizing: border-box;
 }
 
+/* ---------------------------------------
+   Navigation
+---------------------------------------- */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ul.left {
+    span.separator {
+      margin: 0 5px;
+    }
+  }
+
+  ul.left a,
+  ul.right a {
+    display: flex;
+  }
 }
 
-nav ul.left span.separator {
-  margin: 0 5px;
-}
-
-nav ul.left a,
-nav ul.right a {
-  display: flex;
-}
-
+/* ---------------------------------------
+   Utilities
+---------------------------------------- */
 .gothic-font {
-  font-family: "Gothic A1", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Gothic A1", "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
 }
 
-.mobile-menu {
-  backdrop-filter: blur(2px);
-}
-
-.mobile-menu button.absolute {
-  right: 10px;
-  top: 10px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 35px;
-  border-radius: 25px;
-  align-content: center;
-}
-
+/* ---------------------------------------
+   Article Styles
+---------------------------------------- */
 .last-article {
   padding: 15px;
   margin: 15px 0;
   font-family: "Gothic A1", sans-serif;
 }
 
-/* ---------------------------------------
-   Router Active Link
----------------------------------------- */
-.router-link-exact-active {
-  font-weight: bold !important;
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
 }

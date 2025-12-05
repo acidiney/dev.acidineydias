@@ -7,7 +7,11 @@
     {
       "name": "languages",
       "icons": [
-        "icon-rust"
+        "icon-javascript",
+        "icon-python",
+        "icon-go",
+        "icon-kotlin",
+        "icon-php"
       ]
     },
     {
@@ -17,16 +21,14 @@
         "icon-vue-dot-js",
         "icon-angular",
         "icon-css3",
-        "icon-csswizardry",
-        "icon-d3-dot-js",
-        "icon-jquery",
         "icon-react",
-        "icon-redux",
         "icon-storybook",
-        "icon-stylus",
         "icon-svelte",
         "icon-tailwindcss",
-        "icon-typescript"
+        "icon-typescript",
+        "icon-webpack",
+        "icon-figma",
+        "icon-adobexd"
       ]
     },
     {
@@ -34,8 +36,10 @@
       "icons": [
         "icon-codeigniter",
         "icon-deno",
-        "icon-typescript"
-
+        "icon-node-dot-js",
+        "icon-laravel",
+        "icon-django",
+        "icon-nginx"
       ]
     },
     {
@@ -49,29 +53,32 @@
     {
       "name": "packageManager",
       "icons": [
-        "icon-yarn"
+        "icon-yarn",
+        "icon-npm"
       ]
     },
     {
       "name": "database",
       "icons": [
         "icon-mysql",
-        "icon-postgresql"
+        "icon-postgresql",
+        "icon-mongodb"
       ]
     },
     {
       "name": "editors",
       "icons": [
         "icon-visualstudiocode",
+        "icon-vim",
         "icon-jetbrains",
         "icon-sublimetext",
-        "icon-visualstudio"
+        "icon-xcode"
       ]
     },
     {
       "name": "mobileDevelopment",
       "icons": [
-        "icon-nativescript"
+        "icon-ionic"
       ]
     },
     {
@@ -79,56 +86,56 @@
       "icons": [
         "icon-docker",
         "icon-jenkins",
-        "icon-microsoftazure",
-        "icon-travisci"
+        "icon-github",
+        "icon-gitlab"
       ]
     },
     {
       "name": "extraTools",
       "icons": [
-        "icon-openssl",
-        "icon-snyk",
-        "icon-teamviewer",
         "icon-todoist",
         "icon-trello",
-        "icon-skype",
-        "icon-zoom"
+        "icon-spotify",
+        "icon-shopify",
+        "icon-microsoftteams"
       ]
     },
     {
       "name": "browser",
       "icons": [
-        "icon-tor"
+        "icon-brave",
+        "icon-mozillafirefox"
       ]
     },
     {
       "name": "managementAndDeploymentTools",
       "icons": [
         "icon-cloudflare",
-        "icon-netlify"
+        "icon-netlify",
+        "icon-heroku",
+        "icon-microsoftazure",
+        "icon-amazonaws",
+        "icon-linode"
       ]
     },
     {
       "name": "videoStreamPlatforms",
       "icons": [
-        "icon-youtube-play",
-        "icon-crunchyroll",
-        "icon-netflix",
-        "icon-pluralsight",
-        "icon-ted"
+        "icon-youtube",
+        "icon-crunchyroll"
       ]
     },
     {
       "name": "gamming",
       "icons": [
-        "icon-steam",
-        "icon-xsplit"
+        "icon-steam"
       ]
     },
     {
       "name": "projects",
       "icons": [
         "icon-github",
+        "icon-gitlab",
         "icon-medium",
         "icon-producthunt"
       ]
@@ -136,42 +143,27 @@
     {
       "name": "socialMedia",
       "icons": [
-        "icon-twitter",
+        "icon-x",
         "icon-linkedin",
         "icon-instagram",
         "icon-discord",
-        "icon-quora",
-        "icon-reddit",
-        "icon-stackoverflow"
-      ]
-    },
-    {
-      "name": "drive",
-      "icons": [
-        "icon-mega"
-      ]
-    },
-    {
-      "name": "eventTickets",
-      "icons": [
-        "icon-meetup"
+        "icon-reddit"
       ]
     },
     {
       "name": "operationalSystems",
       "icons": [
         "icon-apple",
-        "icon-archlinux",
-        "icon-debian",
-        "icon-deepin",
-        "icon-microsoft"
+        "icon-ubuntu",
+        "icon-archlinux"
       ]
     },
     {
       "name": "enthusiast",
       "icons": [
         "icon-monero",
-        "icon-tensorflow"
+        "icon-bitcoin",
+        "icon-ethereum"
       ]
     }
   ]

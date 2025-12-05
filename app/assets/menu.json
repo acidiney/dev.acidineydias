@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://blog.acidineydias.dev",
+    "text": "menu.blog",
+    "separator": true,
+    "external": true
+  },
+  {
+    "url": "/",
+    "text": "menu.experiences",
+    "separator": true
+  },
+  {
+    "url": "/technologies",
+    "text": "menu.technologies",
+    "separator": true
+  },
+  {
+    "url": "/open-source",
+    "text": "menu.openSource",
+    "separator": true
+  },
+  {
+    "url": "/contact",
+    "text": "menu.contact",
+    "separator": false
+  }
+]
