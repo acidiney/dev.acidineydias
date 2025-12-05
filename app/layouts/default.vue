@@ -66,6 +66,14 @@ useHead({
       "theme-dark": () => website.theme === "dark",
     },
   },
+  meta: computed(() => {
+    const themeColor = website.theme === "dark" ? "#212121" : "#f0f0f0";
+
+    return [
+      { name: "msapplication-TileColor", content: themeColor },
+      { name: "theme-color", content: themeColor },
+    ];
+  }),
   htmlAttrs: {
     lang: computed(() => locale.value),
   },

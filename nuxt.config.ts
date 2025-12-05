@@ -37,8 +37,6 @@ export default defineNuxtConfig({
         { name: "author", content: "Acidiney Dias <hireme@acidineydias.dev>" },
         { name: "application-name", content: "Acidiney Dias Website" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "msapplication-TileColor", content: "#212121" },
-        { name: "theme-color", content: "#212121" },
         { name: "robots", content: "index, blog, follow" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:site", content: "@acidineydias" },
