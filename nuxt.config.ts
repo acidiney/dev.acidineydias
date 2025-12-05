@@ -139,8 +139,9 @@ export default defineNuxtConfig({
       installPrompt: true,
     },
     manifest: {
+      id: "/",
       name: "Acidiney Dias | Full stack developer",
-      short_name: "Acidiney Dias",
+      short_name: "acidiney_dias",
       lang: "en",
       theme_color: "#212121",
       background_color: "#212121",
