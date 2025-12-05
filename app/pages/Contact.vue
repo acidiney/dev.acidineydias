@@ -104,6 +104,10 @@ const handleSubmit = () => {
       isLoading.value = false;
     });
 };
+
+useHead({
+  title: computed(() => `Acidiney Dias | ${$t("menu.contact")}`),
+});
 </script>
 
 <style scoped>

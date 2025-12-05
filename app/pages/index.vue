@@ -9,4 +9,8 @@
 </template>
 <script setup lang="ts">
 import Experiences from "./experiences.vue";
+
+useHead({
+  title: computed(() => `Acidiney Dias | Full stack developer`),
+});
 </script>

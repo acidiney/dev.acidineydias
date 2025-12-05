@@ -50,6 +50,10 @@ const { data } = useAsyncData<Root>(async () => {
 export default {
   name: "Technologies",
 };
+
+useHead({
+  title: computed(() => `Acidiney Dias | ${$t("menu.technologies")}`),
+});
 </script>
 <style scoped>
 section h4 {

@@ -1,7 +1,9 @@
 <template>
   <div class="experiences">
-    <AppTitle>{{ $t('menu.experiences') }}</AppTitle>
-    <div class="list-of-experiences md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6">
+    <AppTitle>{{ $t("menu.experiences") }}</AppTitle>
+    <div
+      class="list-of-experiences md:overflow-y-auto overflow-x-hidden md:h-90 md:pt-6"
+    >
       <ExperienceItem
         v-for="experience in data?.experiences"
         :key="experience.companyName"
@@ -21,30 +23,34 @@
   </div>
 </template>
 <script setup lang="ts">
-import ExperienceItem from '~/components/ExperienceItem.vue'
+import ExperienceItem from "~/components/ExperienceItem.vue";
 import AppTitle from "~/components/Title.vue";
 
 export interface Root {
-  scheme: string
-  description: string
-  author: string
-  version: string
-  experiences: Experience[]
+  scheme: string;
+  description: string;
+  author: string;
+  version: string;
+  experiences: Experience[];
 }
 
 export interface Experience {
-  companyLogo: string
-  companyName: string
-  website: string
-  role: string
-  startDate: string
-  endDate: string
-  location: string
+  companyLogo: string;
+  companyName: string;
+  website: string;
+  role: string;
+  startDate: string;
+  endDate: string;
+  location: string;
 }
 
-const {
-  data
-} = useAsyncData<Root>(() => import('~/assets/experiences.json'), { immediate: true })
+const { data } = useAsyncData<Root>(() => import("~/assets/experiences.json"), {
+  immediate: true,
+});
+
+useHead({
+  title: computed(() => `Acidiney Dias | ${$t("menu.experiences")}`),
+});
 </script>
 
 <style scoped>
@@ -66,5 +72,4 @@ const {
     display: none;
   }
 }
-
 </style>

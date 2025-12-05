@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/sitemap",
     "nuxt-gtag",
+    "@vite-pwa/nuxt",
   ],
   i18n: {
     defaultLocale: "en",
@@ -19,7 +20,7 @@ export default defineNuxtConfig({
       { code: "en", name: "English", file: "en.json" },
       { code: "pt", name: "Portuguese", file: "pt.json" },
     ],
-    baseUrl: "https://acidineydias.me",
+    baseUrl: "https://acidineydias.dev",
     strategy: "prefix_except_default",
     detectBrowserLanguage: {
       useCookie: true,
@@ -131,4 +132,13 @@ export default defineNuxtConfig({
     "~/assets/css/dark.css",
     "~/assets/css/light.css",
   ],
+  pwa: {
+    manifest: {
+      name: "Acidiney Dias | Full stack developer",
+      short_name: "Acidiney Dias",
+      lang: "en",
+      theme_color: "#212121",
+      background_color: "#212121",
+    },
+  },
 });
