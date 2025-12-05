@@ -9,7 +9,7 @@
       <h2 class="text-2xl">
         {{ capitalize(repo.name.trim()) }}
       </h2>
-      <br>
+      <br />
       <div class="categories flex-wrap flex">
         <p class="mr-2 text-xs rounded capitalize">
           {{ repo.language }}
@@ -20,18 +20,18 @@
 </template>
 
 <script setup lang="ts">
-import { formateDate, capitalize } from '~/filters'
-import type {GithubRepo} from "~/types/github.type";
+import { capitalize, formateDate } from "~/filters";
+import type { GithubRepo } from "~/types/github.type";
 
 defineProps<{
-  repo: GithubRepo
-}>()
+  repo: GithubRepo;
+}>();
 </script>
 
 <script lang="ts">
 export default {
-  name: 'ProjectItem',
-}
+  name: "ProjectItem",
+};
 </script>
 
 <style scoped>
@@ -40,7 +40,7 @@ article {
   background-size: cover;
   margin-bottom: 20px;
   border-radius: 25px;
-  transition: all .26s linear;
+  transition: all 0.26s linear;
   cursor: pointer;
   overflow: hidden;
 }
@@ -54,21 +54,21 @@ article a {
 
 article a header .categories p {
   font-weight: 200;
-  font-family: 'Gothic A1',sans-serif;
+  font-family: "Gothic A1", sans-serif;
   text-transform: uppercase;
 }
 
 article a h2 {
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 article a p {
-  color:rgba(148, 148, 149, 0.9);
+  color: rgba(148, 148, 149, 0.9);
 }
 
 article a span {
-  font-family: 'Gothic A1', sans-serif;
+  font-family: "Gothic A1", sans-serif;
   font-weight: 200;
 }
 </style>

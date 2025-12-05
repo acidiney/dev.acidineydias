@@ -1,143 +1,259 @@
 .theme-light {
-  background-color: #f0f0f0;
-  height: 100%;
+  /* ---------------------------------------
+     Theme Variables
+  --------------------------------------- */
+  --bg: #f0f0f0;
+  --bg-soft: rgba(231, 231, 231, 0.81);
+  --text-primary: #212121;
+  --text-secondary: #333333;
+  --text-accent: #222;
+  --text-muted: #777;
+  --text-light: #f0f0f0;
+
+  background-color: var(--bg);
   width: 100%;
-}
-.theme-light nav ul.left a {
-    color: #212121;
-  font-weight: 300;
-}
-.theme-light nav ul.left a:hover {
-  font-weight: 800;
-}
-.theme-light nav ul.left a.nuxt-link-exact-active {
-  font-weight: 800;
-}
-.theme-light nav ul.right li a {
-  color: #212121;
-  font-weight: 300;
-}
-.theme-light nav ul.right li button i::before {
-  color: #212121;
-  font-size: 18pt;
-}
-.theme-light nav .menu-button {
-  height: 30px;
-  width: 30px;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid #212121;
-  border-radius: 25px;
-}
-.theme-light nav .menu-button i::before {
-  color: #212121;
-}
-.theme-light nav .menu-button:hover {
-  border-color: #212121;
-}
-.theme-light nav .menu-button:hover i::before {
-  color: #212121;
-}
+  height: 100%;
 
-.theme-light .download-button {
-    color: #212121;
-}
-.theme-light .mobile-menu {
-  background-color: rgba(231, 231, 231, 0.81);
-  color: #212121;
-}
-.theme-light .mobile-menu button.absolute {
-  border: 1px solid #212121;
-  color: #212121;
-}
-.theme-light .about-me h1 {
-  color: #212121;
-}
-.theme-light .about-me p {
-  color: #333333;
-}
-.theme-light .about-me p a {
-  color: #222;
-}
-.theme-light .about-me a {
-  color: #333;
-}
-.theme-light .about-me .icon-2x:hover::before {
-  color: rgba(148, 148, 149, 0.9);
-}
-.theme-light .about-me .icon-2x::before {
-  font-size: 2em;
-  color: #333;
-}
-.theme-light .articles article a {
-  background-color: #1e1e1ebd;
-}
-.theme-light .articles article a .categories p, .theme-light .articles article a h2, .theme-light .articles article a span {
-  color: #f0f0f0;
-}
-.theme-light .last-article a p.title {
-font-weight: bold;
-}
-
-
-.theme-light .projects article a {
-  background: #fff;
-}
-.theme-light .projects article a .categories p, .theme-light .projects article a h2, .theme-light .projects article a span {
-  color: #1e1e1ebd;
-}
-.theme-light .projects article a h2.sub-title {
-  color: #1e1e1ebd;
-}
-.theme-light .contact form p {
-  color: #212121;
-}
-.theme-light .contact form input::placeholder, .theme-light .contact form textarea::placeholder {
-  color: #444;
-}
-.theme-light .contact button {
-  background: #212121;
-  color: #f0f0f0;
-  padding: 12px 30px;
-  font-family: "Gothic A1", sans-serif;
-}
-.theme-light .contact button:hover {
-  background: rgba(21, 21, 21, 0.82);
-}
-.theme-light .app-title.sub-title {
-  color: #212121;
-}
-.theme-light .article {
-  color: #444;
-}
-.theme-light .article header p {
-  color: #777;
-}
-.theme-light .article header .icon-2x::before {
-  color: #212121;
-}
-.theme-light .article header .icon-2x:hover::before {
-  color: rgba(148, 148, 149, 0.9);
-}
-.theme-light .technologies .tech-section h3 {
-  color: #212121;
-}
-.theme-light .icon-instagram::before, .theme-light .icon-linkedin::before, .theme-light .icon-twitter::before {
-  color: #212121;
-}
-.theme-light .experiences .content, .theme-light .experiences .dot {
-  background-color: #fff;
-}
-.theme-light .experiences .content .description {
-  color: #212121;
-}
-.theme-light .experiences .line {
-  border-left: 1px solid #fff;
-}
-.theme-light .last-article {
-    border:2px dashed #fff;
-}
-
-.theme-light .last-article:hover,.theme-light .last-article:focus  {
+  .bg-secondary {
     background-color: #fff;
+  }
+
+  /* ---------------------------------------
+     Navigation
+  --------------------------------------- */
+  nav {
+    ul.left a {
+      color: var(--text-primary);
+      font-weight: 300;
+
+      &:hover,
+      &.nuxt-link-exact-active {
+        font-weight: 800;
+      }
+    }
+
+    ul.right li {
+      a {
+        color: var(--text-primary);
+        font-weight: 300;
+      }
+
+      button i::before {
+        color: var(--text-primary);
+        font-size: 18pt;
+      }
+    }
+
+    .menu-button {
+      height: 30px;
+      width: 30px;
+      border: 1.5px solid var(--text-primary);
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i::before {
+        color: var(--text-primary);
+      }
+
+      &:hover {
+        border-color: var(--text-primary);
+
+        i::before {
+          color: var(--text-primary);
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Download Button
+  --------------------------------------- */
+  .download-button {
+    color: var(--text-primary);
+  }
+
+  /* ---------------------------------------
+     Mobile Menu
+  --------------------------------------- */
+  .mobile-menu {
+    background-color: var(--bg-soft);
+    color: var(--text-primary);
+
+    button.absolute {
+      border: 1px solid var(--text-primary);
+      color: var(--text-primary);
+    }
+  }
+
+  /* ---------------------------------------
+     About Me
+  --------------------------------------- */
+  .about-me {
+    h1 {
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+
+      a {
+        color: var(--text-accent);
+      }
+    }
+
+    a {
+      color: var(--text-secondary);
+    }
+
+    .icon-2x {
+      &::before {
+        font-size: 2em;
+        color: var(--text-secondary);
+      }
+
+      &:hover::before {
+        color: rgba(148, 148, 149, 0.9);
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Articles
+  --------------------------------------- */
+  .articles {
+    article a {
+      background-color: #1e1e1ebd;
+
+      .categories p,
+      h2,
+      span {
+        color: var(--text-light);
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Projects
+  --------------------------------------- */
+  .projects {
+    article a {
+      background: #fff;
+
+      .categories p,
+      h2,
+      span {
+        color: #1e1e1ebd;
+      }
+
+      h2.sub-title {
+        color: #1e1e1ebd;
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Contact Form
+  --------------------------------------- */
+  .contact {
+    form {
+      p {
+        color: var(--text-primary);
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: #444;
+      }
+    }
+
+    button {
+      background: var(--text-primary);
+      color: var(--text-light);
+      padding: 12px 30px;
+      font-family: "Gothic A1", sans-serif;
+
+      &:hover {
+        background: rgba(21, 21, 21, 0.82);
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Titles
+  --------------------------------------- */
+  .app-title.sub-title {
+    color: var(--text-primary);
+  }
+
+  /* ---------------------------------------
+     Article Page
+  --------------------------------------- */
+  .article {
+    color: #444;
+
+    header {
+      p {
+        color: var(--text-muted);
+      }
+
+      .icon-2x {
+        &::before {
+          color: var(--text-primary);
+        }
+
+        &:hover::before {
+          color: rgba(148, 148, 149, 0.9);
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Technologies
+  --------------------------------------- */
+  .technologies .tech-section h3 {
+    color: var(--text-primary);
+  }
+
+  .icon-instagram::before,
+  .icon-linkedin::before,
+  .icon-twitter::before {
+    color: var(--text-primary);
+  }
+
+  /* ---------------------------------------
+     Experiences Timeline
+  --------------------------------------- */
+  .experiences {
+    .content,
+    .dot {
+      background-color: #fff;
+    }
+
+    .content .description {
+      color: var(--text-primary);
+    }
+
+    .line {
+      border-left: 1px solid #fff;
+    }
+  }
+
+  /* ---------------------------------------
+     Last Article Block
+  --------------------------------------- */
+  .last-article {
+    border: 2px dashed #fff;
+
+    &:hover,
+    &:focus {
+      background-color: #fff;
+    }
+
+    a p.title {
+      font-weight: bold;
+    }
+  }
 }

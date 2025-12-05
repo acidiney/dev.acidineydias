@@ -1,22 +1,20 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
-  <div :class="['about-me md:h-full  flex-col md:flex']">
+  <div :class="['about-me md:h-full flex-col md:flex']">
     <div class="">
       <header class="flex flex-col">
         <figure>
           <img
             src="~/assets/images/24493328.jpg"
-            class="w-32 h-32 rounded-full mb-6 object-cover object-right-top"
+            class="w-16 h-16 md:w-32 md:h-32 rounded-full mb-6 object-cover object-right-top"
             :alt="$t('avatar.alt')"
           />
         </figure>
       </header>
       <footer>
-        <h1 class="text-5xl" v-html="$t('hello')" />
+        <h1 class="text-3xl md:text-5xl mb-2" v-html="$t('hello')" />
+        <p class="md:w-4/5 mb-4" v-html="$t('cover')" />
 
-        <br />
-        <p class="md:w-4/5" v-html="$t('cover')" />
-
-        <br />
         <a
           class="text-left download-button md:mr-5 block"
           :href="$t('cv_link')"
@@ -28,8 +26,7 @@
 
         <!-- last article published -->
 
-        <br />
-        <div v-if="lastPost">
+        <div v-if="lastPost" class="mt-5 hidden md:block">
           <AppTitle>{{ $t("last-article") }}</AppTitle>
           <section class="last-article w-4/5 py-6">
             <a
@@ -51,7 +48,7 @@
           </section>
         </div>
 
-        <div class="social mt-4 md:fixed bottom-0 flex-col flex">
+        <div class="hidden md:flex social mt-4 md:fixed bottom-0 flex-col">
           <ul class="flex mb-2">
             <li v-for="social in socials" :key="'content' + social.icon">
               <a
@@ -72,8 +69,8 @@
 
 <script setup lang="ts">
 import SocialNetworks from "~/assets/social.json";
-import { capitalize, formateDate } from "~/filters";
 import AppTitle from "~/components/Title.vue";
+import { capitalize, formateDate } from "~/filters";
 
 type SocialNetwork = {
   link: string;

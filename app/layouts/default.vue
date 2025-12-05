@@ -1,181 +1,95 @@
 <template>
-  <div
-      v-if="canRender"
+  <ClientOnly>
+    <div
       :class="[
-      { 'overflow-hidden': showMenu },
-      `md:fixed theme-${website.theme} md:overflow-y-hidden box-border`
-    ]"
-  >
-    <div class="w-4/5 mx-auto pb-6 md:pb-0">
-      <nav class="py-6">
-        <ul class="left hidden items-center md:flex">
-          <template v-for="item in menuItems" :key="item.url">
-            <li class="flex">
-              <nuxt-link
-                  v-if="!item.external"
-                 :to="item.url"
-              >
-                {{ $t(item.text) }}
-              </nuxt-link>
-              <a
-                  v-else
-                  :href="item.url"
-                  class="underline"
-              >
-                {{ $t(item.text) }}
-              </a>
-              <span v-if="item.separator" class="separator" />
-            </li>
-          </template>
-        </ul>
-        <ul class="right flex">
-          <li class="mr-4">
-            <NuxtLink
-                v-for="locale in availableLocales"
-                :key="locale.code"
-                :to="switchLocalePath(locale.code)"
-            >
-              {{ locale.code.toUpperCase() }}
-            </NuxtLink>
-          </li>
-          <li>
-            <button
-                :title="$t('toggle-theme')"
-                :aria-label="$t('toggle-theme')" @click="website.toggleTheme">
-              <i :class="`extra-${website.theme === 'dark' ? 'light' : 'dark'}`" />
-            </button>
-          </li>
-        </ul>
-        <button class="menu-button flex md:hidden" @click="toggleMenu">
-          <i class="extra-th-menu" />
-          <span class="sr-only">Menu</span>
-        </button>
-      </nav>
+        `h-screen overflow-hidden md:fixed theme-${website.theme} md:overflow-y-hidden box-border`,
+      ]"
+    >
+      <NavMobileTop :available-locales="availableLocales" />
 
-      <div class="w-full flex gap-5 flex-col md:justify-between md:flex-row md:overflow-hidden">
-        <div class="w-full md:w-1/2">
-        <AboutMe />
-        </div>
-        <div class="w-full md:w-1/2">
-        <NuxtPage />
-        </div>
-      </div>
-    </div>
-    <transition name="fade">
       <div
-          v-if="showMenu"
-          class="mobile-menu fixed h-full w-full left-0 top-0 "
+        class="px-4 md:px-0 md:w-4/5 mx-auto pt-14 md:pt-0 md:h-auto overflow-y-auto"
       >
-        <button class="text-2xl absolute right-0 top-0" @click="toggleMenu">
-          &times;
-        </button>
-        <ul class="justify-center items-center flex h-full flex-col">
-          <template v-for="item in menuItems" :key="item.url">
-            <li class="flex text-4xl mb-4">
-              <nuxt-link
-                  v-if="!item.external"
-                  :to="item.url"
-              >
-                {{ $t(item.text) }}
-              </nuxt-link>
-              <a
-                  v-else
-                  class="underline"
-                  :href="item.url"
-              >
-                {{ $t(item.text) }}
-              </a>
-            </li>
-          </template>
-        </ul>
+        <NavDesktop
+          :menu-items="menuItems"
+          :available-locales="availableLocales"
+        />
+
+        <MainContent>
+          <NuxtPage />
+        </MainContent>
       </div>
-    </transition>
-  </div>
+
+      <NavMobileBottom :menu-items="menuItems" />
+    </div>
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
+import NavDesktop from "@/components/navigation/NavDesktop.vue";
+import MenuItems from "~/assets/menu.json";
+import MainContent from "~/components/layout/MainContent.vue";
+import NavMobileBottom from "~/components/navigation/NavMobileBottom.vue";
+import NavMobileTop from "~/components/navigation/NavMobileTop.vue";
+import type { Locale } from "~/types/locale.type";
 
-const { locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
+const { locale, locales } = useI18n();
 
-const website = useWebsiteStore()
+const website = useWebsiteStore();
+const canRender = ref(false);
 
-const showMenu = ref(false)
-const canRender = ref(false)
+const availableLocales = computed<Locale[]>(() => {
+  return locales.value
+    .filter((i) => i.code !== locale.value)
+    .map((i) => ({
+      code: i.code,
+    }));
+});
 
-const availableLocales = computed(() => {
-  return locales.value.filter(i => i.code !== locale.value)
-})
+const menuItems = computed(() => {
+  const basePath = locale.value === "en" ? "" : `/${locale.value}`;
 
-const menuItems  = computed(() => {
-
-
-const basePath = locale.value === 'en' ? '' : `/${locale.value}`
-
-
-return      [
-  {
-    url: 'https://blog.acidineydias.dev',
-    text: 'menu.blog',
-    separator: true,
-    external: true
-  },
-        {
-          url: `${basePath}/`,
-          text: 'menu.experiences',
-          separator: true
-        },
-
-        {
-          url: `${basePath}/technologies`,
-          text: 'menu.technologies',
-          separator: true
-        },
-        {
-          url: `${basePath}/open-source`,
-          text: 'menu.openSource',
-          separator: true
-        },
-        {
-          url: `${basePath}/contact`,
-          text: 'menu.contact',
-          separator: false
-        }
-      ]
-    }
-)
-
-
-const toggleMenu = ()=> {
-  showMenu.value = !showMenu.value
-}
+  return MenuItems.map((i) => ({
+    ...i,
+    url: i.external ? i.url : `${basePath}${i.url}`,
+  }));
+});
 
 onBeforeMount(() => {
-  website.initTheme()
-  canRender.value = true
-})
+  website.initTheme();
+  canRender.value = true;
+});
+
+const nuxtApp = useNuxtApp();
+
+nuxtApp.hook("page:finish", () => {
+  window.scrollTo(0, 0);
+});
 
 useHead({
   bodyAttrs: {
     class: {
-      'md:fixed': true,
-      'theme-light': () => website.theme === 'light',
-      'theme-dark': () => website.theme === 'dark'
-    }
+      "md:fixed": true,
+      "theme-light": () => website.theme === "light",
+      "theme-dark": () => website.theme === "dark",
+    },
   },
+  meta: computed(() => {
+    const themeColor = website.theme === "dark" ? "#212121" : "#f0f0f0";
+
+    return [
+      { name: "msapplication-TileColor", content: themeColor },
+      { name: "theme-color", content: themeColor },
+    ];
+  }),
   htmlAttrs: {
-    lang: computed(() => locale.value)
-  }
-})
-
-const router = useRouter()
-
-watch(router.currentRoute, () => showMenu.value = false)
-
+    lang: computed(() => locale.value),
+  },
+});
 </script>
 
 <script lang="ts">
 export default {
   name: "DefaultLayout",
-}
+};
 </script>
