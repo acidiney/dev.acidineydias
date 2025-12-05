@@ -1,5 +1,7 @@
 <template>
   <ClientOnly>
+    <NuxtPwaManifest />
+    <NuxtLoadingIndicator />
     <div
       :class="[
         `h-screen overflow-hidden fixed theme-${website.theme} md:overflow-y-hidden box-border`,
