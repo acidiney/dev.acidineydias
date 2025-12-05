@@ -26,9 +26,9 @@
 
         <!-- last article published -->
 
-        <div v-if="lastPost" class="mt-5 hidden md:block">
+        <div v-if="lastPost" class="mt-5 md:block">
           <AppTitle>{{ $t("last-article") }}</AppTitle>
-          <section class="last-article w-4/5 py-6">
+          <section class="last-article md:w-4/5 py-6">
             <a
               target="_blank"
               class="block text-base/6"
