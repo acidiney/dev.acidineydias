@@ -44,16 +44,15 @@ export interface Technology {
 const { data } = useAsyncData<Root>(async () => {
   return await import("~/assets/technologies.json");
 });
+useHead({
+  title: computed(() => `Acidiney Dias | ${$t("menu.technologies")}`),
+});
 </script>
 
 <script lang="ts">
 export default {
   name: "Technologies",
 };
-
-useHead({
-  title: computed(() => `Acidiney Dias | ${$t("menu.technologies")}`),
-});
 </script>
 <style scoped>
 section h4 {

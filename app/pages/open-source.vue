@@ -32,6 +32,10 @@ const loadRepositories = async (page = 1) => {
 const { data: repos } = await useAsyncData(() => loadRepositories(), {
   immediate: true,
 });
+
+useHead({
+  title: computed(() => `Acidiney Dias | ${$t("menu.openSource")}`),
+});
 </script>
 
 <style scoped>
