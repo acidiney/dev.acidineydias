@@ -1,26 +1,28 @@
 <template>
-  <div
-    v-if="canRender"
-    :class="[
-      `h-screen overflow-hidden md:fixed theme-${website.theme} md:overflow-y-hidden box-border`,
-    ]"
-  >
-    <NavMobileTop :available-locales="availableLocales" :website="website" />
-
+  <ClientOnly>
     <div
-      class="w-4/5 mx-auto pt-14 md:pt-0 h-[calc(100vh-64px-56px)] md:h-auto overflow-hidden"
+      :class="[
+        `h-screen overflow-hidden md:fixed theme-${website.theme} md:overflow-y-hidden box-border`,
+      ]"
     >
-      <NavDesktop
-        :menu-items="menuItems"
-        :available-locales="availableLocales"
-        :website="website"
-      />
+      <NavMobileTop :available-locales="availableLocales" />
 
-      <MainContent />
+      <div
+        class="px-4 md:px-0 md:w-4/5 mx-auto pt-14 md:pt-0 md:h-auto overflow-y-auto"
+      >
+        <NavDesktop
+          :menu-items="menuItems"
+          :available-locales="availableLocales"
+        />
+
+        <MainContent>
+          <NuxtPage />
+        </MainContent>
+      </div>
+
+      <NavMobileBottom :menu-items="menuItems" />
     </div>
-
-    <NavMobileBottom :menu-items="menuItems" />
-  </div>
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
@@ -56,6 +58,12 @@ const menuItems = computed(() => {
 onBeforeMount(() => {
   website.initTheme();
   canRender.value = true;
+});
+
+const nuxtApp = useNuxtApp();
+
+nuxtApp.hook("page:finish", () => {
+  window.scrollTo(0, 0);
 });
 
 useHead({

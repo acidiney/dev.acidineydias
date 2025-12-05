@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 md:hidden h-14">
+  <nav class="nav__mobile__top fixed top-0 left-0 right-0 md:hidden h-14">
     <div class="w-4/5 mx-auto h-full flex items-center justify-between">
       <div class="flex gap-3">
         <NuxtLink
@@ -18,7 +18,9 @@
         class="text-primary"
         @click="website.toggleTheme"
       >
-        <i :class="`icon-${website.theme === 'dark' ? 'sun' : 'moon'}`" />
+        <ClientOnly>
+          <i :class="`icon-${website.theme === 'dark' ? 'sun' : 'moon'}`" />
+        </ClientOnly>
       </button>
     </div>
   </nav>
@@ -34,3 +36,10 @@ defineProps<{
   availableLocales: Locale[];
 }>();
 </script>
+
+<style scoped>
+.nav__mobile__top {
+  background-color: var(--bg);
+  z-index: 2;
+}
+</style>

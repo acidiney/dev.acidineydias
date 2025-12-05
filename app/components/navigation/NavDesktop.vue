@@ -2,7 +2,10 @@
   <nav class="py-6 hidden md:flex">
     <!-- Left menu -->
     <ul class="left hidden md:flex items-center">
-      <template v-for="item in menuItems" :key="item.url">
+      <template
+        v-for="item in menuItems.filter((i) => !i.mobile)"
+        :key="item.url"
+      >
         <li class="flex">
           <nuxt-link v-if="!item.external" :to="item.url">
             {{ $t(item.text) }}
@@ -35,7 +38,9 @@
           :aria-label="$t('toggle-theme')"
           @click="website.toggleTheme"
         >
-          <i :class="`icon-${website.theme === 'dark' ? 'sun' : 'moon'}`" />
+          <ClientOnly>
+            <i :class="`icon-${website.theme === 'dark' ? 'sun' : 'moon'}`" />
+          </ClientOnly>
         </button>
       </li>
     </ul>

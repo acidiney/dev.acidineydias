@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div :class="['about-me md:h-full  flex-col md:flex']">
+  <div :class="['about-me md:h-full flex-col md:flex']">
     <div class="">
       <header class="flex flex-col">
         <figure>
@@ -26,7 +26,7 @@
 
         <!-- last article published -->
 
-        <div v-if="lastPost" class="hidden md:block">
+        <div v-if="lastPost" class="mt-5 hidden md:block">
           <AppTitle>{{ $t("last-article") }}</AppTitle>
           <section class="last-article w-4/5 py-6">
             <a

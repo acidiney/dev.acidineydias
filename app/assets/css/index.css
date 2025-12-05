@@ -115,3 +115,7 @@ nav {
 .text-secondary {
   color: var(--text-secondary);
 }
+
+.router-link-exact-active {
+  font-weight: bold !important;
+}

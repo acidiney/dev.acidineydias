@@ -1,31 +1,26 @@
 <template>
   <nav
-    class="px-4 fixed w-full bottom-0 left-0 right-0 md:hidden border-t bg-secondary backdrop-blur"
+    class="nav__mobile__bottom px-4 fixed w-full bottom-0 left-0 right-0 md:hidden bg-secondary"
   >
-    <ul class="flex justify-between items-center h-16 px-4">
-      <template v-for="item in menuItems" :key="item.url">
-        <li>
+    <ul
+      class="flex w-full gap-4 justify-between items-center h-16 border-box py-2"
+    >
+      <template
+        v-for="item in menuItems.filter((i) => !i.external)"
+        :key="item.url"
+      >
+        <li
+          class="flex items-center w-1/5 h-full text-center rounded-full overflow-hidden"
+        >
           <!-- Internal -->
           <nuxt-link
             v-if="!item.external"
             :to="item.url"
-            class="p-3"
+            class="h-full w-full flex items-center justify-center"
             :aria-label="$t(item.text)"
           >
-            <NavIcon :name="item.text" />
+            <NavIcon :icon="item.icon" />
           </nuxt-link>
-
-          <!-- External -->
-          <a
-            v-else
-            :href="item.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-3"
-            :aria-label="$t(item.text)"
-          >
-            <NavIcon name="default" />
-          </a>
         </li>
       </template>
     </ul>
@@ -40,3 +35,17 @@ defineProps<{
   menuItems: MenuItem[];
 }>();
 </script>
+
+<style scoped>
+.nav__mobile__bottom .router-link-active {
+  background-color: var(--bg);
+
+  & i {
+    color: #ffdb11;
+  }
+}
+
+.nav__mobile__bottom {
+  height: 60px !important;
+}
+</style>

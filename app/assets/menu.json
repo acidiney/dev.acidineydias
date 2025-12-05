@@ -2,27 +2,39 @@
   {
     "url": "https://blog.acidineydias.dev",
     "text": "menu.blog",
+    "icon": "icon-book-open",
     "separator": true,
     "external": true
   },
   {
     "url": "/",
     "text": "menu.experiences",
+    "icon": "icon-home",
+    "separator": true
+  },
+  {
+    "url": "/experiences",
+    "text": "menu.experiences",
+    "icon": "icon-layers",
+    "mobile": true,
     "separator": true
   },
   {
     "url": "/technologies",
     "text": "menu.technologies",
+    "icon": "icon-terminal",
     "separator": true
   },
   {
     "url": "/open-source",
     "text": "menu.openSource",
+    "icon": "icon-github1",
     "separator": true
   },
   {
     "url": "/contact",
     "text": "menu.contact",
+    "icon": "icon-send",
     "separator": false
   }
 ]

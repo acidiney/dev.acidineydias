@@ -36,6 +36,9 @@
 .icon-home:before {
   content: "\e94c";
 }
+.icon-layers:before {
+  content: "\e950";
+}
 .icon-send:before {
   content: "\e94d";
 }
