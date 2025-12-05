@@ -1,5 +1,5 @@
 const builtAt = new Date().toISOString();
-
+const sw = process.env.SW === "true";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -134,6 +134,10 @@ export default defineNuxtConfig({
   ],
   pwa: {
     registerType: "autoUpdate",
+    strategies: sw ? "injectManifest" : "generateSW",
+    client: {
+      installPrompt: true,
+    },
     manifest: {
       name: "Acidiney Dias | Full stack developer",
       short_name: "Acidiney Dias",
