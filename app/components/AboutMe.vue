@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div :class="['about-me md:h-full  flex-col md:flex']">
     <div class="">
@@ -5,18 +6,15 @@
         <figure>
           <img
             src="~/assets/images/24493328.jpg"
-            class="w-32 h-32 rounded-full mb-6 object-cover object-right-top"
+            class="w-16 h-16 md:w-32 md:h-32 rounded-full mb-6 object-cover object-right-top"
             :alt="$t('avatar.alt')"
           />
         </figure>
       </header>
       <footer>
-        <h1 class="text-5xl" v-html="$t('hello')" />
+        <h1 class="text-3xl md:text-5xl mb-2" v-html="$t('hello')" />
+        <p class="md:w-4/5 mb-4" v-html="$t('cover')" />
 
-        <br />
-        <p class="md:w-4/5" v-html="$t('cover')" />
-
-        <br />
         <a
           class="text-left download-button md:mr-5 block"
           :href="$t('cv_link')"
@@ -28,7 +26,6 @@
 
         <!-- last article published -->
 
-        <br />
         <div v-if="lastPost" class="hidden md:block">
           <AppTitle>{{ $t("last-article") }}</AppTitle>
           <section class="last-article w-4/5 py-6">

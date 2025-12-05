@@ -12,7 +12,6 @@
   font-display: block;
 }
 
-
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -28,6 +27,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-book-open:before {
+  content: "\e94a";
+}
+.icon-github1:before {
+  content: "\e94b";
+}
+.icon-home:before {
+  content: "\e94c";
+}
+.icon-send:before {
+  content: "\e94d";
+}
+.icon-terminal:before {
+  content: "\e94e";
+}
+.icon-download:before {
+  content: "\e94f";
+}
 .icon-sun:before {
   content: "\e943";
 }
