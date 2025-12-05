@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/sitemap",
     "nuxt-gtag",
-    "@vite-pwa/nuxt",
+    // "@vite-pwa/nuxt",
   ],
   i18n: {
     defaultLocale: "en",
