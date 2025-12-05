@@ -133,12 +133,25 @@ export default defineNuxtConfig({
     "~/assets/css/light.css",
   ],
   pwa: {
+    registerType: "autoUpdate",
     manifest: {
       name: "Acidiney Dias | Full stack developer",
       short_name: "Acidiney Dias",
       lang: "en",
       theme_color: "#212121",
       background_color: "#212121",
+      icons: [
+        {
+          src: "/favicon-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          src: "/favicon-512x512.png",
+          sizes: "512x512",
+          type: "image/png",
+        },
+      ],
     },
   },
 });
