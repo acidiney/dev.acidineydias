@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200;300;400;600;700&family=Roboto&display=swap');
+
+/* ---------------------------------------
+   Font Faces
+---------------------------------------- */
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?fviqtv');
+  src:
+    url('../fonts/icomoon.eot?fviqtv#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?fviqtv') format('truetype'),
+    url('../fonts/icomoon.woff?fviqtv') format('woff'),
+    url('../fonts/icomoon.svg?fviqtv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'extra';
+  src: url('../fonts/extra.eot?7zsq12');
+  src:
+    url('../fonts/extra.eot?7zsq12#iefix') format('embedded-opentype'),
+    url('../fonts/extra.ttf?7zsq12') format('truetype'),
+    url('../fonts/extra.woff?7zsq12') format('woff'),
+    url('../fonts/extra.svg?7zsq12#extra') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* ---------------------------------------
+   Icon Base Styles
+---------------------------------------- */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon', serif !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  font-variant: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="extra-"],
+[class*=" extra-"] {
+  font-family: 'extra', serif !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  font-variant: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------------
+   Icomoon Icon Definitions (Nested)
+---------------------------------------- */
+.icon {
+  &-arrow-left::before      { content: "\e901"; }
+  &-download::before        { content: "\e944"; }
+  &-star::before            { content: "\f005"; }
+  &-github::before          { content: "\f09b"; }
+  &-youtube-play::before    { content: "\f16a"; color: #f00; }
+  &-medium::before          { content: "\f23a"; }
+
+  &-instagram::before       { content: "\e900"; color: #fff; }
+  &-twitter::before         { content: "\e943"; color: #fff; }
+  &-linkedin::before        { content: "\e942"; color: #fff; }
+
+  &-angular::before         { content: "\e902"; color: #dd0031; }
+  &-apple::before           { content: "\e903"; color: #999; }
+  &-archlinux::before       { content: "\e904"; color: #1793d1; }
+  &-cloudflare::before      { content: "\e905"; color: #f38020; }
+  &-codeigniter::before     { content: "\e906"; color: #ee4623; }
+  &-crunchyroll::before     { content: "\e907"; color: #f47521; }
+  &-css3::before            { content: "\e908"; color: #1572b6; }
+  &-csswizardry::before     { content: "\e909"; color: #f43059; }
+  &-d3-dot-js::before       { content: "\e90a"; color: #f9a03c; }
+  &-debian::before          { content: "\e90b"; color: #a81d33; }
+  &-deepin::before          { content: "\e90c"; color: #007cff; }
+  &-deno::before            { content: "\e90d"; }
+
+  &-discord::before         { content: "\e90e"; color: #7289da; }
+  &-docker::before          { content: "\e90f"; color: #1488c6; }
+
+  &-html5::before           { content: "\e910"; color: #e34f26; }
+
+  &-jenkins::before         { content: "\e911"; color: #d24939; }
+  &-jest::before            { content: "\e912"; color: #c21325; }
+  &-jetbrains::before       { content: "\e913"; }
+
+  &-jquery::before          { content: "\e914"; color: #0769ad; }
+  &-meetup::before          { content: "\e915"; color: #ed1c40; }
+  &-mega::before            { content: "\e916"; color: #d9272e; }
+
+  &-microsoft::before       { content: "\e917"; color: #666; }
+  &-microsoftazure::before  { content: "\e918"; color: #0089d6; }
+
+  &-monero::before          { content: "\e919"; color: #f60; }
+  &-mysql::before           { content: "\e91a"; color: #4479a1; }
+
+  &-nativescript::before    { content: "\e91b"; color: #3655ff; }
+
+  &-netflix::before         { content: "\e91c"; color: #e50914; }
+  &-netlify::before         { content: "\e91d"; color: #00c7b7; }
+  &-openssl::before         { content: "\e91e"; color: #721412; }
+  &-pluralsight::before     { content: "\e91f"; color: #f15b2a; }
+
+  &-postgresql::before      { content: "\e920"; color: #336791; }
+  &-postman::before         { content: "\e921"; color: #ff6c37; }
+  &-prestashop::before      { content: "\e922"; color: #df0067; }
+
+  &-producthunt::before     { content: "\e923"; color: #da552f; }
+  &-quora::before           { content: "\e924"; color: #b92b27; }
+
+  &-react::before           { content: "\e925"; color: #61dafb; }
+  &-reddit::before          { content: "\e926"; color: #ff4500; }
+  &-redux::before           { content: "\e927"; color: #764abc; }
+
+  &-rust::before            { content: "\e928"; }
+  &-skype::before           { content: "\e929"; color: #00aff0; }
+  &-snyk::before            { content: "\e92a"; color: #4c4a73; }
+
+  &-stackoverflow::before   { content: "\e92b"; color: #fe7a16; }
+  &-steam::before           { content: "\e92c"; }
+  &-storybook::before       { content: "\e92d"; color: #ff4785; }
+
+  &-stylus::before          { content: "\e92e"; }
+  &-sublimetext::before     { content: "\e92f"; color: #ff9800; }
+  &-svelte::before          { content: "\e930"; color: #ff3e00; }
+
+  &-swagger::before         { content: "\e931"; color: #85ea2d; }
+  &-tailwindcss::before     { content: "\e932"; color: #38b2ac; }
+
+  &-teamviewer::before      { content: "\e933"; color: #0e8ee9; }
+  &-ted::before             { content: "\e934"; color: #e62b1e; }
+
+  &-tensorflow::before      { content: "\e935"; color: #ff6f00; }
+  &-todoist::before         { content: "\e936"; color: #e44332; }
+  &-tor::before             { content: "\e937"; color: #7e4798; }
+
+  &-travisci::before        { content: "\e938"; color: #3eaaaf; }
+  &-trello::before          { content: "\e939"; color: #0079bf; }
+
+  &-typescript::before      { content: "\e93a"; color: #007acc; }
+
+  &-visualstudio::before    { content: "\e93b"; color: #5c2d91; }
+  &-visualstudiocode::before{ content: "\e93c"; color: #007acc; }
+
+  &-vue-dot-js::before      { content: "\e93d"; color: #4fc08d; }
+
+  &-xsplit::before          { content: "\e93e"; color: #0095de; }
+  &-yarn::before            { content: "\e93f"; color: #2c8ebb; }
+
+  &-youtube::before         { content: "\e940"; color: #f00; }
+  &-zoom::before            { content: "\e941"; color: #2d8cff; }
+}
+
+/* ---------------------------------------
+   Extra Icon Definitions
+---------------------------------------- */
+.extra {
+  &-light::before { content: "\e980"; }
+  &-dark::before  { content: "\e981"; }
+  &-th-menu::before { content: "\e900"; }
+}

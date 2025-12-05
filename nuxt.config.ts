@@ -3,7 +3,7 @@ const builtAt = new Date().toISOString();
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: [
     "@nuxt/image",
     "@nuxt/eslint",
@@ -128,7 +128,7 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    "~/assets/css/style.css",
+    "~/assets/css/fonts.css",
     "~/assets/css/index.css",
     "~/assets/css/dark.css",
     "~/assets/css/light.css",

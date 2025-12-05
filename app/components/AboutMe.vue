@@ -29,7 +29,7 @@
         <!-- last article published -->
 
         <br />
-        <div v-if="lastPost">
+        <div v-if="lastPost" class="hidden md:block">
           <AppTitle>{{ $t("last-article") }}</AppTitle>
           <section class="last-article w-4/5 py-6">
             <a
@@ -51,7 +51,7 @@
           </section>
         </div>
 
-        <div class="social mt-4 md:fixed bottom-0 flex-col flex">
+        <div class="hidden md:flex social mt-4 md:fixed bottom-0 flex-col">
           <ul class="flex mb-2">
             <li v-for="social in socials" :key="'content' + social.icon">
               <a
@@ -72,8 +72,8 @@
 
 <script setup lang="ts">
 import SocialNetworks from "~/assets/social.json";
-import { capitalize, formateDate } from "~/filters";
 import AppTitle from "~/components/Title.vue";
+import { capitalize, formateDate } from "~/filters";
 
 type SocialNetwork = {
   link: string;

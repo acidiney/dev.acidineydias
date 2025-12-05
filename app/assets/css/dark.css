@@ -1,141 +1,246 @@
 .theme-dark {
-  background-color: #212121;
-  height: 100%;
+  /* ---------------------------------------
+     Theme Variables
+  --------------------------------------- */
+  --bg: #212121;
+  --bg-soft: rgba(21, 21, 21, 0.82);
+  --text-primary: #fafafa;
+  --text-secondary: #bababa;
+  --text-muted: rgba(148, 148, 149, 0.9);
+
+  background-color: var(--bg);
   width: 100%;
-}
-.theme-dark nav ul.left a {
-    color: #fafafa;
-  font-weight: 300;
-  transition: all 0.26s linear;
-}
-.theme-dark nav ul.left a:hover {
-  font-weight: 800;
-}
-.theme-dark nav ul.left a.nuxt-link-exact-active {
-  font-weight: 800;
-}
-.theme-dark nav ul.right li a {
-  color: #BABABA;
-  font-weight: 300;
-}
-.theme-dark nav ul.right li button i::before {
-  color: #BABABA;
-  font-size: 18pt;
-}
-.theme-dark nav .menu-button {
-  height: 30px;
-  width: 30px;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid #BABABA;
-  border-radius: 25px;
-}
-.theme-dark nav .menu-button i::before {
-  color: #BABABA;
-}
-.theme-dark nav .menu-button:hover {
-  border-color: #fafafa;
-}
-.theme-dark nav .menu-button:hover i::before {
-  color: #fafafa;
-}
-.theme-dark .mobile-menu {
-  background-color: rgba(21, 21, 21, 0.82);
-  color: #fafafa;
-}
-.theme-dark .mobile-menu button.absolute {
-  border: 1px solid #fff;
-  color: #fff;
-}
-.theme-dark .about-me h1 {
-  color: #fafafa;
-}
-.theme-dark .about-me p {
-  color: #BABABA;
-}
-.theme-dark .about-me p a {
-  color: #fff;
-}
-.theme-dark .about-me .icon-2x:hover::before {
-  color: rgba(148, 148, 149, 0.9);
-}
-.theme-dark .about-me .icon-2x::before {
-  font-size: 2em;
-  color: #fff;
-}
-.theme-dark .contact form p {
-  color: #BABABA;
-}
-.theme-dark .contact form input::placeholder, .theme-dark .contact form textarea::placeholder {
-  color: #BABABA;
-}
-.theme-dark .contact form input, .theme-dark .contact form textarea {
-  background-color: rgba(21, 21, 21, 0.82);
-  color: #fff;
-}
+  height: 100%;
 
-.theme-dark .download-button {
-    color: #fff;
-}
-.theme-dark .contact button {
-  background: rgba(21, 21, 21, 0.82);
-  color: #fff;
-  padding: 12px 30px;
-  font-family: "Gothic A1", sans-serif;
-}
-.theme-dark .contact button:hover {
-  background: #0f0f0f;
-}
-.theme-dark .articles article a, .theme-dark .projects article a {
-  background-color: rgba(21, 21, 21, 0.82);
-}
-.theme-dark .articles article a .categories p, .theme-dark .articles article a h2, .theme-dark .articles article a span, .theme-dark .projects article a .categories p, .theme-dark .projects article a h2, .theme-dark .projects article a span {
-  color: #fafafa;
-}
-.theme-dark .articles h2.sub-title, .theme-dark .projects h2.sub-title {
-  color: #fafafa;
-}
-.theme-dark .article {
-  color: #fafafa;
-}
-.theme-dark .article header p {
-  color: rgba(148, 148, 149, 0.9);
-}
-.theme-dark .article header .icon-2x::before {
-  color: #fafafa;
-}
-.theme-dark .article header .icon-2x:hover::before {
-  color: rgba(148, 148, 149, 0.9);
-}
-.theme-dark .app-title.sub-title {
-  color: #fff;
-}
-.theme-dark .technologies .tech-section h3 {
-  color: #fafafa;
-}
-.theme-dark .icon-github::before, .theme-dark .icon-medium::before, .theme-dark .icon-steam::before, .theme-dark .icon-rust::before, .theme-dark .icon-stylus::before, .theme-dark .icon-deno::before, .theme-dark .icon-jetbrains::before {
-  color: #fafafa;
-}
-.theme-dark .experiences .content, .theme-dark .experiences .dot {
-  background-color: rgba(21, 21, 21, 0.82);
-}
-.theme-dark .experiences .content .description {
-  color: #fafafa;
-}
-.theme-dark .experiences .line {
-  border-left: 1px solid rgba(21, 21, 21, 0.82);
-}
+  .bg-secondary {
+    background-color: var(--bg);
+  }
 
-.theme-dark .last-article a span {
-    color: rgba(148, 148, 149, 0.9);;
-}
-.theme-dark .last-article {
-    border:2px dashed rgba(21, 21, 21, 0.86);
-}
-.theme-dark .last-article:hover, .theme-dark .last-article:focus {
-    background-color: rgba(21, 21, 21, 0.82);
-}
-.theme-dark .last-article a p.title {
-    font-weight: bold;
-    color: #fafafa;
+  /* ---------------------------------------
+     Navigation
+  --------------------------------------- */
+  nav {
+    ul.left a {
+      color: var(--text-primary);
+      font-weight: 300;
+      transition: all 0.26s linear;
+
+      &:hover,
+      &.nuxt-link-exact-active {
+        font-weight: 800;
+      }
+    }
+
+    ul.right li {
+      a {
+        color: var(--text-secondary);
+        font-weight: 300;
+      }
+
+      button i::before {
+        color: var(--text-secondary);
+        font-size: 18pt;
+      }
+    }
+
+    .menu-button {
+      height: 30px;
+      width: 30px;
+      border: 1.5px solid var(--text-secondary);
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i::before {
+        color: var(--text-secondary);
+      }
+
+      &:hover {
+        border-color: var(--text-primary);
+
+        i::before {
+          color: var(--text-primary);
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Mobile Menu
+  --------------------------------------- */
+  .mobile-menu {
+    background-color: var(--bg-soft);
+    color: var(--text-primary);
+
+    button.absolute {
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+
+  /* ---------------------------------------
+     About Me
+  --------------------------------------- */
+  .about-me {
+    h1 {
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+
+      a {
+        color: var(--text-primary);
+      }
+    }
+
+    .icon-2x {
+      &::before {
+        font-size: 2em;
+        color: var(--text-primary);
+      }
+
+      &:hover::before {
+        color: var(--text-muted);
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Contact Form
+  --------------------------------------- */
+  .contact {
+    form {
+      p {
+        color: var(--text-secondary);
+      }
+
+      input,
+      textarea {
+        background-color: var(--bg-soft);
+        color: var(--text-primary);
+
+        &::placeholder {
+          color: var(--text-secondary);
+        }
+      }
+    }
+
+    button {
+      background: var(--bg-soft);
+      color: var(--text-primary);
+      padding: 12px 30px;
+      font-family: "Gothic A1", sans-serif;
+
+      &:hover {
+        background: #0f0f0f;
+      }
+    }
+  }
+
+  .download-button {
+    color: var(--text-primary);
+  }
+
+  /* ---------------------------------------
+     Articles & Projects
+  --------------------------------------- */
+  .articles,
+  .projects {
+    article a {
+      background-color: var(--bg-soft);
+
+      .categories p,
+      h2,
+      span {
+        color: var(--text-primary);
+      }
+    }
+
+    h2.sub-title {
+      color: var(--text-primary);
+    }
+  }
+
+  .app-title.sub-title {
+    color: var(--text-primary);
+  }
+
+  /* ---------------------------------------
+     Single Article Page
+  --------------------------------------- */
+  .article {
+    color: var(--text-primary);
+
+    header {
+      p {
+        color: var(--text-muted);
+      }
+
+      .icon-2x {
+        &::before {
+          color: var(--text-primary);
+        }
+
+        &:hover::before {
+          color: var(--text-muted);
+        }
+      }
+    }
+  }
+
+  /* ---------------------------------------
+     Technologies Icons
+  --------------------------------------- */
+  .icon-github::before,
+  .icon-medium::before,
+  .icon-steam::before,
+  .icon-rust::before,
+  .icon-stylus::before,
+  .icon-deno::before,
+  .icon-jetbrains::before {
+    color: var(--text-primary);
+  }
+
+  /* ---------------------------------------
+     Experiences Timeline
+  --------------------------------------- */
+  .experiences {
+    .content,
+    .dot {
+      background-color: var(--bg-soft);
+    }
+
+    .content .description {
+      color: var(--text-primary);
+    }
+
+    .line {
+      border-left: 1px solid var(--bg-soft);
+    }
+  }
+
+  /* ---------------------------------------
+     Last Article Block
+  --------------------------------------- */
+  .last-article {
+    border: 2px dashed rgba(21, 21, 21, 0.86);
+
+    &:hover,
+    &:focus {
+      background-color: var(--bg-soft);
+    }
+
+    a {
+      span {
+        color: var(--text-muted);
+      }
+
+      p.title {
+        font-weight: bold;
+        color: var(--text-primary);
+      }
+    }
+  }
 }

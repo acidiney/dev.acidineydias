@@ -1,3 +1,5 @@
+
+
 *,
 *:before,
 *:after {
@@ -18,11 +20,13 @@
   opacity: 0;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 
@@ -58,10 +62,13 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+
 nav ul.left span.separator {
   margin: 0 5px;
 }
-nav ul.left a, nav ul.right a {
+
+nav ul.left a,
+nav ul.right a {
   display: flex;
 }
 
@@ -72,6 +79,7 @@ nav ul.left a, nav ul.right a {
 .mobile-menu {
   backdrop-filter: blur(2px);
 }
+
 .mobile-menu button.absolute {
   right: 10px;
   top: 10px;
@@ -85,8 +93,14 @@ nav ul.left a, nav ul.right a {
 }
 
 .last-article {
-    padding: 15px;
-    margin: 15px 0;
-    font-family: "Gothic A1", sans-serif;
+  padding: 15px;
+  margin: 15px 0;
+  font-family: "Gothic A1", sans-serif;
+}
 
+/* ---------------------------------------
+   Router Active Link
+---------------------------------------- */
+.router-link-exact-active {
+  font-weight: bold !important;
 }
