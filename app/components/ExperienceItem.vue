@@ -3,9 +3,16 @@
     <span class="line" />
     <a target="__blank" rel="noreferrer" :href="website" class="content">
       <div class="thumbnail hidden md:block">
-        <img :src="companyLogo" :alt="companyName">
+        <img :src="companyLogo" :alt="companyName" />
       </div>
       <div class="description px-3 py-3 border-box">
+        <div class="md:hidden flex items-center justify-center mb-2 mb:m-0">
+          <img
+            class="h-8 w-8 rounded-full"
+            :src="companyLogo"
+            :alt="companyName"
+          />
+        </div>
         <header class="text-center md:text-left">
           <h3>{{ role }}</h3>
           <h4>{{ companyName }}</h4>
@@ -21,20 +28,20 @@
 
 <script setup lang="ts">
 defineProps<{
-  companyLogo: string
-  companyName: string
-  role: string
-  startDate: string
-  endDate: string
-  location: string
-  website: string
-}>()
+  companyLogo: string;
+  companyName: string;
+  role: string;
+  startDate: string;
+  endDate: string;
+  location: string;
+  website: string;
+}>();
 </script>
 
 <script lang="ts">
 export default {
-  name: 'ExperienceItem'
-}
+  name: "ExperienceItem",
+};
 </script>
 
 <style scoped>
@@ -46,7 +53,7 @@ export default {
   display: none;
 }
 .experience-item .content {
-  height: 130px;
+  height: 160px;
   width: 100%;
   border-radius: 30px;
   overflow: hidden;
@@ -74,7 +81,8 @@ export default {
 .experience-item .content .description header h4 {
   font-size: 12pt;
   font-weight: 200 !important;
-  font-family: 'Gothic A1', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Gothic A1", -apple-system, BlinkMacSystemFont, Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .experience-item .content .description footer span {
   font-weight: 200;
