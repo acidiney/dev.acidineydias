@@ -2,13 +2,14 @@
   <ClientOnly>
     <div
       :class="[
-        `h-screen overflow-hidden md:fixed theme-${website.theme} md:overflow-y-hidden box-border`,
+        `h-screen overflow-hidden fixed theme-${website.theme} md:overflow-y-hidden box-border`,
       ]"
     >
       <NavMobileTop :available-locales="availableLocales" />
 
       <div
-        class="px-4 md:px-0 md:w-4/5 mx-auto pt-14 md:pt-0 md:h-auto overflow-y-auto"
+        ref="mainContent"
+        class="px-4 md:px-0 md:w-4/5 mx-auto pt-14 h-[calc(100svh-7.5svh)] md:pt-0 md:h-auto overflow-y-auto"
       >
         <NavDesktop
           :menu-items="menuItems"
@@ -36,6 +37,7 @@ import type { Locale } from "~/types/locale.type";
 const { locale, locales } = useI18n();
 
 const website = useWebsiteStore();
+const mainContent = ref<HTMLDivElement>();
 const canRender = ref(false);
 
 const availableLocales = computed<Locale[]>(() => {
@@ -63,7 +65,7 @@ onBeforeMount(() => {
 const nuxtApp = useNuxtApp();
 
 nuxtApp.hook("page:finish", () => {
-  window.scrollTo(0, 0);
+  mainContent.value?.scrollTo(0, 0);
 });
 
 useHead({
