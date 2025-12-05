@@ -1,6 +1,6 @@
 <template>
   <nav class="nav__mobile__top fixed top-0 left-0 right-0 md:hidden h-14">
-    <div class="w-4/5 mx-auto h-full flex items-center justify-between">
+    <div class="w-full px-4 h-full flex items-center justify-between">
       <div class="flex gap-3">
         <NuxtLink
           v-for="locale in availableLocales"
