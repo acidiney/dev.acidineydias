@@ -1,4 +1,4 @@
-import {defineEventHandler} from 'h3'
+import { defineEventHandler } from 'h3'
 import { parseStringPromise } from "xml2js";
 
 interface RSSItem {
@@ -10,30 +10,39 @@ interface RSSItem {
     tags?: string[];
 }
 
-function extractImage(item: any): string | undefined {
-    if (item.enclosure && item.enclosure[0].$.url) {
-        return item.enclosure[0].$.url;
-    }
-    return undefined;
+interface ParsedRSSItem {
+    title: [string, ...string[]];
+    link: [string, ...string[]];
+    pubDate: [string, ...string[]];
+    description: [string, ...string[]];
+    enclosure?: Array<{ $: { url: string } }>;
+    category?: Array<string | { _: string }>;
 }
 
-function extractTags(item: any): string[] | undefined {
-    if (item.category) {
-        return item.category.map((c: any) => c._ || c);
-    }
-    return undefined;
+function getEnclosureUrl(item: ParsedRSSItem): string | undefined {
+    const enclosure = item.enclosure?.[0];
+    return enclosure?.$.url;
 }
 
-async function getLatestArticle(xmlData: string): Promise<RSSItem | null> {
+export function extractImage(item: ParsedRSSItem): string | undefined {
+    return getEnclosureUrl(item);
+}
+
+export function extractTags(item: ParsedRSSItem): string[] | undefined {
+    if (!item.category) return undefined;
+    return item.category.map((c) => (typeof c === 'string' ? c : c._));
+}
+
+export async function getLatestArticle(xmlData: string): Promise<RSSItem | null> {
 
     const parsed = await parseStringPromise(xmlData);
 
-    const items = parsed.rss.channel[0].item;
+    const items: ParsedRSSItem[] = parsed.rss.channel[0].item;
 
     if (!items || items.length === 0) return null;
 
     // Map items to RSSItem
-    const articles: RSSItem[] = items.map((item: any) => {
+    const articles: RSSItem[] = items.map((item) => {
         return ({
             title: item.title[0],
             link: item.link[0].replace('github.com/acidineydias/', ''),
@@ -47,7 +56,7 @@ async function getLatestArticle(xmlData: string): Promise<RSSItem | null> {
     // Sort by pubDate descending
     articles.sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
 
-    return articles[0];
+    return articles[0] ?? null;
 }
 
 export default defineEventHandler(async () => {

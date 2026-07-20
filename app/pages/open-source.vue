@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <AppTitle>
-      {{ $t("menu.openSource") }}<br />
+      {{ $t("menu.openSource") }}<br >
       <small class="font-light gothic-font">{{
         $t("findAnyProjectToContribute")
       }}</small>

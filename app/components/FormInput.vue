@@ -15,7 +15,7 @@ defineProps<{
   type: string
   placeholder: string
   arialabel: string
-  writeText: (name: string, event: any) => void
+  writeText: (name: string, event: Event) => void
 }>()
 </script>
 

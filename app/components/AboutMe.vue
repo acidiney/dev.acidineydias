@@ -8,7 +8,7 @@
             src="~/assets/images/24493328.jpg"
             class="w-16 h-16 md:w-32 md:h-32 rounded-full mb-6 object-cover object-right-top"
             :alt="$t('avatar.alt')"
-          />
+          >
         </figure>
       </header>
       <footer>

@@ -9,7 +9,7 @@
       <h2 class="text-2xl">
         {{ capitalize(repo.name.trim()) }}
       </h2>
-      <br />
+      <br >
       <div class="categories flex-wrap flex">
         <p class="mr-2 text-xs rounded capitalize">
           {{ repo.language }}

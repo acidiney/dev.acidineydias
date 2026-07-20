@@ -3,7 +3,7 @@
     <span class="line" />
     <a target="__blank" rel="noreferrer" :href="website" class="content">
       <div class="thumbnail hidden md:block">
-        <img :src="companyLogo" :alt="companyName" />
+        <img :src="companyLogo" :alt="companyName" >
       </div>
       <div class="description px-3 py-3 border-box">
         <div class="md:hidden flex items-center justify-center mb-2 mb:m-0">
@@ -11,7 +11,7 @@
             class="h-8 w-8 rounded-full"
             :src="companyLogo"
             :alt="companyName"
-          />
+          >
         </div>
         <header class="text-center md:text-left">
           <h3>{{ role }}</h3>
